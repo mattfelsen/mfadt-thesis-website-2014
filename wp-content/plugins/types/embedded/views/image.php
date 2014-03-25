@@ -569,11 +569,11 @@ class Types_Image_Utils
         if ( $upload_info ) {
             $file = ltrim( str_replace( $upload_info['basedir'], '',
                             self::realpath( $file ) ), '/\\' );
-            $matches = null;
-
-            if ( preg_match( '~(\d{4}/\d{2}/)?[^/]+$~', $file, $matches ) ) {
-                $file = $matches[0];
-            }
+//            $matches = null;
+//
+//            if ( preg_match( '~(\d{4}/\d{2}/)?[^/]+$~', $file, $matches ) ) {
+//                $file = $matches[0];
+//            }
 
             $file = $upload_info['baseurl'] . '/' . str_replace( '\\', '/',
                             $file );
@@ -593,11 +593,11 @@ class Types_Image_Utils
         if ( $upload_info ) {
             $file = ltrim( str_replace( $upload_info['basedir'], '',
                             self::realpath( $file ) ), '/\\' );
-            $matches = null;
-
-            if ( preg_match( '~(\d{4}/\d{2}/)?[^/]+$~', $file, $matches ) ) {
-                $file = $matches[0];
-            }
+//            $matches = null;
+//
+//            if ( preg_match( '~(\d{4}/\d{2}/)?[^/]+$~', $file, $matches ) ) {
+//                $file = $matches[0];
+//            }
         }
 
         return $file;
@@ -807,8 +807,8 @@ class Types_Error extends WP_Error
 
         if ( $message instanceof WP_Error ) {
             $code = $message->get_error_code();
-            $message = $message->get_error_message();
             $data = $message->error_data;
+            $message = $message->get_error_message();
         } else {
             $db = debug_backtrace();
             $code = "{$db[1]['class']}::{$db[1]['function']}()";

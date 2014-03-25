@@ -358,8 +358,11 @@ class WPCF_Relationship
             $wpdb->update( $wpdb->posts,
                     array('post_title' => $post_type . ' ' . $id),
                     array('ID' => $id), array('%s'), array('%d') );
+            
+            do_action( 'wpcf_relationship_add_child', get_post( $id ), $parent );
+            wp_cache_flush();
         }
-        wp_cache_flush();
+        
         return $id;
     }
 

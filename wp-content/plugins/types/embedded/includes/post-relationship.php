@@ -231,30 +231,62 @@ function wpcf_pr_admin_post_meta_box_belongs_form( $post, $type, $belongs ) {
         __( 'Not selected', 'wpcf' ) => 0,
     );
 
-    $items = get_posts( 'post_type=' . $type . '&numberposts=-1&post_status=publish&order=ASC&orderby=title&suppress_filters=0&fields=ids' );
-//    $items = get_posts( 'post_type=' . $type . '&numberposts=-1&post_status=null&order=ASC&orderby=title&suppress_filters=0' );
+//    $items = get_posts( 'post_type=' . $type . '&numberposts=-1&post_status=null&order=ASC&orderby=title&suppress_filters=0&fields=ids' );
 
+//    if ( empty( $items ) ) {
+//        return array();
+    //    }
+
+    /**
+     * create sql query
+     */
+    $sql = sprintf( 'SELECT p.ID, p.post_title, p.post_status FROM %s p ', $wpdb->posts);
+
+    /**
+     * add WMPL support
+     */
+    $wpml_where = '';
+    if ( defined('ICL_SITEPRESS_VERSION') && function_exists('wpml_get_language_information') ) {
+        $post_language_information = wpml_get_language_information($post->ID);
+        $sql .= sprintf( ' LEFT JOIN %sicl_translations t on t.element_id = p.ID and t.element_type = \'post_%s\' ', $wpdb->prefix, $type);
+        $sql .= sprintf( ' LEFT JOIN %sicl_languages l on l.code = t.language_code ', $wpdb->prefix);
+        $wpml_where = sprintf( ' AND l.default_locale = \'%s\'', $post_language_information['locale'] );
+    }
+
+    /**
+     * add where
+     */
+    $sql .= ' WHERE p.post_type = %s AND p.post_status <> %s ' . $wpml_where;
+
+    /**
+     * add order by
+     */
+    $sql .= ' ORDER BY FIELD(p.post_status, \'pending\', \'draft\', \'publish\') DESC, p.post_title';
+
+    /**
+     * get items
+     */
+    $items = $wpdb->get_results( $wpdb->prepare( $sql, $type, 'auto-draft'), OBJECT_K );
     if ( empty( $items ) ) {
         return array();
     }
 
-    $_titles = $wpdb->get_results( $wpdb->prepare(
-                    "SELECT ID, post_title FROM $wpdb->posts
-                        WHERE post_type=%s AND post_status<>%s",
-                    $type, 'auto-draft'
-            ), OBJECT_K );
-
-    foreach ( $items as $temp_post ) {
-//        if ( $temp_post->post_status == 'auto-draft' ) {
+//    foreach ( $items as $temp_post ) {
+//        if ( !isset( $_titles[$temp_post]->post_title ) ) {
 //            continue;
 //        }
-        if ( !isset( $_titles[$temp_post]->post_title ) ) {
-            continue;
-        }
+//        $options[] = array(
+//            '#title' => $_titles[$temp_post]->post_title,
+//            '#value' => $temp_post,
+//        );
+    //    }
+    //
+    //
+    foreach ( $items as $item ) {
+        $_title_add = $item->post_status != 'publish' ? ' (' . $item->post_status . ')' : '';
         $options[] = array(
-//            '#title' => $temp_post->post_title,
-            '#title' => $_titles[$temp_post]->post_title,
-            '#value' => $temp_post,
+            '#title' => $item->post_title . $_title_add,
+            '#value' => $item->ID,
         );
     }
 

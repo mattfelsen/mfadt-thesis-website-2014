@@ -14,9 +14,9 @@ jQuery(document).ready(function(){
      * Views Layout Meta HTML, CRED form.
      */
     window.wpcfActiveEditor = 'content';
-    jQuery('.wp-media-buttons a, .wpcf-wysiwyg .editor_addon_dropdown .item, #postdivrich .editor_addon_dropdown .item, #wpv_filter_meta_html_admin_edit .item, #wpv_layout_meta_html_admin_edit .item').on('click', function(){
-        window.wpcfActiveEditor = jQuery(this).parents('.wpcf-wysiwyg, #postdivrich, #wpv_layout_meta_html_admin, #wpv_filter_meta_html_admin')
-        .find('textarea#content, textarea.wpcf-wysiwyg, textarea#wpv_layout_meta_html_content, textarea#wpv_filter_meta_html_content').attr('id');
+    jQuery('.wp-media-buttons a, .wpcf-wysiwyg .editor_addon_dropdown .item, .wpt-wysiwyg .editor_addon_dropdown .item, #postdivrich .editor_addon_dropdown .item, #wpv_filter_meta_html_admin_edit .item, #wpv_layout_meta_html_admin_edit .item').on('click', function(){
+        window.wpcfActiveEditor = jQuery(this).parents('.wpt-wysiwyg, .wpcf-wysiwyg, #postdivrich, #wpv_layout_meta_html_admin, #wpv_filter_meta_html_admin')
+        .find('textarea#content, textarea.wpcf-wysiwyg, textarea.wpt-wysiwyg, textarea#wpv_layout_meta_html_content, textarea#wpv_filter_meta_html_content').attr('id');
 
     /*
          *

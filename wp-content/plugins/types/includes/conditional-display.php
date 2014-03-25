@@ -35,15 +35,23 @@ function wpcf_cd_form_field_filter( $form, $data ) {
         $vars['group_id'] = $_GET['group_id'];
     }
     if ( !isset( $vars['group_id'] ) ) {
-        return $form + array(
+        $form = $form + array(
             'cd_not_available' => array(
                 '#type' => 'markup',
                 '#markup' => '<p>' . __( 'You will be able to set conditional field display once this group is saved.',
-                        'wpcf' ) . '</p>',
+                        'wpcf' ) . '</p><div style="display:none;">',
             ),
         );
     }
     $form = $form + wpcf_cd_admin_form_filter( $data );
+    if ( !isset( $vars['group_id'] ) ) {
+        $form = $form + array(
+            'cd_not_available2' => array(
+                '#type' => 'markup',
+                '#markup' => '</div>',
+            ),
+        );
+    }
     return $form;
 }
 
