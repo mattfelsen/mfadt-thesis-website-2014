@@ -61,6 +61,7 @@ window.onload = function() {
             $('#s').addClass('isSearching').addClass('placeWhite');
         }
         mfadt.isSearching = true;
+        $('#s').focus();
     });
     $(document).keyup(function(e) {
         // check if firefox
