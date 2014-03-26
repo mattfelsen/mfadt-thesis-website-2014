@@ -3,7 +3,7 @@ var $ = jQuery;
 window.onload = function() {
     console.log('OH YEAH');
     var mfadt = {
-        isSeaching: false,
+        isSearching: false,
         init: function() {
             $('#s').attr({
                 placeholder: 'SEARCH MFADT \'14'
@@ -11,18 +11,22 @@ window.onload = function() {
         },
         search: function(e) {
             var SField = $('#s');
-            // e.preventDefault();
             // if not enter or backspace?
             if (e.keyCode == 27 ||
                 e.keyCode == 9 ||
                 e.keyCode == 91) {
-                mfadt.isSeaching = false;
+                e.preventDefault();
+                mfadt.isSearching = false;
                 SField.removeClass('isSearching').removeClass('placeWhite');
                 SField.val('').blur();
                 $('#blurPanel').removeClass('blurOnFront');
                 $('body').removeClass('bodyZoom');
             } else {
-                if (!mfadt.isSeaching) {
+                if (!mfadt.isSearching) {
+                    mfadt.isSearching = true;
+                    // start searching
+                    SField.addClass('isSearching').addClass('placeWhite');
+                    SField.val(String.fromCharCode(e.keyCode).toLowerCase());
                     SField.attr({
                         placeholder: 'SEARCH MFADT \'14'
                     });
@@ -33,28 +37,55 @@ window.onload = function() {
                         });
                     $('body').addClass('bodyZoom');
                     // blur js does not work now
-                    // center search bar
-                    SField.val(String.fromCharCode(e.keyCode).toLowerCase());
-                    SField.addClass('isSearching').addClass('placeWhite');
                 }
-                mfadt.isSeaching = true;
+                mfadt.isSearching = true;
                 SField.focus();
             }
         }
     };
     // detect typing
+    $('#s').on('focus', function() {
+        if (!mfadt.isSearching) {
+            $('#s').val('').blur();
+            $('#s').attr({
+                placeholder: 'SEARCH MFADT \'14'
+            });
+            // blur body
+            $('#blurPanel').addClass('blurOnFront')
+                .css({
+                    background: getRandBg()
+                });
+            $('body').addClass('bodyZoom');
+            // blur js does not work now
+            // center search bar
+            $('#s').addClass('isSearching').addClass('placeWhite');
+        }
+        mfadt.isSearching = true;
+    });
     $(document).keyup(function(e) {
         // check if firefox
-        mfadt.search(e);
+        if (!mfadt.isSearching) {
+            mfadt.search(e);
+        }
     });
 
     // detect any clicks
-    $(window).on('click', function() {
-        mfadt.isSeaching = false;
-        $('#s').removeClass('isSearching');
-        $('#s').val('').blur();
-        $('#blurPanel').removeClass('blurOnFront').removeClass('placeWhite');
-        $('body').removeClass('bodyZoom');
+    $(document).on('click', function() {
+        if (mfadt.isSearching) {
+            $('#s').removeClass('isSearching');
+            $('#blurPanel').removeClass('blurOnFront').removeClass('placeWhite');
+            $('body').removeClass('bodyZoom');
+            $('#s').val('').blur();
+            mfadt.isSearching = false;
+        }
+    });
+
+    // detect submit
+    $('form').on('submit', function(e) {
+        if ($('#s').val().length === 0) {
+            // do nothing
+            e.preventDefault();
+        }
     });
 
     // INITIALIZE
