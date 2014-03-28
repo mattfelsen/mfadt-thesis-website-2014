@@ -47,6 +47,9 @@ if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
     add_action( 'wpcf_taxonomy_renamed', 'wpcf_wpml_taxonomy_renamed', 10, 2 );
 
     // Relationship save child language
+    /*
+     * TODO Andrea suggested to switch to 'wpcf_relationship_add_child'
+     */
     add_action( 'wpcf_relationship_save_child',
             'wpcf_wpml_relationship_save_child', 10, 2 );
 
@@ -917,6 +920,16 @@ function wpcf_wpml_post_type_renamed( $new_slug, $old_slug ) {
             'context' => 'URL slugs - wpcf',
                 )
         );
+        // Suggested by Andrea
+        // https://icanlocalize.basecamphq.com/projects/7393061-toolset/todo_items/180468169/comments#270683248
+        $wpdb->update( $wpdb->prefix . 'icl_translations',
+                array(
+            'element_type' => "post_{$new_slug}",
+                ),
+                array(
+            'element_type' => "post_{$old_slug}"
+                )
+        );
     }
 }
 
@@ -958,8 +971,12 @@ function wpcf_wpml_relationship_save_child( $child, $parent ) {
     $lang_details = $sitepress->get_element_language_details( $parent->ID,
             'post_' . $parent->post_type );
     if ( $lang_details ) {
-        $sitepress->set_element_language_details( $child->ID,
-                'post_' . $child->post_type, null, $lang_details->language_code );
+        $trid = $sitepress->get_element_trid( $child->ID, "post_{$child->post_type}" );
+        if ( !is_null( $trid ) ) {
+            $sitepress->set_element_language_details( $child->ID,
+                    'post_' . $child->post_type, $trid,
+                    $lang_details->language_code );
+        }
     }
 }
 

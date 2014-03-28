@@ -30,13 +30,21 @@ class WPCF_User_Fields_Control_Table extends WP_List_Table
             $cf_types[$cf_id]['groups_txt'] = empty( $cf_types[$cf_id]['groups'] ) ? __( 'None', 'wpcf' ) : implode(', ', $cf_types[$cf_id]['groups'] );
         }
 		
-        // Get others (cache this result?)
-        $cf_other = $wpdb->get_results("
+        // Get others
+        if ( !isset( $_REQUEST['show_hidden'] ) || $_REQUEST['show_hidden'] == 'false' ) {
+            $cf_other = $wpdb->get_results( "
 		SELECT umeta_id, meta_key
 		FROM $wpdb->usermeta
 		GROUP BY meta_key
 		HAVING meta_key NOT LIKE '\_%'
-		ORDER BY meta_key");
+		ORDER BY meta_key" );
+        } else {
+            $cf_other = $wpdb->get_results( "
+		SELECT umeta_id, meta_key
+		FROM $wpdb->usermeta
+		GROUP BY meta_key
+		ORDER BY meta_key" );
+        }
 
         $output = '';
 
@@ -231,7 +239,12 @@ class WPCF_User_Fields_Control_Table extends WP_List_Table
     }
 
     function view_switcher($current_mode = '') {
-        echo '<div style="clear:both; margin: 20px 0 10px 0; float: right;"><a class="button button-secondary" href="';
+        echo '<div style="clear:both; margin: 20px 0 10px 0; float: right;"><label><input type="checkbox" name="types_show_hidden" value="1"';
+        if ( isset( $_REQUEST['show_hidden'] ) && $_REQUEST['show_hidden'] == 'true' ) {
+            echo ' checked="checked"';
+        }
+        echo ' />&nbsp;'
+        . __( 'Show hidden fields', 'wpcf' ) . '</label>&nbsp;&nbsp;<a class="button button-secondary" href="';
         if (empty($_GET['display_all'])) {
             echo esc_url($_SERVER['REQUEST_URI']) . '&amp;display_all=1">' . __('Display all items',
                     'wpcf');
@@ -308,6 +321,12 @@ function wpcf_admin_user_fields_control_js() {
 
     ?>
     <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $('[name="types_show_hidden"]').on('click', function(){
+                var show = $(this).is(':checked') ? 'true' : 'false';
+                window.location.href = window.location.href.replace(/(&show_hidden=[^\s?!&]*)/, '')+'&show_hidden='+show;
+            });
+        });
         jQuery(document).ready(function(){
             jQuery('#wpcf-custom-fields-control-form .actions select').change(function(){
                 return wpcfAdminCustomFieldsControlSubmit(jQuery(this));

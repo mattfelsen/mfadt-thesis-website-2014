@@ -637,7 +637,7 @@ function wpcf_admin_custom_types_form_submit( $form ) {
     }
 
     // Check overwriting
-    if ( !$update && array_key_exists( $post_type, $custom_types ) ) {
+    if ( ( !array_key_exists( 'wpcf-post-type', $data ) || $data['wpcf-post-type'] != $post_type ) && array_key_exists( $post_type, $custom_types ) ) {
         wpcf_admin_message( __( 'Custom post type already exists', 'wpcf' ),
                 'error' );
 //            $form->triggerError();
@@ -661,7 +661,84 @@ function wpcf_admin_custom_types_form_submit( $form ) {
         $wpdb->update( $wpdb->posts, array('post_type' => $post_type),
                 array('post_type' => $data['wpcf-post-type']), array('%s'),
                 array('%s')
+            );
+
+
+        /**
+         * update post meta "_wp_types_group_post_types"
+         */
+        $sql = sprintf(
+            'select meta_id, meta_value from %s where meta_key = \'%s\'',
+            $wpdb->postmeta,
+            '_wp_types_group_post_types'
         );
+        $all_meta = $wpdb->get_results($sql, OBJECT_K);
+        $re = sprintf( '/,%s,/', $data['wpcf-post-type'] );
+        foreach( $all_meta as $meta ) {
+            if ( !preg_match( $re, $meta->meta_value ) ) {
+                continue;
+            }
+            $wpdb->update(
+                $wpdb->postmeta,
+                array(
+                    'meta_value' => preg_replace( $re, ','.$post_type.',', $meta->meta_value ),
+                ),
+                array(
+                    'meta_id' => $meta->meta_id,
+                ),
+                array( '%s' ),
+                array( '%d' )
+            );
+        }
+
+        /**
+         * update _wpcf_belongs_{$data['wpcf-post-type']}_id
+         */
+        $wpdb->update(
+            $wpdb->postmeta,
+            array(
+                'meta_key' => sprintf( '_wpcf_belongs_%s_id', $post_type ),
+            ),
+            array(
+                'meta_key' => sprintf( '_wpcf_belongs_%s_id', $data['wpcf-post-type'] ),
+            ),
+            array( '%s' ),
+            array( '%s' )
+        );
+
+        /**
+         * update options "wpv_options"
+         */
+        $wpv_options = get_option( 'wpv_options', true );
+        if ( is_array( $wpv_options ) ) {
+            $re = sprintf( '/(views_template_(archive_)?for_)%s/', $data['wpcf-post-type'] );
+            foreach( $wpv_options as $key => $value ) {
+                if ( !preg_match( $re, $key ) ) {
+                    continue;
+                }
+                unset($wpv_options[$key]);
+                $key = preg_replace( $re, "$1".$post_type, $key );
+                $wpv_options[$key] = $value;
+            }
+            update_option( 'wpv_options', $wpv_options );
+        }
+
+        /**
+         * update option "wpcf-custom-taxonomies"
+         */
+        $wpcf_custom_taxonomies = get_option( 'wpcf-custom-taxonomies', true );
+        if ( is_array( $wpcf_custom_taxonomies ) ) {
+            $update_wpcf_custom_taxonomies = false;
+            foreach( $wpcf_custom_taxonomies as $key => $value ) {
+                if ( array_key_exists( 'supports', $value ) && array_key_exists( $data['wpcf-post-type'], $value['supports'] ) ) {
+                    unset( $wpcf_custom_taxonomies[$key]['supports'][$data['wpcf-post-type']] );
+                    $update_wpcf_custom_taxonomies = true;
+                }
+            }
+            if ( $update_wpcf_custom_taxonomies ) {
+                update_option( 'wpcf-custom-taxonomies', $wpcf_custom_taxonomies );
+            }
+        }
 
         // Sync action
         do_action( 'wpcf_post_type_renamed', $post_type, $data['wpcf-post-type'] );
@@ -708,7 +785,6 @@ function wpcf_admin_custom_types_form_submit( $form ) {
 
     // WPML register strings
     wpcf_custom_types_register_translation( $post_type, $data );
-
 
     wpcf_admin_message_store(
             apply_filters( 'types_message_custom_post_type_saved',

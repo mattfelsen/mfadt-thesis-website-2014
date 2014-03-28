@@ -449,68 +449,6 @@ function types_render_usermeta( $field_id, $params, $content = null, $code = '' 
     // Get field
     $field = wpcf_fields_get_field_by_slug( $field_id, 'wpcf-usermeta' );
 
-    //If Access plugin activated
-    if ( function_exists( 'wpcf_access_register_caps' ) ) {
-        $forbidden_self = false;
-        $forbidden_other = false;
-        $forbidden = false;
-        $cache_group = 'types_access_cache_forbidden';
-		$cache_key = md5( 'access::types_render_usermeta' . $field_id );
-		$cached_object = wp_cache_get( $cache_key, $cache_group );
-		$current_user_object = wp_get_current_user();
-		if ( false === $cached_object ) {
-			
-			require_once WPCF_EMBEDDED_INC_ABSPATH . '/fields.php';
-			$field_groups = wpcf_admin_fields_get_groups_by_field( $field_id,
-					'wp-types-user-group' );
-			$cache_data = array();
-			if ( !empty( $field_groups ) ) {
-				foreach ( $field_groups as $field_group ) {
-					if ( $user_id == $current_user ) {
-						if ( !current_user_can( 'view_own_on_site_' . $field_group['slug'] ) ) {
-							$forbidden_self = true;
-							$forbidden = true;
-						}
-					} else {
-						if ( !current_user_can( 'view_others_on_site_' . $field_group['slug'] ) ) {
-							$forbidden_other = true;
-							$forbidden = true;
-						}
-					}
-				}
-			}
-			foreach ( $current_user_object->roles as $role ) {
-				if ( $forbidden_self ) {
-					$cache_data[$role]['self'] = 'disallow';
-				} else {
-					$cache_data[$role]['self'] = 'allow';
-				}
-				if ( $forbidden_other ) {
-					$cache_data[$role]['other'] = 'disallow';
-				} else {
-					$cache_data[$role]['other'] = 'allow';
-				}
-			}
-			wp_cache_add( $cache_key, $cache_data, $cache_group );
-		} else {
-			if ( $user_id == $current_user ) {
-				foreach ( $current_user_object->roles as $role ) {
-					if ( is_array( $cached_object ) && isset( $cached_object[$role] ) && is_array( $cached_object[$role] ) && isset( $cached_object[$role]['self'] ) && $cached_object[$role]['self'] == 'disallow' ) {
-						$forbidden = true;
-					}
-				}
-			} else {
-				foreach ( $current_user_object->roles as $role ) {
-					if ( is_array( $cached_object ) && isset( $cached_object[$role] ) && is_array( $cached_object[$role] ) && isset( $cached_object[$role]['other'] ) && $cached_object[$role]['other'] == 'disallow' ) {
-						$forbidden = true;
-					}
-				}
-			}
-		}
-        if ( $forbidden ) {
-			return;
-        }
-    }
     // If field not found return empty string
     if ( empty( $field ) ) {
 
@@ -838,7 +776,7 @@ class Usermeta_Access
      */
     public function __construct() {
         // setup custom capabilities
-        self::$user_groups = wpcf_admin_fields_get_groups();
+        self::$user_groups = wpcf_admin_fields_get_groups( 'wp-types-user-group' );
         //If access plugin installed
         if ( function_exists( 'wpcf_access_register_caps' ) ) { // integrate with Types Access
             if ( !empty( self::$user_groups ) ) {
@@ -868,10 +806,6 @@ class Usermeta_Access
         $default_role = 'guest'; //'administrator';
         //List of caps with default permissions
         $usermeta_caps = array(
-            array('view_own_on_site', $default_role, __( 'View own fields on site',
-                        'wpcf' )),
-            array('view_others_on_site', $default_role, __( 'View others fields on site',
-                        'wpcf' )),
             array('view_own_in_profile', $default_role, __( 'View own fields in profile',
                         'wpcf' )),
             array('modify_own', $default_role, __( 'Modify own fields', 'wpcf' )),
@@ -926,9 +860,12 @@ class Usermeta_Access
     public static function register_access_usermeta_area( $areas,
             $area_type = 'usermeta' )
     {
+    	$fields_groups = wpcf_admin_fields_get_groups( 'wp-types-user-group' );
+		if ( !empty( $fields_groups ) ) {	
         $USERMETA_ACCESS_AREA_NAME = __( 'User Meta Fields Access', 'wpcf' );
         $USERMETA_ACCESS_AREA_ID = '__USERMETA_FIELDS';
         $areas[] = array('id' => $USERMETA_ACCESS_AREA_ID, 'name' => $USERMETA_ACCESS_AREA_NAME);
+		}
         return $areas;
     }
 
@@ -984,8 +921,6 @@ class Post_Fields_Access
         $default_role = 'guest'; //'administrator';
         //List of caps with default permissions
         $fields_caps = array(
-            array('view_fields_on_site', $default_role, __( 'View Fields On Site',
-                        'wpcf' )),
             array('view_fields_in_edit_page', $default_role, __( 'View Fields In Edit Page',
                         'wpcf' )),
             array('modify_fields_in_edit_page', 'author', __( 'Modify Fields In Edit Page',
