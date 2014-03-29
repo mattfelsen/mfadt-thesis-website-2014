@@ -5,6 +5,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
+	<base href="<?= site_url() ;?>/"></base>
 	<link rel="shortcut icon" href="assets/favicon.ico">
 	<link rel="stylesheet" href="assets/css/base.css">
 	<link rel="stylesheet" href="assets/css/skeleton.css">
