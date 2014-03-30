@@ -16,13 +16,13 @@ $query = new WP_Query( $args );
 	
 	<?php
 
-	if ($query->have_posts()) : while ($query->have_posts()) :
-		$query->the_post();
+	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 
 		$students_list = array();
 		$students = types_child_posts('student');
 		foreach ($students as $student) { $students_list[] = $student->post_title; }
 		$students = join(" + ", $students_list);
+		
 	?>
 	
 	<div class="four columns">
