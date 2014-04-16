@@ -18,6 +18,10 @@ body {
 	transform: scale(1.1) !important;
 }
 
+.columns {
+	overflow: hidden;
+}
+
 /*header styles*/
 #blurPanel {
 	transition: 0.25s opacity !important;
@@ -35,10 +39,15 @@ body {
 	z-index: 1 !important;
 }
 
-.topMenu {
-	min-height: 50px;
-	margin: 20px 0px 20px 0px;
+nav {
+	background: rgba(255,255,255,0.95);
 	border-bottom: 1px solid #c0c0c0;
+}
+
+.topMenu {
+	min-height: 60px;
+	margin: 0px;
+	padding: 15px 0px 20px 0px;
 }
 
 .topMenu .menu {
@@ -104,8 +113,29 @@ form::-webkit-input-placeholder {
 /*mainContainer styles*/
 
 .mainContainer {
-	margin: 0px 0px 0px 0px;
+	margin: 0px 0px 15px 0px;
 }
+
+/*student*/
+#students {
+}
+
+.student {
+	background: #b3b3b3;
+	border-bottom: 1px solid black;
+	padding: 10px 0px 15px 0px;
+}
+
+/*project*/
+#project {
+	margin: 15px 0px 0px 0px;
+	padding: 10px 0px 15px 0px;
+}
+
+#project img {
+	width: 100%;
+}
+
 
 /*footer styles*/
 
@@ -127,4 +157,10 @@ footer h6 {
 	text-transform: uppercase;
 	border-bottom: 2px solid #969696;
 	margin: 0px 0px 10px 0px;
+}
+
+/*other styles*/
+/*stuck*/
+.is_stuck {
+	z-index: 9;
 }

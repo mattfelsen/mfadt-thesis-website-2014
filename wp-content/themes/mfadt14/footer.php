@@ -1,5 +1,4 @@
 <div class="clear"></div>
-</div>
 <footer id="footer" role="contentinfo">
 	<h3>ACKNOWLEDGEMENTS</h3>
 	<div class="four columns">
@@ -18,7 +17,7 @@
 <?php wp_footer(); ?>
 	<!-- load scripts -->
 	<script src="assets/js/underscore.min.js"></script>
-	<script src="assets/js/blur.min.js"></script>
+	<script src="assets/js/sticky.min.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 </html>

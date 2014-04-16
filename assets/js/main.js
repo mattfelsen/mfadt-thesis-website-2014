@@ -8,6 +8,28 @@ window.onload = function() {
             $('#s').attr({
                 placeholder: 'SEARCH MFADT \'14'
             });
+            // sticky controls
+            // nav, student, project left
+            $('nav').stick_in_parent({
+                inner_scrolling: false
+            });
+            $('#students').stick_in_parent({
+                inner_scrolling: false,
+                offset_top: $('nav').outerHeight(true) // get el height + margin
+            })
+                .on('sticky_kit:stick', function() {
+                    // collapse #student
+                    console.log('student stick!');
+                    $('.student .student-bio, .student-links, .student-headshot').slideUp();
+                }).on('sticky_kit:unstick', function() {
+                    // collapse #student
+                    console.log('student unstick!');
+                    $('.student .student-bio, .student-links, .student-headshot').slideDown();
+                });
+            $('#project .six').stick_in_parent({
+                inner_scrolling: true,
+                offset_top: $('#students').outerHeight(true)
+            });
         },
         search: function(e) {
             var SField = $('#s');
@@ -43,6 +65,8 @@ window.onload = function() {
             }
         }
     };
+
+    // listeners
     // detect typing
     $('#s').on('focus', function() {
         if (!mfadt.isSearching) {

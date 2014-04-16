@@ -16,9 +16,10 @@
 <body <?php body_class(); ?>>
 	<div id="blurPanel"></div>
 	<div id="wrapper" class="container">
-		<nav class="topMenu sixteen columns">
-			<?php wp_nav_menu( array( 'theme_location' =>'main-menu' ) ); ?>
-			<?php get_search_form(); ?>
-			<div class="clear"></div>
+		<nav class="topMenu">
+			<div class="sixteen columns">
+				<?php wp_nav_menu( array( 'theme_location' =>'main-menu' ) ); ?>
+				<?php get_search_form(); ?>
+				<div class="clear"></div>
+			</div>
 		</nav>
-		<div id="container">

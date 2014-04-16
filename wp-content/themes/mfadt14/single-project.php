@@ -4,25 +4,32 @@
 ?>
 
 <!-- html goes here -->
-<div class="sixteen columns mainContainer">
-	<?php foreach ($students as $student) { ?>
-	<section class="student">
-		<h2><?= $student->post_title ?></h2>
-		<div><?= $student->fields['biography'] ?></div>
-		<div>
-			<?= $student->fields['personal-website'] ?><br>
-			<?= $student->fields['linkedin'] ?><br>
-			@<?= $student->fields['twitter'] ?><br>
+<!-- <div class="sixteen columns mainContainer"> -->
+	<section id="students">
+		<?php foreach ($students as $student) { ?>
+		<div class="container student">
+			<div class="four columns">
+				<h3><?= $student->post_title ?></h3>
+			</div>
+			<div class="six columns student-bio">
+				<?= $student->fields['biography'] ?>
+			</div>
+			<div class="three columns student-links">
+				<?= $student->fields['personal-website'] ?><br>
+				<?= $student->fields['linkedin'] ?><br>
+				@<?= $student->fields['twitter'] ?><br>
+			</div>
+			<div class="three columns student-headshot">
+				<?= $student->fields['headshot'] ?>
+			</div>
 		</div>
-		<div><?= $student->fields['headshot'] ?></div>
+		<?php } ?>
 	</section>
-	<?php } ?>
 
-	<section class="project">
+	<section class="container" id="project">
+		<div class="six columns">
 		<h2><?php the_title(); ?></h2>
 		<h3><?= types_render_field('short-description') ?></h3>
-
-		<div class="six columns">
 			<p><?= types_render_field('long-description') ?></p>
 			<p><?= types_render_field('project-website') ?></p>
 			<p>
@@ -34,11 +41,12 @@
 				Spring: <?= types_render_field('writing-faculty-spring') ?><br>
 			</p>
 		</div>
-		<div class="eight columns">
+		<div class="ten columns">
 			<?= types_render_field('featured-image') ?>
+			<?= types_render_field('thumbnail') ?>
 		</div>
 	</section>
 
-</div>
+<!-- </div> -->
 
 <?php get_footer(); ?>
