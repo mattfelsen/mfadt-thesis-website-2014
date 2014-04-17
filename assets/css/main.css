@@ -11,6 +11,7 @@ body {
    -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
      -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+        
 }
 
 .bodyZoom {
@@ -106,6 +107,106 @@ form::-webkit-input-placeholder {
 .mainContainer {
 	margin: 0px 0px 0px 0px;
 }
+
+.studentInfoHolder{
+	height: 150px;	
+}
+
+.studentBio{
+	width: 60%;
+	display: inline-block;
+	vertical-align:text-top;
+}
+
+div.studentContactInfo{
+	width: 46px;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align:text-top;
+	margin: 0 30px 0 80px;
+/* 	float: right; */
+
+}
+img.headshotRegular{
+	height:100%;
+	display: inline-block;
+	vertical-align:text-top;
+	float: right;
+}
+
+.personalWebsiteLink{
+	background-image: url(../img/icons/personalIcon.png);
+	width: 46px;
+	height: 46px;
+	background-size: contain;
+	margin-bottom: 2px;
+	-webkit-transition: background-image .95s ease-in-out;
+	-moz-transition: background-image .95s ease-in-out;
+	-o-transition: background-image .95s ease-in-out;
+	transition: background-image .95s ease-in-out;
+}
+
+.personalWebsiteLink:hover{
+	background-image: url(../img/icons/personalIconHover.png);
+}
+
+.linkedInLink{
+	background-image: url(../img/icons/linkedInIcon.png);
+	width: 46px;
+	height: 46px;
+	background-size: contain;
+	margin-bottom: 2px;
+	-webkit-transition: background-image .95s ease-in-out;
+	-moz-transition: background-image .95s ease-in-out;
+	-o-transition: background-image .95s ease-in-out;
+	transition: background-image .95s ease-in-out;
+}
+
+.linkedInLink:hover{
+	background-image: url(../img/icons/linkedInIconHover.png);
+}
+
+.twitterLink{
+	background-image: url(../img/icons/twitterIcon.png);
+	width: 46px;
+	height: 46px;
+	background-size: contain;
+	-webkit-transition: background-image .95s ease-in-out;
+	-moz-transition: background-image .95s ease-in-out;
+	-o-transition: background-image .95s ease-in-out;
+	transition: background-image .95s ease-in-out;
+}
+
+.twitterLink:hover{
+	background-image: url(../img/icons/twitterIconHover.png);
+}
+
+/*
+div.headshotRegular{
+	width: %;
+	display: inline-block;
+	float: right;
+}
+*/
+
+
+
+p.facultyNames{
+	margin:0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*footer styles*/
 
