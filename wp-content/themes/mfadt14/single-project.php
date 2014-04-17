@@ -46,7 +46,7 @@ $students = types_child_posts('student');
 			</p>
 		</div>
 		<div class="eight columns">
-			<?= types_render_field('featured-image') ?>
+			<?= types_render_field('media', array('width' => 600)) ?>
 		</div>
 	</section>
 
