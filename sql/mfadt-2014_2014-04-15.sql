@@ -111,7 +111,7 @@ LOCK TABLES `wp_options` WRITE;
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`)
 VALUES
-	(1,'siteurl','http://dev.mfadt.com/2014','yes'),
+	(1,'siteurl','http://localhost:8888/mfadt','yes'),
 	(2,'blogname','MFAD+T 2014','yes'),
 	(3,'blogdescription','','yes'),
 	(4,'users_can_register','0','yes'),
@@ -146,7 +146,7 @@ VALUES
 	(33,'blog_charset','UTF-8','yes'),
 	(34,'moderation_keys','','no'),
 	(35,'active_plugins','a:3:{i:0;s:31:\"add-multiple-users/multiadd.php\";i:1;s:46:\"really-simple-csv-importer/rs-csv-importer.php\";i:2;s:14:\"types/wpcf.php\";}','yes'),
-	(36,'home','http://dev.mfadt.com/2014','yes'),
+	(36,'home','http://localhost:8888/mfadt','yes'),
 	(37,'category_base','','yes'),
 	(38,'ping_sites','http://rpc.pingomatic.com/','yes'),
 	(39,'advanced_edit','0','yes'),
