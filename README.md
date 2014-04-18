@@ -74,6 +74,9 @@ MFAD+T Thesis Website 2014
 		git checkout develop
 		git merge --no-ff develop-my-feature
 		git branch -d develop-my-feature
+		git push
+		
+	Note: you may get an error about tracking not set up for push. It will tell you a command to set remote tracking, similar to `git push --set-upstream origin develop`. Go ahead and run that.
 
 5. Submit a pull request on GitHub!
 

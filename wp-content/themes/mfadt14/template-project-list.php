@@ -31,7 +31,7 @@ $query = new WP_Query( $args );
 		<p><?= $students ?></p>
 		
 	    <? if (has_post_thumbnail()) : ?>
-		    <img class="projectThumb" src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0]; ?>">
+		    <img class="projectThumb" src="<? $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); print $src[0]; ?>">
 			<? else: ?>
 			<img class="projectThumb" src="assets/img/no-thumbnail-<? $r=rand(0,3);if($r>2)$o='sm';elseif($r>1)$o='md';else $o='lg'; print $o; ?>.jpg">
 		<?php endif; ?>
