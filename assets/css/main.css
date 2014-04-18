@@ -108,6 +108,14 @@ form::-webkit-input-placeholder {
 	margin: 0px 0px 0px 0px;
 }
 
+.masonry {
+    width: 268px;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px 0 0 0;
+}
+
+
 .studentInfoHolder{
 	height: 150px;	
 }
@@ -206,7 +214,9 @@ p.facultyNames{
 /*Project Listing Page*/
 
 img.projectThumb{
-	width:150px;
+	width: 268px;
+	margin: 15px 0 0 0;
+	box-shadow: 1px 2px 10px #bab8b8;
 }
 
 

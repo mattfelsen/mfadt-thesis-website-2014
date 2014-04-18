@@ -11,8 +11,9 @@ $query = new WP_Query( $args );
 ?>
 
 <!-- html goes here -->
-<div class="sixteen columns mainContainer">
 	<h1>Projects</h1>
+<div class="sixteen columns mainContainer">
+
 	
 	<?php
 
@@ -25,13 +26,16 @@ $query = new WP_Query( $args );
 		
 	?>
 	
-	<div class="four columns">
-		<? if(has_post_thumbnail()){ ?>
-		<img class="projectThumb" src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0]; ?>">
-		<? } ?>
-		
+	<div class="masonry columns">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 		<p><?= $students ?></p>
+		
+	    <? if (has_post_thumbnail()) : ?>
+		    <img class="projectThumb" src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0]; ?>">
+			<? else: ?>
+			<img class="projectThumb" src="assets/img/no-thumbnail-<? $r=rand(0,3);if($r>2)$o='sm';elseif($r>1)$o='md';else $o='lg'; print $o; ?>.jpg">
+		<?php endif; ?>
+		
 	</div>
 	
 	<?php endwhile; endif; ?>
