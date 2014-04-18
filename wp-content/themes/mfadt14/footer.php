@@ -18,7 +18,8 @@
 <?php wp_footer(); ?>
 	<!-- load scripts -->
 	<script src="assets/js/underscore.min.js"></script>
-	<script src="assets/js/blur.min.js"></script>
+<!-- 	<script src="assets/js/blur.min.js"></script> -->
+	<script src="assets/js/masonry.pkgd.min.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 </html>
