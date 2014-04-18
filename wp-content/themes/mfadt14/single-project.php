@@ -35,7 +35,7 @@ $students = types_child_posts('student');
 		<div class="six columns">
 			<p ><?= types_render_field('long-description') ?></p>
 <!-- 			follow the same format of "Project Website" rather than displaying URL target="_blank" -->
-			<p><?= types_render_field('project-website') ?></p>
+			<p><a href="<?= types_render_field('project-website', array('output' => 'raw')) ?>" target="_blank">View Project Website</a></p>
 			<p>
 				<h5>Thesis Faculty</h5>
 				<p class="facultyNames">Fall: <?= types_render_field('thesis-faculty-fall') ?></p>
