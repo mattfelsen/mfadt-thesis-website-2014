@@ -56,10 +56,13 @@
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px "Open sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+/* 		font: 14px/21px "Open sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 		color: #4c4c4c;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
+		
  }
 
 
@@ -67,8 +70,9 @@
 ================================================== */
 	h1, h2, h3, h4, h5, h6 {
 		color: #181818;
-		font-family: "Open sans", "Helvetica", "Arial";
-		font-weight: normal; }
+/* 		font-family: "Open sans", "Helvetica", "Arial"; */
+		font-family: 'Exo 2', sans-serif;
+		 }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
 	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
@@ -78,7 +82,11 @@
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader { color: #777; }
 
-	p { margin: 0 0 20px 0; }
+	p { margin: 0 0 20px 0; 
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		line-height: 1.25;
+	}
 	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
 

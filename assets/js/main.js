@@ -28,10 +28,9 @@ window.onload = function() {
                     'margin-top': window.innerHeight
                 });
                 this.hero();
-                $('#output').show();
             } else {
                 // deactivate canvas
-                $('#hero-background').remove();
+                // $('#hero-background').remove();
                 $('.menu-logo').css({
                     'margin-left': 0,
                     opacity: 1
@@ -81,10 +80,7 @@ window.onload = function() {
                 offset_top: $('#students').outerHeight(true)
             });
         },
-        hero: function() {
-            $('#hero-background').show();
-            initialise();
-        },
+        hero: function() {},
         search: function(e) {
             var SField = $('#s');
             // if not enter or backspace?
@@ -167,15 +163,14 @@ window.onload = function() {
         }
     });
 
-    // INITIALIZE
-    mfadt.init();
-
     // listeners
     window.addEventListener('resize', function() {
-        mfadt.init();
         // shift below-hero
         $('.below-hero').css({
             'margin-top': window.innerHeight
+        });
+        $('nav').css({
+            bottom: 0
         });
     });
     window.onscroll = function() {
@@ -187,6 +182,9 @@ window.onload = function() {
             });
         }
     };
+
+    // INITIALIZE
+    mfadt.init();
 
     // HELPERS
     function getRandBg() {

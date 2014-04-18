@@ -91,3 +91,17 @@ function remove_meta_boxes_do_meta()
 {
 	remove_meta_box('wpcf-marketing', 'project', 'side');
 }
+
+//
+// Change Featured Image meta box to say Project Thumbnail instead
+//
+add_action( 'add_meta_boxes', 'change_project_featured_image_metabox_title' ); // , 10, 2 );
+function change_project_featured_image_metabox_title( $post_type, $post ) {
+    if ( $post_type === 'project' ) {
+        //remove original featured image metabox
+        remove_meta_box( 'postimagediv', 'project', 'side' );
+
+        //add our customized metabox
+        add_meta_box( 'postimagediv', __('Project Thumbnail'), 'post_thumbnail_meta_box', 'project', 'side', 'low' );
+    }
+}
