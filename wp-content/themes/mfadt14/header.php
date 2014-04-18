@@ -14,12 +14,18 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 	<?php wp_head(); ?></head>
 <body <?php body_class(); ?>>
+	<nav class="topMenu">
+		<div class="container">
+		<div class="sixteen columns">
+			<a href="#"><img alt="logo" class="menu-logo" src="assets/img/hero/dtlogo-black.png"></a>
+			<?php wp_nav_menu( array( 'theme_location' =>'main-menu' ) ); ?>
+			<?php get_search_form(); ?>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</nav>
+	<div id="hero-background">
+		<div id="output"></div>
+	</div>
 	<div id="blurPanel"></div>
 	<div id="wrapper" class="container">
-		<nav class="topMenu">
-			<div class="sixteen columns">
-				<?php wp_nav_menu( array( 'theme_location' =>'main-menu' ) ); ?>
-				<?php get_search_form(); ?>
-				<div class="clear"></div>
-			</div>
-		</nav>

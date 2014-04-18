@@ -1,5 +1,9 @@
 /*mfadt style*/
 body {
+	transition: 0.1s;
+	opacity:0;
+	overflow-x: hidden;
+	/*background: #bfbfbf;*/
 	-webkit-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
 -webkit-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
    -moz-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
@@ -22,6 +26,74 @@ body {
 	overflow: hidden;
 }
 
+.hero {
+	background: url(../img/hero/handandheart.png) no-repeat;
+	background-size: 85%;
+	position: absolute;
+	width: 100%;
+	height: 73%;
+	top: 0px;
+	left: 0;
+	z-index: 0;
+	background-position: 0px 70px;
+	margin-top: 15px;
+}
+
+#hero-background {
+	position:absolute;
+	top:0; left:0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.hero-information {
+	position: absolute;
+	right: 15px;
+	bottom: 45%;
+	font-size: 1.5em;
+	line-height: 1.3em;
+	/*text-shadow: 1px 1px 0px white;*/
+	/*box-shadow: 10px 10px 0px black;*/
+	/*background: rgba(255,255,255,0.8);*/
+	padding: 20px;
+	color: #fff;
+}
+
+.hero-information button {
+	background: none;
+	border: 1px solid black;
+	padding: 5px 15px 5px 15px;
+	border-radius: 0px;
+	font-size: 0.7em;
+	float:right;
+	margin:0px;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.hero-logo {
+	margin: 30px;
+	/*-webkit-filter: invert(100%);*/
+}
+
+.below-hero {
+	padding: 0px 0px 0px 0px;
+}
+
+.below-hero-content h6 {
+	color: #969696;
+	font-weight: 700;
+	padding: 10px 0px 3px 0px;
+	text-transform: uppercase;
+	border-bottom: 2px solid #969696;
+	margin: 0px 0px 10px 0px;
+}
+
+.noBottom {
+	border:none !important;
+}
+
 /*header styles*/
 #blurPanel {
 	transition: 0.25s opacity !important;
@@ -40,18 +112,31 @@ body {
 }
 
 nav {
-	background: rgba(255,255,255,0.95);
+	transition: opacity 0.3s;
+	/*opacity: 0;*/
+	background: rgba(255,255,255,1);
 	border-bottom: 1px solid #c0c0c0;
+	height: 60px;
+	width: 100%;
+}
+
+.menu-logo {
+	transition: 0.25s;
+	width: 170px;
+	float: left;
+	margin-left: -500px;
+	opacity: 0;
 }
 
 .topMenu {
 	min-height: 60px;
 	margin: 0px;
-	padding: 15px 0px 20px 0px;
+	padding: 15px 0px 0px 0px;
 }
 
 .topMenu .menu {
 	float: left;
+	margin-left: 30px;
 }
 
 .topMenu form {
@@ -162,5 +247,6 @@ footer h6 {
 /*other styles*/
 /*stuck*/
 .is_stuck {
+	opacity: 1;
 	z-index: 9;
 }

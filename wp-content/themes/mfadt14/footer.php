@@ -18,6 +18,9 @@
 	<!-- load scripts -->
 	<script src="assets/js/underscore.min.js"></script>
 	<script src="assets/js/sticky.min.js"></script>
+	<script src="assets/js/fss.min.js"></script>
+	<script src="assets/js/hero-background.js"></script>
+	<!-- <script src="assets/js/snap.svg-min.js"></script> -->
 	<script src="assets/js/main.js"></script>
 </body>
 </html>

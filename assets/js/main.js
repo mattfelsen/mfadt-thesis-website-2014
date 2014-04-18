@@ -2,16 +2,66 @@ var $ = jQuery;
 
 window.onload = function() {
     console.log('OH YEAH');
+    var global = {
+        w: window.innerWidth,
+        h: window.innerHeight,
+        scrollAt: null
+    };
     var mfadt = {
         isSearching: false,
         init: function() {
+            // 
+            $('body').css('opacity', 1);
+            // check location
+            // if homepage, then hide nav, show later
+            if (location.pathname == '/mfadt/' && window.innerWidth >= 767) {
+                console.log('this is homepage');
+                // hide nav
+                $('nav').css({
+                    position: 'absolute',
+                    zIndex: 9,
+                    bottom: 0
+                });
+                // deploy svg
+                // shift below-hero
+                $('.below-hero').css({
+                    'margin-top': window.innerHeight
+                });
+                this.hero();
+                $('#output').show();
+            } else {
+                // deactivate canvas
+                $('#hero-background').remove();
+                $('.menu-logo').css({
+                    'margin-left': 0,
+                    opacity: 1
+                });
+            }
             $('#s').attr({
                 placeholder: 'SEARCH MFADT \'14'
             });
             // sticky controls
-            // nav, student, project left
             $('nav').stick_in_parent({
                 inner_scrolling: false
+            }).on('sticky_kit:stick', function() {
+                console.log('insert logo');
+                $('.menu-logo').css({
+                    'margin-left': 0,
+                    opacity: 1
+                });
+            }).on('sticky_kit:unstick', function() {
+                // only if on homepage
+                if (location.pathname == '/mfadt/') {
+                    $('.menu-logo').css({
+                        'margin-left': -500,
+                        opacity: 0
+                    });
+                    $('nav').css({
+                        position: 'absolute',
+                        bottom: 0
+                    });
+                }
+
             });
             $('#students').stick_in_parent({
                 inner_scrolling: false,
@@ -30,6 +80,10 @@ window.onload = function() {
                 inner_scrolling: true,
                 offset_top: $('#students').outerHeight(true)
             });
+        },
+        hero: function() {
+            $('#hero-background').show();
+            initialise();
         },
         search: function(e) {
             var SField = $('#s');
@@ -90,7 +144,7 @@ window.onload = function() {
     $(document).keyup(function(e) {
         // check if firefox
         if (!mfadt.isSearching) {
-            mfadt.search(e);
+            // mfadt.search(e);
         }
     });
 
@@ -115,6 +169,24 @@ window.onload = function() {
 
     // INITIALIZE
     mfadt.init();
+
+    // listeners
+    window.addEventListener('resize', function() {
+        mfadt.init();
+        // shift below-hero
+        $('.below-hero').css({
+            'margin-top': window.innerHeight
+        });
+    });
+    window.onscroll = function() {
+        global.scrollAt = window.pageYOffset;
+        // when scroll
+        if (global.scrollAt < window.innerHeight) {
+            $('nav').css({
+                bottom: 0
+            });
+        }
+    };
 
     // HELPERS
     function getRandBg() {
