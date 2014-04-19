@@ -103,6 +103,84 @@ svg {
 	font-weight: 700;
 }
 
+/* --------––––––------- PROJ DETAIL --–––––------------------*/
+
+.studentInfoHolder{
+	height: 150px;	
+}
+
+.studentBio{
+	display: inline-block;
+	width: 60%;
+	vertical-align:text-top;
+}
+
+div.studentContactInfo{
+	display: inline-block;
+	overflow: hidden;
+	margin: 0 30px 0 80px;
+	width: 46px;
+	vertical-align:text-top;
+/* 	float: right; */
+
+}
+img.headshotRegular{
+	display: inline-block;
+	float: right;
+	height:100%;
+	vertical-align:text-top;
+}
+
+.personalWebsiteLink{
+	margin-bottom: 2px;
+	width: 46px;
+	height: 46px;
+	background-image: url(../img/icons/personalIcon.png);
+	background-size: contain;
+	-webkit-transition: background-image .95s ease-in-out;
+	-moz-transition: background-image .95s ease-in-out;
+	-o-transition: background-image .95s ease-in-out;
+	transition: background-image .95s ease-in-out;
+}
+
+.personalWebsiteLink:hover{
+	background-image: url(../img/icons/personalIconHover.png);
+}
+
+.linkedInLink{
+	margin-bottom: 2px;
+	width: 46px;
+	height: 46px;
+	background-image: url(../img/icons/linkedInIcon.png);
+	background-size: contain;
+	-webkit-transition: background-image .95s ease-in-out;
+	-moz-transition: background-image .95s ease-in-out;
+	-o-transition: background-image .95s ease-in-out;
+	transition: background-image .95s ease-in-out;
+}
+
+.linkedInLink:hover{
+	background-image: url(../img/icons/linkedInIconHover.png);
+}
+
+.twitterLink{
+	width: 46px;
+	height: 46px;
+	background-image: url(../img/icons/twitterIcon.png);
+	background-size: contain;
+	-webkit-transition: background-image .95s ease-in-out;
+	-moz-transition: background-image .95s ease-in-out;
+	-o-transition: background-image .95s ease-in-out;
+	transition: background-image .95s ease-in-out;
+}
+
+.twitterLink:hover{
+	background-image: url(../img/icons/twitterIconHover.png);
+}
+p.facultyNames{
+	margin:0px;
+}
+
 /* --------––––––------- FOOTER --–––––------------------*/
 
 footer {
