@@ -4,7 +4,7 @@
 ?>
 
 <!-- html goes here -->
-<div class="sixteen columns mainContainer">
+<div class="container">
 	<?php foreach ($students as $student) { ?>
 	<section class="student">
 		<h2 class="studentName"><?= $student->post_title ?></h2>

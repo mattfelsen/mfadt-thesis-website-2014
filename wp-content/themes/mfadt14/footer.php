@@ -1,6 +1,6 @@
 <div class="clear"></div>
-<footer id="footer" role="contentinfo">
-	<h3>ACKNOWLEDGEMENTS</h3>
+<footer class="container" role="contentinfo">
+	<h3 class="sixteen columns">ACKNOWLEDGEMENTS</h3>
 	<div class="four columns">
 		<h6>Faculty</h6>
 		Sven Travis
@@ -13,14 +13,11 @@
 	</div>
 	<div class="clear"></div>
 </footer>
-</div> <!-- leave this here -->
+</div>
 <?php wp_footer(); ?>
 	<!-- load scripts -->
+	<script src="assets/js/d3.min.js"></script>
 	<script src="assets/js/underscore.min.js"></script>
-	<script src="assets/js/sticky.min.js"></script>
-	<script src="assets/js/fss.min.js"></script>
-	<script src="assets/js/hero-background.js"></script>
-	<!-- <script src="assets/js/snap.svg-min.js"></script> -->
 	<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -11,8 +11,8 @@ $query = new WP_Query( $args );
 ?>
 
 <!-- html goes here -->
-<div class="sixteen columns mainContainer">
-	<h1>Projects</h1>
+<div class="container">
+	<h1 class="sixteen columns">Projects</h1>
 	
 	<?php
 
