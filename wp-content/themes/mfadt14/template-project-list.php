@@ -11,10 +11,10 @@ $query = new WP_Query( $args );
 ?>
 
 <!-- html goes here -->
-	<h1>Projects</h1>
-<div class="sixteen columns mainContainer">
 
-
+<div class="container">
+	<h1 class="sixteen columns">Projects</h1>
+	
 	<?php
 
 	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
