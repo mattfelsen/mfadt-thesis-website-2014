@@ -21,7 +21,7 @@ body {
 /*RESPONSIVE*/
 nav {
 	padding-top: 12px;
-	background: #fff;
+	background: rgba(255,255,255,0.95);
 	border-bottom: 1px solid #969696;
 	position: fixed;
 	width: 100%;
@@ -91,16 +91,34 @@ svg {
 }
 
 /* --------––––––------- INFO --–––––------------------*/
-#mfadt-info {
-	padding-top: 15px;
+
+#mfadt-info-container {
+	background: url(../img/hero/dt-info.jpg);
+	/*background-size: cover;*/
+	background-position: center;
+	box-shadow: 0px 1px 2px #b2b2b2;
 }
+
+#mfadt-info {
+	padding: 15px 0px 30px 0px;
+}
+
+#mfadt-info > * {
+	color: #ffffff !important;
+}
+
 .below-hero-content h6 {
 	margin: 0px 0px 10px 0px;
 	padding: 10px 0px 3px 0px;
-	border-bottom: 2px solid #969696;
-	color: #969696;
+	border-bottom: 2px solid #fff;
+	color: #fff;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 900;
+}
+
+/* --------––––––------- PROJECT --–––––------------------*/
+#project {
+	margin-top: 30px;
 }
 
 /* --------––––––------- PROJ DETAIL --–––––------------------*/
