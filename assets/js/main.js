@@ -43,7 +43,7 @@ window.onload = function() {
         }
     };
 
-    // listeners
+    // listeners –––––––––––––––––––––––––––––––––––––––––––––––––––
     // GLOBAL
     window.addEventListener('resize', function() {
         global.w = window.innerWidth;
@@ -72,9 +72,9 @@ window.onload = function() {
         // toggle slide
         $('.nav-list').slideToggle();
     });
-    // END OF LISTENER
+    // END OF LISTENER –––––––––––––––––––––––––––––––––––––––––––––––––––
 
-    // INITIALIZE
+    // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
     mfadt.init();
 
     // HELPERS

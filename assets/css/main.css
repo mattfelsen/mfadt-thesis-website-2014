@@ -92,6 +92,10 @@ svg {
 
 /* --------––––––------- INFO --–––––------------------*/
 
+.noBottom {
+	border: none !important;
+}
+
 #mfadt-info-container {
 	background: url(../img/hero/dt-info.jpg);
 	/*background-size: cover;*/
@@ -200,6 +204,9 @@ p.facultyNames{
 }
 
 /* --------––––––------- FOOTER --–––––------------------*/
+#footer-background {
+	background: url(../img/hero/dt-footer.png);
+}
 
 footer {
 	margin: 60px 0px 60px 0px;
@@ -207,14 +214,14 @@ footer {
 }
 
 footer h3 {
-	color: #3f3f3f;
+	color: #fff;
 }
 
 footer h6 {
 	margin: 0px 0px 10px 0px;
 	padding: 10px 0px 3px 0px;
-	border-bottom: 2px solid #969696;
-	color: #969696;
+	border-bottom: 2px solid #fff;
+	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
 }
