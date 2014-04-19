@@ -1,7 +1,6 @@
 /*mfadt style*/
 body {
 	overflow-x: hidden;
-	opacity:0;
 -webkit-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
    -moz-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
      -o-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -18,72 +17,83 @@ body {
         
 }
 
-.bodyZoom {
-	-webkit-transform: scale(1.1) !important;
-	transform: scale(1.1) !important;
+/* –––––––––––––––––––––––––––– NAV –––––––––––––––––––––––––––––*/
+/*RESPONSIVE*/
+nav {
+	padding-top: 12px;
+	background: #fff;
+	border-bottom: 1px solid #969696;
+	position: fixed;
+	width: 100%;
+	z-index: 9;
 }
 
-.columns {
-	overflow: hidden;
+.nav-hamburger {
+	display: none;
+	width: 28px;
+	float: right;
 }
 
-.hero {
+.nav-logo, .nav-logo-for-mobile {
+	float: left;
+	height: 28px;
+	margin: 0px 24px 8px 0px;
+}
+
+ul#menu-main {
+	margin-bottom: 0px !important;
+}
+
+.menu-main-container {
+	padding-top: 4px;
+	float: left;
+}
+
+.menu-main-container ul > li {
+	display: inline-block;
+	margin-right: 30px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+form {
+	margin-bottom: 0px !important;
+}
+
+form div label {
+	display: none;
+}
+
+.searchform {
+	float: right; /*for now*/
+}
+
+/* --------––––––------- HERO --–––––------------------*/
+
+#mfadt-hero {
 	position: absolute;
-	top: 0px;
-	left: 0;
-	z-index: 0;
-	margin-top: 15px;
 	width: 100%;
-	height: 73%;
-	background: url(../img/hero/handandheart.png) no-repeat;
-	background-position: 0px 70px;
-	background-size: 85%;
-}
-
-#hero-background {
-	position:absolute;
-	top:0; left:0;
-	width: 100%;
+	top:0;
+	z-index: 1;
 	height: 100%;
-	background: url(../img/hero/bg.png) no-repeat;
-	background-size: cover;
-	background-position: center;
+	background: #cea4ce;
 }
 
-.hero-information {
-	position: absolute;
-	right: 15px;
-	bottom: 45%;
-	color: #fff;
-	font-size: 1.5em;
-	line-height: 1.3em;
-	/*text-shadow: 1px 1px 0px white;*/
-	/*box-shadow: 10px 10px 0px black;*/
-	/*background: rgba(255,255,255,0.8);*/
-	padding: 20px;
-}
-
-.hero-information button {
-	float:right;
-	margin:0px;
-	padding: 5px 15px 5px 15px;
-	border: 1px solid black;
-	border-radius: 0px;
-	background: none;
-	font-weight: 400;
-	font-style: italic;
-	font-size: 0.7em;
-}
-
-.hero-logo {
-	margin: 30px;
-	/*-webkit-filter: invert(100%);*/
+svg {
+	background: #cecece;
 }
 
 .below-hero {
-	padding: 0px;
+	position: absolute;
+	width: 100%;
+	top:100%;
+	z-index: 1;
 }
 
+/* --------––––––------- INFO --–––––------------------*/
+#mfadt-info {
+	padding-top: 15px;
+}
 .below-hero-content h6 {
 	margin: 0px 0px 10px 0px;
 	padding: 10px 0px 3px 0px;
@@ -93,65 +103,32 @@ body {
 	font-weight: 700;
 }
 
-.noBottom {
-	border:none !important;
+/* --------––––––------- FOOTER --–––––------------------*/
+
+footer {
+	margin: 60px 0px 60px 0px;
+	padding: 10px 0px 0px 0px;
 }
 
-/*header styles*/
-#blurPanel {
-	position: fixed;
-	top: -100px; left: 0px;
-	z-index: -999;
-	overflow: hidden;
-	width: 100%;
-	height: 300%;
-	opacity: 0;
-	transition: 0.25s opacity !important;
+footer h3 {
+	color: #3f3f3f;
 }
 
-.blurOnFront {
-	z-index: 1 !important;
-	opacity: 1 !important;
+footer h6 {
+	margin: 0px 0px 10px 0px;
+	padding: 10px 0px 3px 0px;
+	border-bottom: 2px solid #969696;
+	color: #969696;
+	text-transform: uppercase;
+	font-weight: 700;
 }
 
-nav {
-	width: 100%;
-	height: 60px;
-	border-bottom: 1px solid #c0c0c0;
-	transition: opacity 0.3s;
-	/*opacity: 0;*/
-	background: rgba(255,255,255,1);
+/* --------––––––------- MISC --–––––------------------*/
+.in-between {
+	margin-top: 72px;	
 }
 
-.menu-logo {
-	float: left;
-	margin-left: -500px;
-	width: 170px;
-	opacity: 0;
-	transition: 0.25s;
-}
-
-.topMenu {
-	margin: 0px;
-	padding: 15px 0px 0px 0px;
-	min-height: 60px;
-}
-
-.topMenu .menu {
-	float: left;
-	margin-left: 30px;
-}
-
-.topMenu form {
-	float:right;
-	margin-bottom: 0px;
-}
-
-.topMenu form {
-	float:right;
-	margin-bottom: 0px;
-}
-
+/*SEARCH BAR*/
 #searchsubmit {
 	display: none;
 }
@@ -169,157 +146,4 @@ form::-webkit-input-placeholder {
 
 .placeWhite::-webkit-input-placeholder {
     color: #fff;
-}
-
-.isSearching {
-	position: absolute;
-	top: 250px;
-	left: 10%;
-	z-index: 1;
-	padding-left: 100px !important;
-	width: 80% !important;
-	color: #000 !important;
-	font-size: 4.5em !important;
-	transition: 0.3s width !important;
-}
-
-.topMenu form label {
-	display: none;
-}
-
-.menu-main-container ul  {
-	margin: 3px 0px 0px 0px;
-}
-
-.menu-main-container ul > li {
-	display: inline-block;
-	margin-right: 30px;
-	text-transform: uppercase;
-	font-weight: 600;
-}
-
-/*mainContainer styles*/
-
-.mainContainer {
-	margin: 0px 0px 15px 0px;
-}
-
-.studentInfoHolder{
-	height: 150px;	
-}
-
-.studentBio{
-	display: inline-block;
-	width: 60%;
-	vertical-align:text-top;
-}
-
-div.studentContactInfo{
-	display: inline-block;
-	overflow: hidden;
-	margin: 0 30px 0 80px;
-	width: 46px;
-	vertical-align:text-top;
-/* 	float: right; */
-
-}
-img.headshotRegular{
-	display: inline-block;
-	float: right;
-	height:100%;
-	vertical-align:text-top;
-}
-
-.personalWebsiteLink{
-	margin-bottom: 2px;
-	width: 46px;
-	height: 46px;
-	background-image: url(../img/icons/personalIcon.png);
-	background-size: contain;
-	-webkit-transition: background-image .95s ease-in-out;
-	-moz-transition: background-image .95s ease-in-out;
-	-o-transition: background-image .95s ease-in-out;
-	transition: background-image .95s ease-in-out;
-}
-
-.personalWebsiteLink:hover{
-	background-image: url(../img/icons/personalIconHover.png);
-}
-
-.linkedInLink{
-	margin-bottom: 2px;
-	width: 46px;
-	height: 46px;
-	background-image: url(../img/icons/linkedInIcon.png);
-	background-size: contain;
-	-webkit-transition: background-image .95s ease-in-out;
-	-moz-transition: background-image .95s ease-in-out;
-	-o-transition: background-image .95s ease-in-out;
-	transition: background-image .95s ease-in-out;
-}
-
-.linkedInLink:hover{
-	background-image: url(../img/icons/linkedInIconHover.png);
-}
-
-.twitterLink{
-	width: 46px;
-	height: 46px;
-	background-image: url(../img/icons/twitterIcon.png);
-	background-size: contain;
-	-webkit-transition: background-image .95s ease-in-out;
-	-moz-transition: background-image .95s ease-in-out;
-	-o-transition: background-image .95s ease-in-out;
-	transition: background-image .95s ease-in-out;
-}
-
-.twitterLink:hover{
-	background-image: url(../img/icons/twitterIconHover.png);
-}
-
-/*
-div.headshotRegular{
-	width: %;
-	display: inline-block;
-	float: right;
-}
-*/
-
-p.facultyNames{
-	margin:0px;
-}
-
-/*Project Listing Page*/
-
-img.projectThumb{
-	width:150px;
-}
-
-/*footer styles*/
-
-footer {
-	margin: 60px 0px 60px 0px;
-	padding: 10px 0px 0px 0px;
-	border-top: 1px solid #969696;
-	/*background: #560f6b;*/
-}
-
-footer h3 {
-	color: #3f3f3f;
-}
-
-footer h6 {
-	margin: 0px 0px 10px 0px;
-	padding: 10px 0px 3px 0px;
-	border-bottom: 2px solid #969696;
-	color: #969696;
-	text-transform: uppercase;
-	font-weight: 700;
-}
-
-/*other styles*/
-/*stuck*/
-.is_stuck {
-	z-index: 9;
-	opacity: 1;
 }
