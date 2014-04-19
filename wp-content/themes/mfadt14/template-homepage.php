@@ -26,17 +26,17 @@ Template Name: Homepage
 	<a href="http://www.map-embed.com" class="map-data">www.map-embed.com</a>
 	<link rel="stylesheet" type="text/css" href="http://www.map-embed.com/maps.css">
 	<script type="text/javascript">
-			function init_map(){ 
-				var myOptions=  { zoom:12, disableDefaultUI:true, center: new google.maps.LatLng (40.7370468,-73.99220600000001), 
-					mapTypeId: google.maps.MapTypeId.ROADMAP}; 
-					map = new google.maps.Map (document.getElementById("gmap_canvas"), myOptions); 
-					marker = new google.maps.Marker({map: map, position: new google.maps.LatLng (40.7370468,-73.99220600000001)}); 
-					infowindow = new google.maps.InfoWindow ({content:"<span><strong>Parsons MFADT Thesis Exhibition 2014</strong><br>6 East 16th St.<br>10003 New York</span>" }); 
-					google.maps.event.addListener (marker, "click", function(){ 
+			function init_map(){
+				var myOptions=  { zoom:12, disableDefaultUI:true, center: new google.maps.LatLng (40.7370468,-73.99220600000001),
+					mapTypeId: google.maps.MapTypeId.ROADMAP};
+					map = new google.maps.Map (document.getElementById("gmap_canvas"), myOptions);
+					marker = new google.maps.Marker({map: map, position: new google.maps.LatLng (40.7370468,-73.99220600000001)});
+					infowindow = new google.maps.InfoWindow ({content:"<span><strong>Parsons MFADT Thesis Exhibition 2014</strong><br>6 East 16th St.<br>10003 New York</span>" });
+					google.maps.event.addListener (marker, "click", function(){
 						infowindow.open(map,marker);
-					}); 
+					});
 					// infowindow.open(map,marker);
-					} 
+					}
 					google.maps.event.addDomListener (window, "load", init_map);
 	</script>
 	</div>
@@ -68,9 +68,9 @@ Template Name: Homepage
 </div>
 </section>
 
-<section id="project" class="container">
+<section id="projects" class="container">
 	<h1 class="sixteen columns">Projects</h1>
-	
+
 	<?php
 	$args = array ('post_type' => 'project', 'posts_per_page' => '-1', 'orderby' => 'rand');
 	$query = new WP_Query( $args );
@@ -81,18 +81,22 @@ Template Name: Homepage
 		$students = types_child_posts('student');
 		foreach ($students as $student) { $students_list[] = $student->post_title; }
 		$students = join(" + ", $students_list);
-		
+
 	?>
-	
-	<div class="four columns">
-		<? if(has_post_thumbnail()){ ?>
-		<img class="projectThumb" src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0]; ?>">
-		<? } ?>
-		
+
+	<div class="masonry columns">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 		<p><?= $students ?></p>
+		<!-- <? the_category(); ?> -->
+		<!-- <?= join(', ', get_the_tags()); ?> -->
+
+		<? if (has_post_thumbnail()) : ?>
+		<img class="projectThumb" src="<? $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); print $src[0]; ?>">
+		<? else: ?>
+		<img class="projectThumb" src="assets/img/no-thumbnail-<? $r=rand(0,3);if($r>2)$o='sm';elseif($r>1)$o='md';else $o='lg'; print $o; ?>.jpg">
+		<?php endif; ?>
 	</div>
-	
+
 	<?php endwhile; endif; ?>
 </section>
 

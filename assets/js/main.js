@@ -13,7 +13,7 @@ window.onload = function() {
         init: function() {
             console.log('mfadt thesis initialized');
             // check pathname
-            if (location.pathname !== '/mfadt/' || location.search !== "") {
+            if ((location.pathname !== '/2014/' && location.pathname !== '/mfadt/') || location.search !== "") {
                 // if not homepage
                 $('nav').css({
                     top: 0,
@@ -76,6 +76,17 @@ window.onload = function() {
 
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
     mfadt.init();
+
+    // INIT MASONRY
+    // selecting the .mainContainer class from the projects page
+    var container = document.querySelector('section#projects');
+    var msnry = new Masonry(container, {
+        // options...
+        itemSelector: '.columns',
+        columnWidth: 268,
+        "gutter": 30
+    });
+    // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
 
     // HELPERS
     function getRandBg() {

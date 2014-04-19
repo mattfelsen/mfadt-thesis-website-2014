@@ -1,20 +1,20 @@
 /*mfadt style*/
 body {
 	overflow-x: hidden;
--webkit-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
-   -moz-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+-webkit-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+   -moz-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
      -o-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-	transition: 0.1s; 
+	transition: 0.1s;
         transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 
 -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
--webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
-   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
-     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 	/*background: #bfbfbf;*/
 	-webkit-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
-        
+
 }
 
 /* –––––––––––––––––––––––––––– NAV –––––––––––––––––––––––––––––*/
@@ -125,10 +125,18 @@ svg {
 	margin-top: 30px;
 }
 
+.masonry {
+    width: 268px;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px 0 0 0;
+		margin-bottom: 30px;
+}
+
 /* --------––––––------- PROJ DETAIL --–––––------------------*/
 
 .studentInfoHolder{
-	height: 150px;	
+	height: 150px;
 }
 
 .studentBio{
@@ -203,18 +211,28 @@ p.facultyNames{
 	margin:0px;
 }
 
+
+/*Project Listing Page*/
+
+img.projectThumb{
+	width: 268px;
+	margin: 15px 0 0 0;
+	box-shadow: 1px 2px 10px #bab8b8;
+}
+
 /* --------––––––------- FOOTER --–––––------------------*/
 #footer-background {
 	background: url(../img/hero/dt-footer.png);
 }
 
-footer {
+footer, footer a {
+	color: #fff;
 	margin: 60px 0px 60px 0px;
 	padding: 10px 0px 0px 0px;
 	color: #fff;
 }
 
-footer h3 {
+footer h3, footer h5, footer h6 {
 	color: #fff;
 }
 
@@ -222,14 +240,13 @@ footer h6 {
 	margin: 0px 0px 10px 0px;
 	padding: 10px 0px 3px 0px;
 	border-bottom: 2px solid #fff;
-	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
 }
 
 /* --------––––––------- MISC --–––––------------------*/
 .in-between {
-	margin-top: 72px;	
+	margin-top: 72px;
 }
 
 /*SEARCH BAR*/
