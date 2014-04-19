@@ -12,9 +12,9 @@ $query = new WP_Query( $args );
 
 <!-- html goes here -->
 
-<div class="container">
+<section id="projects" class="container">
 	<h1 class="sixteen columns">Projects</h1>
-	
+
 	<?php
 
 	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
@@ -25,6 +25,7 @@ $query = new WP_Query( $args );
 		$students = join(" + ", $students_list);
 
 	?>
+
 
 	<div class="masonry columns">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
@@ -41,6 +42,6 @@ $query = new WP_Query( $args );
 	</div>
 
 	<?php endwhile; endif; ?>
-</div>
+</section>
 
 <?php get_footer(); ?>
