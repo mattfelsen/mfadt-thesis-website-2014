@@ -43,6 +43,16 @@ window.onload = function() {
             }
         }
     };
+    
+    // selecting the .mainContainer class from the projects page
+    var container = document.querySelector('.page-id-478 .mainContainer');
+    var msnry = new Masonry( container, {
+      // options...
+      itemSelector: '.columns',
+      columnWidth: 268,
+      "gutter": 30
+    });
+    
     // detect typing
     $('#s').on('focus', function() {
         if (!mfadt.isSearching) {
@@ -88,7 +98,7 @@ window.onload = function() {
             e.preventDefault();
         }
     });
-
+    
     // INITIALIZE
     mfadt.init();
 
