@@ -14,8 +14,9 @@ Template Name: Homepage
 <!-- END OF HERO -->
 <div class="below-hero">
 <!-- ABOUT PROGRAM & INFO -->
-<section id="mfadt-info" class="container">
-	<h4 class="sixteen columns">
+<section id="mfadt-info-container">
+<div id="mfadt-info" class="container">
+	<h4 style="font-weight: 900; margin-bottom: 15px;" class="sixteen columns">
 		The MFA DT program at Parsons examines and extends the intersection of design and technology for practical, playful, theoretical, and artistic impact. Students deepen their practice and theory of design as they critique, leverage, or develop emerging technologies for creative change.
 	</h4>
 	<div class="six columns below-hero-content">
@@ -64,20 +65,35 @@ Template Name: Homepage
 			65 West 11th Street Room B500, New York, NY 10003
 		</p>
 	</div>
+</div>
 </section>
 
 <section id="project" class="container">
-	<div class="sixteen columns">
-		<h3>PROJECTS</h3>
-			Lorem ipsum Aliqua in ex mollit aliquip irure quis officia qui enim exercitation culpa Ut dolore Duis in eiusmod esse irure id est commodo eu anim in qui consequat nisi consequat aute sit sunt nostrud eu enim irure tempor amet sunt dolore consequat incididunt aute esse exercitation in consequat dolor magna consequat ad dolore officia fugiat enim nulla in adipisicing ad eu fugiat ut adipisicing nisi consectetur do minim eiusmod incididunt eiusmod qui cupidatat aliqua ullamco veniam ut ex exercitation mollit non anim exercitation voluptate exercitation nostrud in sit ex occaecat ad consectetur in exercitation non pariatur amet ut deserunt laborum tempor ad aliqua commodo aliqua tempor dolor esse cillum fugiat veniam officia incididunt qui consectetur non ex in culpa aute minim eu Excepteur est exercitation exercitation tempor incididunt elit ut ex ut est eiusmod id elit est laborum sunt deserunt labore deserunt et proident do ut minim do reprehenderit ut in ut ut dolor qui enim ea dolore labore deserunt aliqua eiusmod adipisicing Ut dolor quis amet Duis Duis sunt laboris sit dolor irure dolore mollit dolor magna ex nulla ut sunt sunt nulla Excepteur mollit ullamco nostrud culpa qui anim Ut eu veniam non est aliqua commodo elit exercitation in quis incididunt ut sint officia ut in ex exercitation sint nostrud est anim veniam aliquip nulla amet in aute in et do aliquip sit cillum cillum exercitation quis ut magna officia tempor ut ea proident nisi elit veniam cupidatat est nulla ullamco laboris Excepteur nostrud non reprehenderit qui officia aliqua irure nostrud enim dolore dolore nostrud dolor ullamco nulla occaecat magna dolor.
-		Lorem ipsum Elit sed in aliqua laboris nisi in dolor velit in nulla adipisicing qui nulla et cupidatat aliqua enim velit consequat commodo anim ut do id Ut labore amet.
+	<h1 class="sixteen columns">Projects</h1>
+	
+	<?php
+	$args = array ('post_type' => 'project', 'posts_per_page' => '-1', 'orderby' => 'rand');
+	$query = new WP_Query( $args );
 
-		Lorem ipsum Aliqua in ex mollit aliquip irure quis officia qui enim exercitation culpa Ut dolore Duis in eiusmod esse irure id est commodo eu anim in qui consequat nisi consequat aute sit sunt nostrud eu enim irure tempor amet sunt dolore consequat incididunt aute esse exercitation in consequat dolor magna consequat ad dolore officia fugiat enim nulla in adipisicing ad eu fugiat ut adipisicing nisi consectetur do minim eiusmod incididunt eiusmod qui cupidatat aliqua ullamco veniam ut ex exercitation mollit non anim exercitation voluptate exercitation nostrud in sit ex occaecat ad consectetur in exercitation non pariatur amet ut deserunt laborum tempor ad aliqua commodo aliqua tempor dolor esse cillum fugiat veniam officia incididunt qui consectetur non ex in culpa aute minim eu Excepteur est exercitation exercitation tempor incididunt elit ut ex ut est eiusmod id elit est laborum sunt deserunt labore deserunt et proident do ut minim do reprehenderit ut in ut ut dolor qui enim ea dolore labore deserunt aliqua eiusmod adipisicing Ut dolor quis amet Duis Duis sunt laboris sit dolor irure dolore mollit dolor magna ex nulla ut sunt sunt nulla Excepteur mollit ullamco nostrud culpa qui anim Ut eu veniam non est aliqua commodo elit exercitation in quis incididunt ut sint officia ut in ex exercitation sint nostrud est anim veniam aliquip nulla amet in aute in et do aliquip sit cillum cillum exercitation quis ut magna officia tempor ut ea proident nisi elit veniam cupidatat est nulla ullamco laboris Excepteur nostrud non reprehenderit qui officia aliqua irure nostrud enim dolore dolore nostrud dolor ullamco nulla occaecat magna dolor.
-		Lorem ipsum Elit sed in aliqua laboris nisi in dolor velit in nulla adipisicing qui nulla et cupidatat aliqua enim velit consequat commodo anim ut do id Ut labore amet.
+	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 
-		Lorem ipsum Aliqua in ex mollit aliquip irure quis officia qui enim exercitation culpa Ut dolore Duis in eiusmod esse irure id est commodo eu anim in qui consequat nisi consequat aute sit sunt nostrud eu enim irure tempor amet sunt dolore consequat incididunt aute esse exercitation in consequat dolor magna consequat ad dolore officia fugiat enim nulla in adipisicing ad eu fugiat ut adipisicing nisi consectetur do minim eiusmod incididunt eiusmod qui cupidatat aliqua ullamco veniam ut ex exercitation mollit non anim exercitation voluptate exercitation nostrud in sit ex occaecat ad consectetur in exercitation non pariatur amet ut deserunt laborum tempor ad aliqua commodo aliqua tempor dolor esse cillum fugiat veniam officia incididunt qui consectetur non ex in culpa aute minim eu Excepteur est exercitation exercitation tempor incididunt elit ut ex ut est eiusmod id elit est laborum sunt deserunt labore deserunt et proident do ut minim do reprehenderit ut in ut ut dolor qui enim ea dolore labore deserunt aliqua eiusmod adipisicing Ut dolor quis amet Duis Duis sunt laboris sit dolor irure dolore mollit dolor magna ex nulla ut sunt sunt nulla Excepteur mollit ullamco nostrud culpa qui anim Ut eu veniam non est aliqua commodo elit exercitation in quis incididunt ut sint officia ut in ex exercitation sint nostrud est anim veniam aliquip nulla amet in aute in et do aliquip sit cillum cillum exercitation quis ut magna officia tempor ut ea proident nisi elit veniam cupidatat est nulla ullamco laboris Excepteur nostrud non reprehenderit qui officia aliqua irure nostrud enim dolore dolore nostrud dolor ullamco nulla occaecat magna dolor.
-		Lorem ipsum Elit sed in aliqua laboris nisi in dolor velit in nulla adipisicing qui nulla et cupidatat aliqua enim velit consequat commodo anim ut do id Ut labore amet.
+		$students_list = array();
+		$students = types_child_posts('student');
+		foreach ($students as $student) { $students_list[] = $student->post_title; }
+		$students = join(" + ", $students_list);
+		
+	?>
+	
+	<div class="four columns">
+		<? if(has_post_thumbnail()){ ?>
+		<img class="projectThumb" src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large')[0]; ?>">
+		<? } ?>
+		
+		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
+		<p><?= $students ?></p>
 	</div>
+	
+	<?php endwhile; endif; ?>
 </section>
 
 <?php get_footer(); ?>
