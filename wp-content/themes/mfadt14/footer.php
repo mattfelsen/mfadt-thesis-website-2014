@@ -1,4 +1,5 @@
 <div class="clear"></div>
+<div id="footer-background">
 <footer class="container" role="contentinfo">
 	<h3 class="sixteen columns">ACKNOWLEDGEMENTS</h3>
 	<div class="four columns">
@@ -13,6 +14,7 @@
 	</div>
 	<div class="clear"></div>
 </footer>
+</div>
 </div>
 <?php wp_footer(); ?>
 	<!-- load scripts -->
