@@ -2,109 +2,95 @@ var $ = jQuery;
 
 window.onload = function() {
     console.log('OH YEAH');
+    var global = {
+        w: window.innerWidth,
+        h: window.innerHeight,
+        scrollAt: null
+    };
     var mfadt = {
-        isSearching: false,
+        svg: null,
+        isMobile: false,
         init: function() {
-            $('#s').attr({
-                placeholder: 'SEARCH MFADT \'14'
-            });
-        },
-        search: function(e) {
-            var SField = $('#s');
-            // if not enter or backspace?
-            if (e.keyCode == 27 ||
-                e.keyCode == 9 ||
-                e.keyCode == 91) {
-                e.preventDefault();
-                mfadt.isSearching = false;
-                SField.removeClass('isSearching').removeClass('placeWhite');
-                SField.val('').blur();
-                $('#blurPanel').removeClass('blurOnFront');
-                $('body').removeClass('bodyZoom');
-            } else {
-                if (!mfadt.isSearching) {
-                    mfadt.isSearching = true;
-                    // start searching
-                    SField.addClass('isSearching').addClass('placeWhite');
-                    SField.val(String.fromCharCode(e.keyCode).toLowerCase());
-                    SField.attr({
-                        placeholder: 'SEARCH MFADT \'14'
-                    });
-                    // blur body
-                    $('#blurPanel').addClass('blurOnFront')
-                        .css({
-                            background: getRandBg()
-                        });
-                    $('body').addClass('bodyZoom');
-                    // blur js does not work now
+            console.log('mfadt thesis initialized');
+            // check pathname
+            if (location.pathname !== '/mfadt/' || location.search !== "") {
+                // if not homepage
+                $('nav').css({
+                    top: 0,
+                    height: 60
+                });
+            }
+            // check page width
+            if (global.w <= 767) { // ********** IF MOBILE **********
+                this.isMobile = true;
+                // remove magic
+                $('svg').remove();
+                // collapse nav-list
+                $('.nav-list').slideUp();
+            } else { // ********** IF DESKTOP **********
+                this.isMobile = false;
+                // init magic
+                if ($('svg').length !== 1) {
+                    this.magic();
                 }
-                mfadt.isSearching = true;
-                SField.focus();
+                $('.nav-list').show();
+            }
+        },
+        magic: function() {
+            var svgFileArray = [];
+            this.svg = d3.select('#mfadt-hero').append('svg');
+            // load svg
+        }
+    };
+
+    // listeners –––––––––––––––––––––––––––––––––––––––––––––––––––
+    // GLOBAL
+    window.addEventListener('resize', function() {
+        global.w = window.innerWidth;
+        global.h = window.innerHeight;
+        mfadt.init();
+    });
+    window.onscroll = function() {
+        global.scrollAt = window.pageYOffset;
+        // when scroll, move nav
+        if (mfadt.isMobile == false) {
+            // console.log(global.scrollAt);
+            $('nav').css({
+                bottom: global.scrollAt + 'px'
+            });
+            // if scroll to top
+            if (global.scrollAt >= global.h - 60) {
+                // stick
+                $('nav').css({
+                    bottom: global.h - 60
+                });
             }
         }
     };
-    
-    // selecting the .mainContainer class from the projects page
-    var container = document.querySelector('.page-id-478 .mainContainer');
-    var msnry = new Masonry( container, {
-      // options...
-      itemSelector: '.columns',
-      columnWidth: 268,
-      "gutter": 30
+    // BUTTONS
+    $('.nav-hamburger').click(function() {
+        // toggle slide
+        $('.nav-list').slideToggle();
     });
-    
-    // detect typing
-    $('#s').on('focus', function() {
-        if (!mfadt.isSearching) {
-            $('#s').val('').blur();
-            $('#s').attr({
-                placeholder: 'SEARCH MFADT \'14'
-            });
-            // blur body
-            $('#blurPanel').addClass('blurOnFront')
-                .css({
-                    background: getRandBg()
-                });
-            $('body').addClass('bodyZoom');
-            // blur js does not work now
-            // center search bar
-            $('#s').addClass('isSearching').addClass('placeWhite');
-        }
-        mfadt.isSearching = true;
-        $('#s').focus();
-    });
-    $(document).keyup(function(e) {
-        // check if firefox
-        if (!mfadt.isSearching) {
-            mfadt.search(e);
-        }
-    });
+    // END OF LISTENER –––––––––––––––––––––––––––––––––––––––––––––––––––
 
-    // detect any clicks
-    $(document).on('click', function() {
-        if (mfadt.isSearching) {
-            $('#s').removeClass('isSearching');
-            $('#blurPanel').removeClass('blurOnFront').removeClass('placeWhite');
-            $('body').removeClass('bodyZoom');
-            $('#s').val('').blur();
-            mfadt.isSearching = false;
-        }
-    });
-
-    // detect submit
-    $('form').on('submit', function(e) {
-        if ($('#s').val().length === 0) {
-            // do nothing
-            e.preventDefault();
-        }
-    });
-    
-    // INITIALIZE
+    // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
     mfadt.init();
 
-    // HELPERS
-    function getRandBg() {
-        var h = _.random(0, 360);
-        return 'hsla(' + h + ',75%,50%,0.90)';
-    }
+  // INIT MASONRY
+  // selecting the .mainContainer class from the projects page
+  var container = document.querySelector('section#projects');
+  var msnry = new Masonry( container, {
+    // options...
+    itemSelector: '.columns',
+    columnWidth: 268,
+    "gutter": 30
+  });
+  // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
+
+  // HELPERS
+  function getRandBg() {
+      var h = _.random(0, 360);
+      return 'hsla(' + h + ',75%,50%,0.90)';
+  }
 };

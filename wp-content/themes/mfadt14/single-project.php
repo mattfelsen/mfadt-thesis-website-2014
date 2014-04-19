@@ -1,4 +1,5 @@
 <?php
+
 /*
 Template Name: Project Detail
 */
@@ -17,7 +18,7 @@ $writing_spring = types_render_field('writing-faculty-spring');
 ?>
 
 <!-- html goes here -->
-<div class="sixteen columns mainContainer">
+<div class="container">
 	<?php foreach ($students as $student) { ?>
 	<section class="student">
 		<h2 class="studentName"><?= $student->post_title ?></h2>
@@ -45,6 +46,7 @@ $writing_spring = types_render_field('writing-faculty-spring');
 			<p ><?= types_render_field('long-description') ?></p>
 			<!-- follow the same format of "Project Website" rather than displaying URL target="_blank" -->
 			<p><a href="<?= types_render_field('project-website', array('output' => 'raw')) ?>" target="_blank">View Project Website</a></p>
+
 			<p>
 				<h5>Thesis Faculty</h5>
 
@@ -69,6 +71,6 @@ $writing_spring = types_render_field('writing-faculty-spring');
 		</div>
 	</section>
 
-</div>
+<!-- </div> -->
 
 <?php get_footer(); ?>
