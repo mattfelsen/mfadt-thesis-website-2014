@@ -114,7 +114,6 @@ $query = new WP_Query( $args );
 
 </div>
 </div>
-
 <?php wp_footer(); ?>
 
 <!-- load scripts -->

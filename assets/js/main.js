@@ -77,20 +77,20 @@ window.onload = function() {
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
     mfadt.init();
 
-  // INIT MASONRY
-  // selecting the .mainContainer class from the projects page
-  var container = document.querySelector('section#projects');
-  var msnry = new Masonry( container, {
-    // options...
-    itemSelector: '.columns',
-    columnWidth: 268,
-    "gutter": 30
-  });
-  // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
+    // INIT MASONRY
+    // selecting the .mainContainer class from the projects page
+    var container = document.querySelector('section#projects');
+    var msnry = new Masonry(container, {
+        // options...
+        itemSelector: '.columns',
+        columnWidth: 268,
+        "gutter": 30
+    });
+    // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  // HELPERS
-  function getRandBg() {
-      var h = _.random(0, 360);
-      return 'hsla(' + h + ',75%,50%,0.90)';
-  }
+    // HELPERS
+    function getRandBg() {
+        var h = _.random(0, 360);
+        return 'hsla(' + h + ',75%,50%,0.90)';
+    }
 };
