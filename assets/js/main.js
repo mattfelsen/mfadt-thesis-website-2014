@@ -13,7 +13,7 @@ window.onload = function() {
         init: function() {
             console.log('mfadt thesis initialized');
             // check pathname
-            if (location.pathname !== '/mfadt/' || location.search !== "") {
+            if ((location.pathname !== '/2014/' && location.pathname !== '/mfadt/') || location.search !== "") {
                 // if not homepage
                 $('nav').css({
                     top: 0,

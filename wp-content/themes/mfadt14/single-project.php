@@ -71,6 +71,6 @@ $writing_spring = types_render_field('writing-faculty-spring');
 		</div>
 	</section>
 
-<!-- </div> -->
+</div>
 
 <?php get_footer(); ?>
