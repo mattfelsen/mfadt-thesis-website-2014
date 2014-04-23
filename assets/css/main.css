@@ -97,7 +97,7 @@ svg {
 }
 
 #mfadt-info-container {
-	background: url(../img/hero/dt-info.jpg);
+	background: url(../img/hero/dt-info.gif);
 	/*background-size: cover;*/
 	background-position: center;
 	box-shadow: 0px 1px 2px #b2b2b2;
@@ -222,14 +222,24 @@ img.projectThumb{
 
 /* --------––––––------- FOOTER --–––––------------------*/
 #footer-background {
-	background: url(../img/hero/dt-footer.png);
+	padding-top: 15px;
+	background: url(../img/hero/dt-footer.gif);
 }
 
 footer, footer a {
 	color: #fff;
-	margin: 60px 0px 60px 0px;
-	padding: 10px 0px 0px 0px;
+	font-size: 1em;
+}
+
+footer a:hover {
+	font-weight: 500;
 	color: #fff;
+}
+
+footer h5 {
+	font-size: 1em;
+	font-weight: 700;
+	margin-bottom: 5px;
 }
 
 footer h3, footer h5, footer h6 {
