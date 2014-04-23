@@ -9,7 +9,27 @@ Template Name: Homepage
 <!-- html goes here -->
 
 <!-- HERO -->
-<section id="mfadt-hero" class="container">
+<section id="mfadt-hero">
+	<div class="in-between"></div>
+	<div class="container">
+		<div class="sixteen columns mfadt-box-hero">
+			<img class="ten columns img-hero" src="assets/img/hero/dt-box-hero-no-shadow.png">
+			<div class="mfadt-box-hero-shadow"></div>
+			<div class="five columns hero-detail">
+				<h2>
+				PARSONS MFADT THESIS SHOW 2014
+				</h2>
+				<h4>
+					Join us in a spectacular event of over 70 projects
+					that will leverage design and technology. Please think of a better copy.
+				</h4>
+				<br>
+				<h4>
+					See exhibition detail below
+				</h4>
+			</div>
+		</div>
+	</div>
 </section>
 <!-- END OF HERO -->
 <div class="below-hero">
@@ -21,6 +41,7 @@ Template Name: Homepage
 	</h4>
 	<div class="six columns below-hero-content">
 	<h6 class="noBottom">Map</h6>
+	<!-- embed google map -->
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
 	<div id="gmap_canvas" style="margin-top: -10px; height:150px; width:100%;"></div>
 	<a href="http://www.map-embed.com" class="map-data">www.map-embed.com</a>

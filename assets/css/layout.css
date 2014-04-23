@@ -3,6 +3,9 @@
 
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (min-width: 767px) {
+		.mfadt-box-hero-shadow {
+			display: none;
+		}
 		.nav-logo-for-mobile {
 			display: none !important;
 		}
@@ -37,6 +40,10 @@
 			text-transform: uppercase !important;
 			font-weight: 600 !important;
 		}
+		/*#mfadt-hero {
+			background: url(../img/hero/dt-mobile-box-hero-bg.png) !important;
+			background-size: cover;
+		}*/
 	}
 
 /* #Font-Face
