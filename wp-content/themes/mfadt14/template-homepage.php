@@ -13,7 +13,7 @@ Template Name: Homepage
 	<div class="in-between"></div>
 	<div class="container">
 		<div class="sixteen columns mfadt-box-hero">
-			<img class="ten columns img-hero" src="assets/img/hero/dt-box-hero-no-shadow.png">
+			<img class="eleven columns img-hero" src="assets/img/hero/dt-box-hero-no-shadow.png">
 			<div class="mfadt-box-hero-shadow"></div>
 			<div class="five columns hero-detail">
 				<h2>

@@ -43,7 +43,6 @@ nav {
 ul#menu-main {
 	margin-bottom: 0px !important;
 }
-
 .menu-main-container {
 	padding-top: 4px;
 	float: left;
@@ -129,7 +128,7 @@ svg {
 }
 
 #mfadt-info-container {
-	background: url(../img/hero/dt-info.gif);
+	background: url(../img/hero/dt-box-info-bg.jpg);
 	/*background-size: cover;*/
 	background-position: center;
 	box-shadow: 0px 1px 2px #b2b2b2;
@@ -255,7 +254,7 @@ img.projectThumb{
 /* --------––––––------- FOOTER --–––––------------------*/
 #footer-background {
 	padding-top: 15px;
-	background: url(../img/hero/dt-footer.gif);
+	background: url(../img/hero/dt-box-footer-bg.jpg);
 }
 
 footer, footer a {

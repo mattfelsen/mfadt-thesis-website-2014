@@ -3,6 +3,9 @@
 
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (min-width: 767px) {
+		.img-hero {
+			width: 65% !important;
+		}
 		.mfadt-box-hero-shadow {
 			display: none;
 		}
