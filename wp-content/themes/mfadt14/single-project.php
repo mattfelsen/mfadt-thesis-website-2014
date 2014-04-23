@@ -15,6 +15,18 @@ $thesis_spring = types_render_field('thesis-faculty-spring');
 $writing_fall = types_render_field('writing-faculty-fall');
 $writing_spring = types_render_field('writing-faculty-spring');
 
+// Set up category name
+$category = get_the_category();
+$category = $category[0]->cat_name;
+
+// Set up tags
+$a = array();
+$tags = get_the_tags();
+foreach($tags as $t) {
+	$a[] = $t->name;
+}
+$tags = join(', ', $a);
+
 ?>
 
 <!-- html goes here -->
@@ -39,8 +51,8 @@ $writing_spring = types_render_field('writing-faculty-spring');
 	<section class="project">
 		<h2><?php the_title(); ?></h2>
 		<h3><?= types_render_field('short-description') ?></h3>
-		<!-- <? the_category(); ?> -->
-		<!-- <?= join(', ', get_the_tags()); ?> -->
+		<!-- <?= $category ?> -->
+		<!-- <?= $tags ?> -->
 
 		<div class="six columns">
 			<p ><?= types_render_field('long-description') ?></p>

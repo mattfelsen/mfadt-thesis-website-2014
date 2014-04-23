@@ -84,7 +84,7 @@ function remove_meta_boxes_admin_menu()
 {
 	if (wp_get_current_user()->roles[0] == "author") {
 		remove_meta_box('categorydiv', 'project', 'normal');
-		remove_meta_box('tagsdiv-post_tag', 'project', 'normal');
+		//remove_meta_box('tagsdiv-post_tag', 'project', 'normal');
 	}
 }
 function remove_meta_boxes_do_meta()
@@ -105,3 +105,16 @@ function change_project_featured_image_metabox_title( $post_type, $post ) {
         add_meta_box( 'postimagediv', __('Project Thumbnail'), 'post_thumbnail_meta_box', 'project', 'side', 'low' );
     }
 }
+
+// 
+// Change the tags side meta box to work like categories (i.e. show a list of tags with checkboxes)
+// instead of the default empty text box which autocompletes, but isn't helpful for tag discovery.
+// The "Manage Tags Capability" plugin takes care of this, but doesn't affect custom post types by
+// default. This adds the plugin code to custom projects
+//
+function add_mtc_post_types( $types )
+{
+    $types[] = 'project';
+    return $types;
+}
+add_filter( 'rd2_mtc_post_types', 'add_mtc_post_types' );
