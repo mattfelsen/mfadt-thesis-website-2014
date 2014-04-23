@@ -27,6 +27,22 @@ window.onload = function() {
                 $('svg').remove();
                 // collapse nav-list
                 $('.nav-list').slideUp();
+                var top = 0,
+                    allow = false;
+                setInterval(function() {
+                    // $('.img-hero').css({
+                    //     top: top
+                    // });
+
+
+                    // if (top == 75) {
+                    //     clearInterval(this);
+                    //     top = 75;
+                    // } else {
+                    //     top++;
+                    // }
+
+                }, 1000 / 30);
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
@@ -52,6 +68,19 @@ window.onload = function() {
     });
     window.onscroll = function() {
         global.scrollAt = window.pageYOffset;
+        if (global.scrollAt >= 75) {
+            $('.img-hero').css({
+                top: 75
+            });
+        } else {
+            $('.img-hero').css({
+                top: global.scrollAt
+            });
+            $('.mfadt-box-hero-shadow').css({
+                width: 50 + global.scrollAt / 2.5 + '%',
+                boxShadow: '0 ' + -30 + 'px ' + (26 - global.scrollAt / 5) + 'px black',
+            });
+        }
         // when scroll, move nav
         if (mfadt.isMobile == false) {
             // console.log(global.scrollAt);
@@ -77,20 +106,34 @@ window.onload = function() {
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
     mfadt.init();
 
-  // INIT MASONRY
-  // selecting the .mainContainer class from the projects page
-  var container = document.querySelector('section#projects');
-  var msnry = new Masonry( container, {
-    // options...
-    itemSelector: '.columns',
-    columnWidth: 268,
-    "gutter": 30
-  });
-  // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
+    // INIT MASONRY
+    // selecting the .mainContainer class from the projects page
+    var container = document.querySelector('section#projects');
+    var msnry = new Masonry(container, {
+        // options...
+        itemSelector: '.columns',
+        columnWidth: 268,
+        "gutter": 30
+    });
+    // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  // HELPERS
-  function getRandBg() {
-      var h = _.random(0, 360);
-      return 'hsla(' + h + ',75%,50%,0.90)';
-  }
+    // HELPERS
+    function getRandBg() {
+        var h = _.random(0, 360);
+        return 'hsla(' + h + ',75%,50%,0.90)';
+    }
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
 };

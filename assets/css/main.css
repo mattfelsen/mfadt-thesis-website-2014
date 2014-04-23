@@ -43,7 +43,6 @@ nav {
 ul#menu-main {
 	margin-bottom: 0px !important;
 }
-
 .menu-main-container {
 	padding-top: 4px;
 	float: left;
@@ -70,13 +69,45 @@ form div label {
 
 /* --------––––––------- HERO --–––––------------------*/
 
+.img-hero {
+	position: relative;
+	max-width:100% !important;
+	margin-bottom: 30px !important;
+}
+
 #mfadt-hero {
 	position: absolute;
 	width: 100%;
 	top:0;
 	z-index: 1;
 	height: 100%;
-	background: #cea4ce;
+	background: url(../img/hero/dt-mobile-box-hero-bg.png) !important;
+	background-size: cover;
+}
+
+#mfadt-hero .container {
+	height: 100%;
+}
+
+.hero-detail {
+	margin-top: 50px !important;
+}
+
+.mfadt-box-hero {
+	height: 100%;
+}
+
+.mfadt-box-hero h2, .mfadt-box-hero h4 {
+	color: #fff;
+}
+
+.mfadt-box-hero-shadow {
+	display: none;
+	height: 4px;
+	border-radius: 85% 10%;
+	box-shadow: 0 -30px 26px black;
+	width: 50%;
+	margin: 100px auto 15px auto;
 }
 
 svg {
@@ -97,7 +128,7 @@ svg {
 }
 
 #mfadt-info-container {
-	background: url(../img/hero/dt-info.jpg);
+	background: url(../img/hero/dt-box-info-bg.jpg);
 	/*background-size: cover;*/
 	background-position: center;
 	box-shadow: 0px 1px 2px #b2b2b2;
@@ -222,13 +253,24 @@ img.projectThumb{
 
 /* --------––––––------- FOOTER --–––––------------------*/
 #footer-background {
-	background: url(../img/hero/dt-footer.png);
+	padding-top: 15px;
+	background: url(../img/hero/dt-box-footer-bg.jpg);
 }
 
 footer, footer a {
 	color: #fff;
-	margin: 60px 0px 60px 0px;
-	padding: 10px 0px 0px 0px;
+	font-size: 1em;
+}
+
+footer a:hover {
+	font-weight: 500;
+	color: #fff;
+}
+
+footer h5 {
+	font-size: 1em;
+	font-weight: 700;
+	margin-bottom: 5px;
 }
 
 footer h3, footer h5, footer h6 {
@@ -246,6 +288,10 @@ footer h6 {
 /* --------––––––------- MISC --–––––------------------*/
 .in-between {
 	margin-top: 72px;
+}
+
+.map-data {
+	display: none;
 }
 
 /*SEARCH BAR*/
