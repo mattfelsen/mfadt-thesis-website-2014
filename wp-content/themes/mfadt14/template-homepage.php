@@ -22,7 +22,7 @@ Template Name: Homepage
 	<div class="six columns below-hero-content">
 	<h6 class="noBottom">Map</h6>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
-	<div id="gmap_canvas" style="height:150px; width:100%;"></div>
+	<div id="gmap_canvas" style="margin-top: -10px; height:150px; width:100%;"></div>
 	<a href="http://www.map-embed.com" class="map-data">www.map-embed.com</a>
 	<link rel="stylesheet" type="text/css" href="http://www.map-embed.com/maps.css">
 	<script type="text/javascript">
