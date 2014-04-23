@@ -19,7 +19,7 @@ $query = new WP_Query( $args );
 			<?php endwhile; ?>
 		</div>
 
-		<div class="four columns">
+		<div class="three columns">
 			<h6>Thesis Show Committees</h6>
 
 			<h5>Co-Chairs</h5>
@@ -52,7 +52,7 @@ $query = new WP_Query( $args );
 
 		</div>
 
-		<div class="four columns">
+		<div class="three columns">
 			<h6>&nbsp;</h6>
 
 			<h5>Event Production</h5>
@@ -83,7 +83,7 @@ $query = new WP_Query( $args );
 
 		</div>
 
-		<div class="four columns">
+		<div class="three columns">
 			<h6>&nbsp;</h6>
 
 			<h5>Peer Reviews</h5>
@@ -108,13 +108,14 @@ $query = new WP_Query( $args );
 			<a href="project/title">Quincy Bock</a><br>
 			<br>
 		</div>
-
+		<div class="three columns">
+			<h6>Thanks</h6>
+		</div>
 		<div class="clear"></div>
 	</footer>
 
 </div>
 </div>
-
 <?php wp_footer(); ?>
 
 <!-- load scripts -->
