@@ -2,14 +2,19 @@
 /*
 Template Name: Faculty Detail
 */
+
+get_header();
+
+the_post();
+
 ?>
 
-<?php get_header(); ?>
+<div class="container">
+	<h2><?php the_title(); ?></h2>
 
-<h2><?php the_title(); ?></h2>
-
-<div>
-	<?php the_content(); ?>
+	<div>
+		<?php the_content(); ?>
+	</div>
 </div>
 
 <!-- html goes here -->

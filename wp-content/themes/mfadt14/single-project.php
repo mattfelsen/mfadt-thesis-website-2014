@@ -1,4 +1,5 @@
 <?php
+
 /*
 Template Name: Project Detail
 */
@@ -14,10 +15,22 @@ $thesis_spring = types_render_field('thesis-faculty-spring');
 $writing_fall = types_render_field('writing-faculty-fall');
 $writing_spring = types_render_field('writing-faculty-spring');
 
+// Set up category name
+$category = get_the_category();
+$category = $category[0]->cat_name;
+
+// Set up tags
+$a = array();
+$tags = get_the_tags();
+foreach($tags as $t) {
+	$a[] = $t->name;
+}
+$tags = join(', ', $a);
+
 ?>
 
 <!-- html goes here -->
-<div class="sixteen columns mainContainer">
+<div class="container">
 	<?php foreach ($students as $student) { ?>
 	<section class="student">
 		<h2 class="studentName"><?= $student->post_title ?></h2>
@@ -38,13 +51,14 @@ $writing_spring = types_render_field('writing-faculty-spring');
 	<section class="project">
 		<h2><?php the_title(); ?></h2>
 		<h3><?= types_render_field('short-description') ?></h3>
-		<!-- <? the_category(); ?> -->
-		<!-- <?= join(', ', get_the_tags()); ?> -->
+		<!-- <?= $category ?> -->
+		<!-- <?= $tags ?> -->
 
 		<div class="six columns">
 			<p ><?= types_render_field('long-description') ?></p>
 			<!-- follow the same format of "Project Website" rather than displaying URL target="_blank" -->
 			<p><a href="<?= types_render_field('project-website', array('output' => 'raw')) ?>" target="_blank">View Project Website</a></p>
+
 			<p>
 				<h5>Thesis Faculty</h5>
 

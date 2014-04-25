@@ -12,7 +12,7 @@ $query = new WP_Query( $args );
 
 
 <!-- html goes here -->
-<div class="sixteen columns mainContainer">
+<div class="container">
 	<h1>People</h1>
 
 	<?php
