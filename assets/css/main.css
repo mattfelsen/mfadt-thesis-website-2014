@@ -1,5 +1,7 @@
 /*mfadt style*/
 body {
+    background: url(../img/hero/dt-mobile-box-hero-bg.png) !important;
+	background-size: cover;
 	overflow-x: hidden;
 -webkit-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
    -moz-transition: all 100ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -68,11 +70,18 @@ form div label {
 }
 
 /* --------––––––------- HERO --–––––------------------*/
+.dates-n-things {
+    padding: 30px 0 0 0;
+}
+
+.dates-n-things p {
+    font-weight: 400;
+}
 
 .img-hero {
 	position: relative;
 	max-width:100% !important;
-	margin-bottom: 30px !important;
+    padding: 0 3em;
 }
 
 #mfadt-hero {
@@ -80,9 +89,6 @@ form div label {
 	width: 100%;
 	top:0;
 	z-index: 1;
-	height: 100%;
-	background: url(../img/hero/dt-mobile-box-hero-bg.png) !important;
-	background-size: cover;
 }
 
 #mfadt-hero .container {
@@ -90,16 +96,18 @@ form div label {
 }
 
 .hero-detail {
-	margin-top: 50px !important;
+	margin-top: 10px !important;
 }
 
-.mfadt-box-hero {
+.mfadt-box-hero h6, .mfadt-box-hero h2 {
+    text-transform: uppercase;
+}
+
+.mfadt-box-hero, .mfadt-box-hero h6, .mfadt-box-hero h2 {
 	height: 100%;
-}
-
-.mfadt-box-hero h2, .mfadt-box-hero h4 {
 	color: #fff;
 }
+
 
 .mfadt-box-hero-shadow {
 	display: none;
