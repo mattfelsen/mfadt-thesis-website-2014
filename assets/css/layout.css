@@ -1,5 +1,23 @@
 /* #Media Queries
 ================================================== */
+	@media (min-width: 768px) and (max-width: 1198px) {
+		.teaser-title {
+			margin: 350px 175px 0 -375px
+		}
+		.dates-n-things {
+			width: 200px;
+			margin: -520px 0 0 75px;
+		}
+		.exhibition {
+			padding: 10px;
+		}
+		.symposium {
+			padding: 10px;
+		}
+		.opening {
+			padding: 10px;
+		}
+  	}
 
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (min-width: 767px) {

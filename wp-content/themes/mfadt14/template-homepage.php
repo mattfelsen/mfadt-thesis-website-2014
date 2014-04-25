@@ -19,12 +19,14 @@ Template Name: Homepage
 			
 			<div class="mfadt-box-hero-shadow"></div>
 			<div class="five columns hero-detail">
+                <div class="teaser-title">
 				<h2>
 				PARSONS MFADT THESIS SHOW 2014
 				</h2>
 				<h4>Join us this May for a week-long exhibition of 70+ world-changing projects by emerging artists, designers, coders, makers, hackers, educators, and thinkers.</h4>
+                </div>
                 <div class="dates-n-things">
-                    <div>
+                    <div class="symposium">
                         <h6>Symposium</h6>
                 		<p>
                 		    Fri. May 16 from 2-8pm<br>
@@ -34,7 +36,7 @@ Template Name: Homepage
                 			
                 		</p>
                     </div>
-    				<div>
+    				<div class="exhibition">
     				    <h6>Exhibition</h6>
                 		<p>
                 			May 17 - 25, 2014<br>
@@ -43,7 +45,7 @@ Template Name: Homepage
                 			New York City
                 		</p>
                     </div>
-                    <div>
+                    <div class="opening">
                         <h6>Opening Reception</h6>
                 		<p>
                 		    Wed. May 21, 6-8pm<br>
