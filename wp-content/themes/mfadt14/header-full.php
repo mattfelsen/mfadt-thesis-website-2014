@@ -17,4 +17,16 @@
 
 	<?php wp_head(); ?></head>
 <body <?php body_class(); ?>>
-	
+	<nav>
+		<div class="container">
+			<a href="#"><img alt="logo" class="nav-logo-for-mobile" src="assets/img/hero/dtlogo-black.png"></a>
+			<!-- Hamburger Icon -->
+			<img class="nav-hamburger" src="assets/img/nav/menu-64.png">
+			<div class="sixteen columns nav-list">
+				<a href="#"><img alt="logo" class="nav-logo" src="assets/img/hero/dtlogo-black.png"></a>
+				<?php wp_nav_menu( array( 'theme_location' =>'main-menu' ) ); ?>
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</nav>
+	<div class="in-between"></div>
