@@ -27,8 +27,11 @@ Template Name: Homepage
                     <div>
                         <h6>Symposium</h6>
                 		<p>
-                			Wollman Hall, Eugene Lang College<br>
-                			65 West 11th Street Room B500, New York, NY 10003
+                		    Fri. May 16 from 2-8pm<br>
+                			Sat. May 17 from 12-7pm<br>
+                			Theresa Lang Student & Community Center<br>
+                			55 West 13th Street, New York City
+                			
                 		</p>
                     </div>
     				<div>
@@ -43,8 +46,10 @@ Template Name: Homepage
                     <div>
                         <h6>Opening Reception</h6>
                 		<p>
-                			12th Floor<br>
-                			Wednesday, May 21st, 6pm - 8pm<br>
+                		    Wed. May 21, 6-8pm<br>
+                			6 East 16th Street, 12th Floor<br>
+                			New York City
+                			
                 		</p>
                     </div>
                     
