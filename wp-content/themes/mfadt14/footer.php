@@ -123,6 +123,7 @@ $query = new WP_Query( $args );
 <script src="assets/js/underscore.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/masonry.pkgd.min.js"></script>
+<script src="assets/js/profilePage.js"></script>
 
 </body>
 
