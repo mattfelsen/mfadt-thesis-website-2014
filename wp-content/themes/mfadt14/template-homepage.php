@@ -13,32 +13,34 @@ Template Name: Homepage
 	<div class="in-between"></div>
 	<div class="container">
 		<div class="sixteen columns mfadt-box-hero">
-			<img class="eleven columns img-hero" src="assets/img/hero/dt-box-hero-no-shadow.png">
+			<img class="eleven columns img-hero" src>
 			<div class="mfadt-box-hero-shadow"></div>
 			<div class="five columns hero-detail">
 				<h2>
 				PARSONS MFADT THESIS SHOW 2014
 				</h2>
+
 				<h4>
-					Join us in a spectacular event of over 70 projects
-					that will leverage design and technology. Please think of a better copy.
+					Join us this May for a week-long exhibition of 70+ projects by emerging artists, designers, coders, makers, hackers, educators, and thinkers.
 				</h4>
 				<br>
 				<h4>
 					See exhibition detail below
 				</h4>
+
 			</div>
 		</div>
 	</div>
 </section>
+
 <!-- END OF HERO -->
 <div class="below-hero">
 <!-- ABOUT PROGRAM & INFO -->
 <section id="mfadt-info-container">
 <div id="mfadt-info" class="container">
-	<h4 style="font-weight: 900; margin-bottom: 15px;" class="sixteen columns">
+	<h3 class="sixteen columns text">
 		The MFA DT program at Parsons examines and extends the intersection of design and technology for practical, playful, theoretical, and artistic impact. Students deepen their practice and theory of design as they critique, leverage, or develop emerging technologies for creative change.
-	</h4>
+	</h3>
 	<div class="six columns below-hero-content">
 	<h6 class="noBottom">Map</h6>
 	<!-- embed google map -->
@@ -62,35 +64,41 @@ Template Name: Homepage
 	</script>
 	</div>
 	<div class="four columns below-hero-content">
+		<h6>Symposium</h6>
+		<p>
+			Fri. May 16 from 2-8pm<br>
+            Sat. May 17 from 12-7pm<br>
+            Theresa Lang Student &amp; <br>Community Center<br>
+            55 West 13th Street, New York City
+		</p>
+	</div>
+	<div class="three columns below-hero-content">
 		<h6>Exhibition</h6>
 		<p>
 			May 17 - 25, 2014<br>
-			Open daily 10am - 8pm<br>
-			–<br>
-			6 East 16th Street<br>
-			12th Floor<br>
-			New York City
+            Open daily 10am - 8pm<br>
+            6 East 16th Street, 12th Floor<br>
+            New York City
 		</p>
 	</div>
 	<div class="three columns below-hero-content">
 		<h6>Reception</h6>
 		<p>
-			12th Floor<br>
-			Wednesday, May 21st, 6pm - 8pm<br>
-		</p>
-	</div>
-	<div class="three columns below-hero-content">
-		<h6>Symposium</h6>
-		<p>
-			Wollman Hall, Eugene Lang College<br>
-			65 West 11th Street Room B500, New York, NY 10003
+			Wed. May 21, 6-8pm<br>
+            6 East 16th Street, 12th Floor<br>
+            New York City
 		</p>
 	</div>
 </div>
 </section>
-
+<section class="categories-container sixteen columns">
+	<h3>Projects</h3>
+	<div class="categories-list">
+		<?php wp_list_categories('title_li='); ?>
+	</div>
+</section>
 <section id="projects" class="container">
-	<h1 class="sixteen columns">Projects</h1>
+	
 
 	<?php
 	$args = array ('post_type' => 'project', 'posts_per_page' => '-1', 'orderby' => 'rand');
@@ -120,15 +128,14 @@ Template Name: Homepage
 
 	<div class="masonry columns">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
-		<p><?= $students ?></p>
-		<!-- <?= $category ?> -->
+		<h5><?= $students ?></h5>
 		<!-- <?= $tags ?> -->
 
-		<? if (has_post_thumbnail()) : ?>
+		<a href="<?php the_permalink() ?>"><? if (has_post_thumbnail()) : ?>
 		<img class="projectThumb" src="<? $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); print $src[0]; ?>">
 		<? else: ?>
 		<img class="projectThumb" src="assets/img/no-thumbnail-<? $r=rand(0,3);if($r>2)$o='sm';elseif($r>1)$o='md';else $o='lg'; print $o; ?>.jpg">
-		<?php endif; ?>
+		<?php endif; ?></a>
 	</div>
 
 	<?php endwhile; endif; ?>

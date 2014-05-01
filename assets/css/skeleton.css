@@ -21,7 +21,7 @@
 /* #Base 960 Grid
 ================================================== */
 
-
+    .categories-container                       { position: relative; width: 1180px; margin: 0 auto; padding: 0; }
     .container                                  { position: relative; width: 1200px; margin: 0 auto; padding: 0; }
     .container .column,
     .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
@@ -69,6 +69,7 @@
     .container .offset-by-fourteen              { padding-left: 840px; }
     .container .offset-by-fifteen               { padding-left: 900px; }
 
+    .categories-container h3                    { display: none; }
 
 
 /* #Tablet (Portrait)
@@ -101,6 +102,10 @@
         .container .fourteen.columns                { width: 652px; }
         .container .fifteen.columns                 { width: 700px; }
         .container .sixteen.columns                 { width: 748px; }
+
+        .categories-container                       { width: 768px; }
+
+
 
         .container .one-third.column                { width: 236px; }
         .container .two-thirds.column               { width: 492px; }
@@ -203,6 +208,10 @@
         .container .sixteen.columns,
         .container .one-third.column,
         .container .two-thirds.column { width: 420px; }
+
+        .categories-container { width: 420px; }
+        .categories-container h3 { display: block; }
+        .categories-list { padding-left: 0 !important; }
     }
 
 
