@@ -16,11 +16,46 @@
 		nav {
 			bottom: 0;
 		}
+		.projectPersonPageContainer {
+			padding: 2.5% 3%;
+		}
+
+		.student-info-text {
+			width: 47%;
+			margin-right: 3.25%;
+		}
+		.student-info-social {
+			width: 16%;
+		}
+		.studentContactInfo h5 {
+			display: block;
+		}
+
+		.student-info-image {
+			width: 30%;
+		}
+
+		#theImage {
+			width: 130px;
+			margin-top: -10px;
+		}
+
+		.project-info-text {
+			width: 43%;
+		}
+
+		.project-info-image {
+			width: 50%;
+		}
 	}
 
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (max-width: 767px) {
+		h3 {
+			font-size: 1.5em !important;
+		}
+
 		nav {
 			position: fixed !important;
 			top:0 !important;
@@ -48,6 +83,41 @@
 			background: url(../img/hero/dt-mobile-box-hero-bg.png) !important;
 			background-size: cover;
 		}*/
+
+		.projectPersonPageContainer {
+			padding: 5%;
+		}
+
+		.student-info-text {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		.student-info-social {
+			width: 100%;
+		}
+
+		.studentContactInfo h5 {
+			display: none;
+		}
+
+		.student-info-social {
+			margin-top: -10px;
+		}
+
+		.student-info-image {
+			width: 100%;
+		}
+
+		#theImage {
+			width: 100%;
+			margin-top: 0px;
+		}
+
+		.project-info-text, .project-info-image {
+			width: 100%;
+		}
+
 	}
 
 /* #Font-Face
