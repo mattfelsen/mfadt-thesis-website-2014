@@ -83,14 +83,12 @@ $writing_spring = types_render_field('writing-faculty-spring');
 
 		
 		<div class="project-info-image">
-			<center><?= types_render_field('media', array('width' => 600)) ?></center>
+			<?= types_render_field('media', array('width' => 600)) ?>
 			</div>
 		<div class="clear"></div>
 		</div>	
 	</section>
 	
-	
-	<hr>
 
 </div>
 

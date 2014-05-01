@@ -302,12 +302,15 @@ p.facultyNames{
 	height: auto !important;
 	float: right; 
 	display: inline;
-	padding-bottom: 50px;
 }
 
 .project-info-image img {
 	width: 100%;
 	margin-bottom: 25px;
+}
+
+.project-info-image img:last-of-type {
+	margin-bottom: 0;
 }
 
 img.projectThumb{
