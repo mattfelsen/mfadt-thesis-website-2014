@@ -7,6 +7,7 @@
 	<title><?php wp_title( ' | ', true, 'right' ); ?></title>
 	<base href="<?= home_url() ;?>/"></base>
 	<link rel="shortcut icon" href="assets/favicon.ico">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/base.css">
 	<link rel="stylesheet" href="assets/css/skeleton.css">
 	<link rel="stylesheet" href="assets/css/layout.css">

@@ -57,7 +57,7 @@
 	body {
 		background: #efefea;
 		font-family: 'Lato', sans-serif;
-		font-weight: 300;
+		font-weight: 400;
 /* 		font: 14px/21px "Open sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 		color: #4c4c4c;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -70,7 +70,7 @@
 ================================================== */
 	h1, h2, h3, h5, h6 {
 		color: #181818;
-		font-family: 'Exo 2', sans-serif;
+		font-family: 'Lato', sans-serif;
 		 }
     h4 {
         font-family: 'Roboto Slab', serif;
@@ -88,7 +88,7 @@
 
 	p { margin: 0 0 20px 0; 
 		font-family: 'Lato', sans-serif;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.25;
 	}
 	p img { margin: 0; }
