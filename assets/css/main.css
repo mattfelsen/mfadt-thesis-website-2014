@@ -104,6 +104,11 @@ form div label {
 	color: #fff;
 }
 
+.mfadt-box-hero h2 {
+	font-family: 'Exo 2', sans-serif;
+
+}
+
 .mfadt-box-hero-shadow {
 	display: none;
 	height: 4px;
@@ -146,7 +151,7 @@ svg {
 #mfadt-info h3.text {
 	font-weight: 400;
 	margin-bottom: 15px;
-	font-family: Lato, sans-serif;
+	font-family: 'Exo 2', sans-serif;
 }
 
 .below-hero-content h6 {
