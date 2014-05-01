@@ -30,22 +30,28 @@ $tags = join(', ', $a);
 ?>
 
 <!-- html goes here -->
-<div class="fakeBody">
 <div class="container projectPersonPageContainer">
 	<?php foreach ($students as $student) { ?>
 	<section class="student">
-		<h2 class="studentName"><?= $student->post_title ?></h2>
-		<div class="studentInfoHolder">
-			<div class="studentBio"><p><?= $student->fields['biography'] ?></p></div>
-			<img id="theImage" src="http://54.235.78.70/3Dtest/portrait01.jpg"/>
-
+		<div class="student-info-text">
+			<h3 class="studentName"><?= $student->post_title ?></h3>	
+			<div class="studentInfoHolder">
+				<div class="studentBio"><p><?= $student->fields['biography'] ?></p></div>
+	<!-- 			<img class="headshotRegular" src="<?= $student->fields['headshot'] ?>" /> -->
+			</div>
+		</div>
+		<div class="student-info-social">
 			<div class="studentContactInfo">
 				<a href="<?= $student->fields['personal-website'] ?>" target="_blank"><div class="personalWebsiteLink"></div></a>
 				<a href="<?= $student->fields['linkedin'] ?>" target="_blank"><div class="linkedInLink"></div></a>
-				<a href="https://twitter.com/<?= $student->fields['twitter'] ?>" target="_blank"><div class="twitterLink"></div></a>			</div>
-
-<!-- 			<img class="headshotRegular" src="<?= $student->fields['headshot'] ?>" /> -->
+				<a href="https://twitter.com/<?= $student->fields['twitter'] ?>" target="_blank"><div class="twitterLink"></div></a>			
+			</div>
 		</div>
+		<div class="student-info-image">
+			<img id="theImage" src="http://54.235.78.70/3Dtest/portrait01.jpg"/>
+		</div>
+		
+		<div class="clear"></div>
 	</section>
 	<?php } ?>
 
@@ -89,7 +95,6 @@ $tags = join(', ', $a);
 	
 	<hr>
 
-</div>
 </div>
 
 <?php get_footer(); ?>
