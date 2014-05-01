@@ -15,6 +15,10 @@ the_post();
 	<div>
 		<?php the_content(); ?>
 	</div>
+
+	<div>
+		<?php the_post_thumbnail(); ?>
+	</div>
 </div>
 
 <!-- html goes here -->
