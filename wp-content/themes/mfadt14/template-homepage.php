@@ -94,7 +94,7 @@ Template Name: Homepage
 <section class="categories-container sixteen columns">
 	<h3>Projects</h3>
 	<div class="categories-list">
-		<?php wp_list_categories('title_li='); ?>
+		<?php wp_list_categories('exclude=1&title_li='); ?>
 	</div>
 </section>
 <section id="projects" class="container">
@@ -129,7 +129,6 @@ Template Name: Homepage
 	<div class="masonry columns">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 		<h5><?= $students ?></h5>
-		<!-- <?= $tags ?> -->
 
 		<a href="<?php the_permalink() ?>"><? if (has_post_thumbnail()) : ?>
 		<img class="projectThumb" src="<? $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); print $src[0]; ?>">

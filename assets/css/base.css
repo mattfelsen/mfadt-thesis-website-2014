@@ -57,7 +57,7 @@
 	body {
 		background: #efefea;
 		font-family: 'Lato', sans-serif;
-		font-weight: 300;
+		font-weight: 400;
 /* 		font: 14px/21px "Open sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 		color: #4c4c4c;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -88,7 +88,7 @@
 
 	p { margin: 0 0 20px 0; 
 		font-family: 'Lato', sans-serif;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.25;
 	}
 	p img { margin: 0; }
