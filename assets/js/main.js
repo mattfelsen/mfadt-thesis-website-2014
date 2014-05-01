@@ -106,6 +106,10 @@ window.onload = function() {
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
     mfadt.init();
 
+    $('.img-hero').attr({
+        src: 'assets/img/hero/hero-' + ~~(Math.random()*5+1) + '.png'
+    });
+    
     // INIT MASONRY
     // selecting the .mainContainer class from the projects page
     var container = document.querySelector('section#projects');
