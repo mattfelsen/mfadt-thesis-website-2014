@@ -15,6 +15,23 @@ $thesis_spring = types_render_field('thesis-faculty-spring');
 $writing_fall = types_render_field('writing-faculty-fall');
 $writing_spring = types_render_field('writing-faculty-spring');
 
+// Set up media
+$media = types_render_field('media', array('width' => 600, 'output' => 'raw'));
+$media = split(' ', $media);
+
+foreach ($media as $i => $url) {
+	$parse = parse_url($url);
+
+	if ($parse['host'] == 'youtu.be') {
+		$media[$i] = '<iframe width="558" height="314" src="http://www.youtube.com/embed'.$parse['path'].'" frameborder="0" allowfullscreen></iframe>';
+	} elseif ($parse['host'] == 'vimeo.com') {
+		$media[$i] = '<iframe src="//player.vimeo.com/video'.$parse['path'].'" width="558" height="314" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+	} else {
+		$media[$i] = '<img src="'.$url.'" />';
+	}
+}
+$media = join(' ', $media);
+
 ?>
 
 <!-- html goes here -->
@@ -83,7 +100,7 @@ $writing_spring = types_render_field('writing-faculty-spring');
 
 		
 		<div class="project-info-image">
-			<?= types_render_field('media', array('width' => 600)) ?>
+			<?= $media ?>
 			</div>
 		<div class="clear"></div>
 		</div>	
