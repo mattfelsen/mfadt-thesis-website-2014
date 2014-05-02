@@ -55,7 +55,8 @@
 /* #Basic Styles
 ================================================== */
 	body {
-		background: #efefea;
+		/*background: #efefea;*/
+		background-color: #e6eaed;
 		font-family: 'Lato', sans-serif;
 		font-weight: 400;
 /* 		font: 14px/21px "Open sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; */
