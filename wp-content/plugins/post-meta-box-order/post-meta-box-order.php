@@ -21,7 +21,7 @@ $force_override = true;
  * the new order instead of just new users.
  * Note that this will overwrite the meta boxes order users have
  */
-$posts_widgets_order_hash = '079e54b7679111af34baf06e89439b87';
+$posts_widgets_order_hash = '079e54b7679111af34baf06e89439bfgg';
 
 
 /**
@@ -44,6 +44,7 @@ $posts_widgets_order_left_column[] = 'postexcerpt';
 $posts_widgets_order_left_column[] = 'commentstatusdiv';
 $posts_widgets_order_left_column[] = 'wpcf-group-project-details';
 $posts_widgets_order_left_column[] = 'wpcf-group-images-video';
+$posts_widgets_order_left_column[] = 'wpcf-group-symposium';
 $posts_widgets_order_left_column[] = 'authordiv';
 
 

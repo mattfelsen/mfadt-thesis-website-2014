@@ -220,7 +220,7 @@ svg {
 	margin-bottom: 2%;
 }
 
-.student-info-text, .student-info-social {
+.student-info-text, .student-info-social, .student-info-symposium {
 	float: left;
 }
 
@@ -267,7 +267,7 @@ p.facultyNames{
 	display: inline;
 }
 
-.social-icons {
+.social-icons, .date-time {
 	margin-top: 20px;
 }
 

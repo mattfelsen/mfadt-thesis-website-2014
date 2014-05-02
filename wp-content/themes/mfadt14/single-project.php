@@ -15,6 +15,7 @@ $thesis_spring = types_render_field('thesis-faculty-spring');
 $writing_fall = types_render_field('writing-faculty-fall');
 $writing_spring = types_render_field('writing-faculty-spring');
 
+
 // Set up media
 $media = types_render_field('media', array('width' => 600, 'output' => 'raw'));
 $media = split(' ', $media);
@@ -37,6 +38,7 @@ $media = join(' ', $media);
 <!-- html goes here -->
 <div class="container projectPersonPageContainer">
 	<?php foreach ($students as $student) { ?>
+
 	<section class="student">
 		<div class="student-info-text">
 			<h3 class="studentName"><?= $student->post_title ?></h3>	
@@ -44,6 +46,10 @@ $media = join(' ', $media);
 				<div class="studentBio"><p><?= $student->fields['biography'] ?></p></div>
 	<!-- 			<img class="headshotRegular" src="<?= $student->fields['headshot'] ?>" /> -->
 			</div>
+		</div>
+		<div class="student-info-symposium">
+			<h5>Symposium</h5>	
+			<div class="date-time"><?= types_render_field('date', array("format"=>"D. F j, ga")) ?></div>
 		</div>
 		<div class="student-info-social">
 			<div class="studentContactInfo">
