@@ -15,6 +15,7 @@ $thesis_spring = types_render_field('thesis-faculty-spring');
 $writing_fall = types_render_field('writing-faculty-fall');
 $writing_spring = types_render_field('writing-faculty-spring');
 
+
 // Set up media
 $media = types_render_field('media', array('width' => 600, 'output' => 'raw'));
 $media = split(' ', $media);
@@ -35,8 +36,9 @@ $media = join(' ', $media);
 ?>
 
 <!-- html goes here -->
-<div class="container projectPersonPageContainer">
+<div class="container projectPersonPageContainer container-page">
 	<?php foreach ($students as $student) { ?>
+
 	<section class="student">
 		<div class="student-info-text">
 			<h3 class="studentName"><?= $student->post_title ?></h3>	
@@ -45,18 +47,42 @@ $media = join(' ', $media);
 	<!-- 			<img class="headshotRegular" src="<?= $student->fields['headshot'] ?>" /> -->
 			</div>
 		</div>
+		<div class="student-info-symposium">
+			<h5>Symposium</h5>	
+			<div class="date-time">
+				<?= types_render_field('date', array("format"=>"D. F j, ga")) ?>
+				<p><?= types_render_field('symposium-group-choices') ?></p>
+			</div>
+			
+		</div>
 		<div class="student-info-social">
 			<div class="studentContactInfo">
 				<h5>Learn more:</h5>
 				<div class="social-icons">
-					<a href="<?= $student->fields['personal-website'] ?>" target="_blank"><i class="fa fa-desktop"></i></a>
-					<a href="https://twitter.com/<?= $student->fields['twitter'] ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-					<a href="<?= $student->fields['linkedin'] ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
+					<?php 
+
+					$personalWebsite = $student->fields['personal-website'];
+					$twitter = $student->fields['twitter'];					
+					$linkedin = $student->fields['linkedin'];
+
+					if ($personalWebsite != "") {
+						echo "<a href='$personalWebsite' target='_blank'><i class='fa fa-desktop'></i></a>";
+					}
+
+					if ($twitter != "") {	
+						echo "<a href='https://twitter.com/$twitter' target='_blank'><i class='fa fa-twitter'></i></a>";
+					}
+
+					if ($linkedin != "") {
+						echo "<a href='$linkedin' target='_blank'><i class='fa fa-linkedin'></i></a>";
+					}
+
+					?>
 				</div>
 			</div>
 		</div>
 		<div class="student-info-image">
-			<img id="theImage" src="http://54.235.78.70/3Dtest/portrait01.jpg"/>
+			<img class="theImage" src="http://54.235.78.70/3Dtest/portrait01.jpg"/>
 		</div>
 		
 		<div class="clear"></div>
