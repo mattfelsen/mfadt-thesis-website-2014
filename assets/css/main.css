@@ -229,7 +229,7 @@ svg {
 }
 
 .studentInfoHolder{
-	//height: 180px;
+	height: 180px;
 	margin-top: 20px;
 }
 
@@ -256,6 +256,11 @@ img.headshotRegular{
 
 p.facultyNames{
 	margin:0px;
+}
+
+.js-desc-fixed {
+	position: fixed;
+	top: 80px;
 }
 
 
