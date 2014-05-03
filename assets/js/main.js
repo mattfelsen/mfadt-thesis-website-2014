@@ -54,7 +54,7 @@ window.onload = function() {
         },
         magic: function() {
             var svgFileArray = [];
-            this.svg = d3.select('#mfadt-hero').append('svg');
+            // this.svg = d3.select('#mfadt-hero').append('svg');
             // load svg
         }
     };
