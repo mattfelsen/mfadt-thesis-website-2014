@@ -45,6 +45,7 @@ $posts_widgets_order_left_column[] = 'commentstatusdiv';
 $posts_widgets_order_left_column[] = 'wpcf-group-project-details';
 $posts_widgets_order_left_column[] = 'wpcf-group-images-video';
 $posts_widgets_order_left_column[] = 'wpcf-group-symposium';
+$posts_widgets_order_left_column[] = 'wpcf-group-symposium-grouping';
 $posts_widgets_order_left_column[] = 'authordiv';
 
 

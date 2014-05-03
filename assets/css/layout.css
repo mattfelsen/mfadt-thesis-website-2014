@@ -41,7 +41,7 @@
 			width: 15%;
 		}
 
-		#theImage {
+		.theImage {
 			width: 130px;
 			margin-top: -10px;
 		}
@@ -115,7 +115,7 @@
 			width: 100%;
 		}
 
-		#theImage {
+		.theImage {
 			width: 100%;
 			margin-top: 0px;
 		}
