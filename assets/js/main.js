@@ -27,22 +27,11 @@ window.onload = function() {
                 $('svg').remove();
                 // collapse nav-list
                 $('.nav-list').slideUp();
+                $('nav').css({
+                    height: 'auto'
+                });
                 var top = 0,
                     allow = false;
-                setInterval(function() {
-                    // $('.img-hero').css({
-                    //     top: top
-                    // });
-
-
-                    // if (top == 75) {
-                    //     clearInterval(this);
-                    //     top = 75;
-                    // } else {
-                    //     top++;
-                    // }
-
-                }, 1000 / 30);
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
@@ -108,7 +97,7 @@ window.onload = function() {
                 if (isScrolledCollected == false) {
                     isScrolledCollected = true;
                     scrolled = global.scrollAt;
-                    console.log(scrolled);
+                    // console.log(scrolled);
                 }
                 $('.project-info-text').css({
                     position: 'absolute',
