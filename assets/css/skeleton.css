@@ -135,6 +135,10 @@
     /* Note: Design for a width of 320px */
 
     @media only screen and (max-width: 767px) {
+        .categories-list { padding-left: 0 !important; margin: 0 auto; font-size: 0.8em;}
+        .categories-container { width: 300px; }
+        .categories-container h3 { display: block; }
+
         .container { width: 300px; }
         .container .columns,
         .container .column { margin: 0; }

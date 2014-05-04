@@ -94,6 +94,7 @@ Template Name: Homepage
 <section class="categories-container sixteen columns">
 	<h3>Projects</h3>
 	<div class="categories-list">
+
 		<?php wp_list_categories('exclude=1&title_li='); ?>
 	</div>
 </section>

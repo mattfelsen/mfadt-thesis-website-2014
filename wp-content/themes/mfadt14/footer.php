@@ -27,7 +27,7 @@ $query = new WP_Query( $args );
 			<a href="project/title">Justin Charles</a><br>
 			<br>
 
-			<h5>Curation/Symposium</h5>
+			<h5>Curation/<br>Symposium</h5>
 			<a href="project/title">Albert Kim</a><br>
 			<a href="project/title">Bernardo Santos Schorr</a><br>
 			<a href="project/title">Clarisa Diaz<br>
