@@ -2,8 +2,9 @@ var textBoxHeight = $(".projectTextHolder").height();
 $(".projectImageHolder").height(textBoxHeight-30);
 
 console.log($(".projectInfoHolder").height());
-
-var pp = "http://54.235.78.70/3Dtest/portrait";
+var name = $('img.theImage').attr("name");
+console.log(name);
+var pp = "http://mfadt.parsons.edu/2014/assets/img/students/"+name;
 var images = new Array();
 var spin = true; 
 var metaSpin = true;
@@ -13,29 +14,34 @@ var counter = 0;
 var spinRate = 100;
 //load images into array
 for (var i=1;i<48;i++){
+	images.push(pp+"_"+i+'.jpg');
+    src = images[i-1];
+    $(".theImage").attr("src", src);
+/*
     if(i<10){
         images.push(pp+'0'+i+'.jpg');
         src = images[i-1];
-        $("#theImage").attr("src", src);
+        $(".theImage").attr("src", src);
     }
     else{
         images.push(pp+i+'.jpg');
         src = images[i-1];
-        $("#theImage").attr("src", src);
+        $(".theImage").attr("src", src);
     }
+*/
 }
-images.push(pp+'01.jpg');
+images.push(pp+'_1.jpg');
 
 //make a million unnessisary variables!
-var offset = $( "#theImage" ).offset();
+var offset = $( ".theImage" ).offset();
 var numberOfFrames = images.length;
-var widthOfImage = $("#theImage").width();
+var widthOfImage = $(".theImage").width();
 var interval = widthOfImage/numberOfFrames;
 var xLocInImage;
 var frameNumber = 0;
 
 //move image when you hover over it
-$("#theImage").mousemove(function(e){ 
+$(".theImage").mousemove(function(e){ 
   xLocInImage = e.pageX - offset.left;
   frameNumber = parseInt(xLocInImage/interval);  
   src = images[frameNumber];
@@ -43,12 +49,12 @@ $("#theImage").mousemove(function(e){
 });
 
 //dont let the image auto spin when you are hovering
-$("#theImage").hover(function(){
+$(".theImage").hover(function(){
     spin = !spin;
 });
 
 //unwind back to zero when you move off
-$("#theImage").mouseout(function(){
+$(".theImage").mouseout(function(){
     unwindingBacktoZero = true;
 
 });
@@ -57,7 +63,7 @@ $("#theImage").mouseout(function(){
 setInterval(function () {
     if(unwindingBacktoZero && spin){
         frameNumber--;
-        $("#theImage").attr("src", images[frameNumber]);
+        $(".theImage").attr("src", images[frameNumber]);
         if(frameNumber < 1){ unwindingBacktoZero = false;}
     }
 }, spinRate+20);
@@ -69,11 +75,11 @@ setInterval(function () {
     if(spin && !unwindingBacktoZero && metaSpin){
         if(forward){
             frameNumber++;
-            $("#theImage").attr("src", images[frameNumber]);
+            $(".theImage").attr("src", images[frameNumber]);
         }
         else{
             frameNumber--;
-            $("#theImage").attr("src", images[frameNumber]);
+            $(".theImage").attr("src", images[frameNumber]);
         }
     }
     if(frameNumber == 7 || frameNumber == images.length-7){forward = !forward}
