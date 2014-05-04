@@ -56,9 +56,9 @@ ul#menu-main {
 }
 .menu-main-container {
 	padding-top: 4px;
-	position: absolute;
-	top: 0;
-	left: 30%;
+	float: left;
+/*	top: 0;
+	left: 30%;*/
 }
 
 .menu-main-container ul > li {
@@ -129,7 +129,7 @@ form div label {
 }
 
 svg {
-	background: #cecece;
+	background: #fff;
 }
 
 .below-hero {
@@ -245,7 +245,7 @@ svg {
 }
 
 .studentInfoHolder{
-	//height: 180px;
+	height: 180px;
 	margin-top: 20px;
 }
 
@@ -273,6 +273,11 @@ img.headshotRegular{
 	
 p.facultyNames{
 	margin:0px;
+}
+
+.js-desc-fixed {
+	position: fixed;
+	top: 80px;
 }
 
 
@@ -343,7 +348,7 @@ p.facultyNames{
 	margin-top: 0;
 }
 
-img.projectThumb{
+img.projectThumb, img.studentPortraitThumb{
 	width: 268px;
 	margin: 15px 0 0 0;
 	box-shadow: 1px 2px 10px #bab8b8;
@@ -353,11 +358,24 @@ img.projectThumb{
 	transition: opacity 0.4s;
 }
 
-img.projectThumb:hover {
+img.projectThumb:hover, img.studentPortraitThumb:hover {
 	opacity: 0.8;
 	filter: alpha(opacity=80);
 	-webkit-transition: opacity 0.4s;
 	transition: opacity 0.4s;
+}
+
+div.longTitleImageCropped{
+padding-top: 5px;
+height: 250px;
+overflow: hidden;
+box-shadow: 1px 2px 10px #bab8b8;
+margin-top: 15px;
+
+}
+
+div.longTitleImageCropped img{
+	margin-top: -5px;
 }
 
 /* --------––––––------- FOOTER --–––––------------------*/

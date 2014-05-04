@@ -82,7 +82,7 @@ $media = join(' ', $media);
 			</div>
 		</div>
 		<div class="student-info-image">
-			<img class="theImage" src="http://54.235.78.70/3Dtest/portrait01.jpg"/>
+			<img class="theImage" name="<?= $student->post_title ?>" src="http://mfadt.parsons.edu/2014/assets/img/students/<?= $student->post_title ?>_1.jpg"/>
 		</div>
 		
 		<div class="clear"></div>
