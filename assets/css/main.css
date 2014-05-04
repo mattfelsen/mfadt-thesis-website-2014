@@ -46,9 +46,9 @@ ul#menu-main {
 }
 .menu-main-container {
 	padding-top: 4px;
-	position: absolute;
-	top: 0;
-	left: 30%;
+	float: left;
+/*	top: 0;
+	left: 30%;*/
 }
 
 .menu-main-container ul > li {
@@ -119,7 +119,7 @@ form div label {
 }
 
 svg {
-	background: #cecece;
+	background: #fff;
 }
 
 .below-hero {
@@ -229,7 +229,7 @@ svg {
 }
 
 .studentInfoHolder{
-	//height: 180px;
+	height: 180px;
 	margin-top: 20px;
 }
 
@@ -256,6 +256,11 @@ img.headshotRegular{
 
 p.facultyNames{
 	margin:0px;
+}
+
+.js-desc-fixed {
+	position: fixed;
+	top: 80px;
 }
 
 

@@ -27,22 +27,11 @@ window.onload = function() {
                 $('svg').remove();
                 // collapse nav-list
                 $('.nav-list').slideUp();
+                $('nav').css({
+                    height: 'auto'
+                });
                 var top = 0,
                     allow = false;
-                setInterval(function() {
-                    // $('.img-hero').css({
-                    //     top: top
-                    // });
-
-
-                    // if (top == 75) {
-                    //     clearInterval(this);
-                    //     top = 75;
-                    // } else {
-                    //     top++;
-                    // }
-
-                }, 1000 / 30);
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
@@ -54,7 +43,7 @@ window.onload = function() {
         },
         magic: function() {
             var svgFileArray = [];
-            this.svg = d3.select('#mfadt-hero').append('svg');
+            // this.svg = d3.select('#mfadt-hero').append('svg');
             // load svg
         }
     };
@@ -66,6 +55,8 @@ window.onload = function() {
         global.h = window.innerHeight;
         mfadt.init();
     });
+    var init_desc_width = $('.project-info-text').width();
+    var scrolled, isScrolledCollected = false;
     window.onscroll = function() {
         global.scrollAt = window.pageYOffset;
         if (global.scrollAt >= 75) {
@@ -94,6 +85,31 @@ window.onload = function() {
                     bottom: global.h - 60
                 });
             }
+            // Project page fix project description
+            if (global.scrollAt >= 280 && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
+                // console.log('fix desc!');
+                $('.project-info-text').css({
+                    position: 'fixed',
+                    top: 80,
+                    width: init_desc_width
+                });
+            } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height() - 300) {
+                if (isScrolledCollected == false) {
+                    isScrolledCollected = true;
+                    scrolled = global.scrollAt;
+                    // console.log(scrolled);
+                }
+                $('.project-info-text').css({
+                    position: 'absolute',
+                    top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
+                });
+            } else if (global.scrollAt < 280) {
+                // console.log('release desc!');
+                $('.project-info-text').css({
+                    position: 'static'
+                });
+            }
+
         }
     };
     // BUTTONS
@@ -106,10 +122,6 @@ window.onload = function() {
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
     mfadt.init();
 
-    $('.img-hero').attr({
-        src: 'assets/img/hero/hero-' + ~~(Math.random()*5+1) + '.png'
-    });
-    
     // INIT MASONRY
     // selecting the .mainContainer class from the projects page
     var container = document.querySelector('section#projects');
