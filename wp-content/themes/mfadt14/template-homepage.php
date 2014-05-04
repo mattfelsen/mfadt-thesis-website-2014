@@ -35,6 +35,7 @@ Template Name: Homepage
 
 <!-- END OF HERO -->
 <div class="below-hero">
+
 <!-- ABOUT PROGRAM & INFO -->
 <section id="mfadt-info-container">
 <div id="mfadt-info" class="container">
@@ -91,6 +92,7 @@ Template Name: Homepage
 	</div>
 </div>
 </section>
+
 <section class="categories-container sixteen columns">
 	<h3>Projects</h3>
 	<div class="categories-list">
@@ -98,10 +100,11 @@ Template Name: Homepage
 		<?php wp_list_categories('exclude=1&title_li='); ?>
 	</div>
 </section>
+
 <section id="projects" class="container">
 	
-
 	<?php
+
 	$args = array ('post_type' => 'project', 'posts_per_page' => '-1', 'orderby' => 'rand');
 	$query = new WP_Query( $args );
 
@@ -112,18 +115,6 @@ Template Name: Homepage
 		$students = types_child_posts('student');
 		foreach ($students as $student) { $students_list[] = $student->post_title; }
 		$students = join(" + ", $students_list);
-
-		// Set up category name
-		$category = get_the_category();
-		$category = $category[0]->cat_name;
-
-		// Set up tags
-		$a = array();
-		$tags = get_the_tags();
-		foreach($tags as $t) {
-			$a[] = $t->name;
-		}
-		$tags = join(', ', $a);
 
 	?>
 
