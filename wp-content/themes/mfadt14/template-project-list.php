@@ -25,18 +25,6 @@ $query = new WP_Query( $args );
 		foreach ($students as $student) { $students_list[] = $student->post_title; }
 		$students = join(" + ", $students_list);
 
-		// Set up category name
-		$category = get_the_category();
-		$category = $category[0]->cat_name;
-
-		// Set up tags
-		$a = array();
-		$tags = get_the_tags();
-		foreach($tags as $t) {
-			$a[] = $t->name;
-		}
-		$tags = join(', ', $a);
-
 	?>
 
 
