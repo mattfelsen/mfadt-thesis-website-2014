@@ -21,7 +21,8 @@ window.onload = function() {
                 });
             }
             // check page width
-            if (global.w <= 767) { // ********** IF MOBILE **********
+            if (global.w <= 767) {
+                // ********** IF MOBILE **********
                 this.isMobile = true;
                 // remove magic
                 $('svg').remove();
@@ -43,7 +44,7 @@ window.onload = function() {
         },
         magic: function() {
             var svgFileArray = [];
-            // this.svg = d3.select('#mfadt-hero').append('svg');
+            this.svg = d3.select('#mfadt-hero').append('svg');
             // load svg
         }
     };
@@ -109,7 +110,6 @@ window.onload = function() {
                     position: 'static'
                 });
             }
-
         }
     };
     // BUTTONS
