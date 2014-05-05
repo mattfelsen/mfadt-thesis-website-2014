@@ -13,10 +13,11 @@ get_header();
 <div class="container" style="padding-bottom: 100px;">
 	<h1>Press</h1>
 
+<div class="holder" style="width: 600px; margin: auto;">
 <tr><td height="20" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
     <tr>
       <td align="center" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-        <table width="1200" border="0" cellspacing="0" cellpadding="0" bgcolor="white" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" align="center">
+        <table width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="white" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" align="center">
 
 <!--
                   <tr>
@@ -28,7 +29,7 @@ get_header();
 
                   <tr>
                     <td align="left" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-                      <center><img width="300" src="./assets/img/hero/hero-5.png" alt="MFA Design and Technology" style="border: 0 !important;display: block !important;outline: none !important; padding-top: 10px; margin-left: 10px;"></center>
+                      <center><img width="600" src="./assets/img/pressHeader.jpg" alt="MFA Design and Technology" style="border: 0 !important;display: block !important;outline: none !important;"></center>
                     </td>
                   </tr>
 					
@@ -45,7 +46,7 @@ get_header();
 
     <tr>
       <td align="center" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-        <table width="1200" border="0" cellspacing="0" cellpadding="0" bgcolor="white" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" align="center">
+        <table width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="white" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" align="center">
           <tr><td height="0" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
                       <tr>
                         <td width="50" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
@@ -62,7 +63,7 @@ get_header();
     <!--bar-->
     <tr>
       <td align="center" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-        <table width="1200" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="white" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
+        <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="white" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
           <tr>
             <td height="10" width="50" bgcolor="white" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
             <td height="10" width="500" bgcolor="#000000" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
@@ -75,7 +76,7 @@ get_header();
     <!--define what's possible-->
     <tr>
       <td align="center" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-        <table width="1200" bgcolor="white" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;color: black;vertical-align: top;padding: 0;">
+        <table width="600" bgcolor="white" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;color: black;vertical-align: top;padding: 0;">
           <tr><td height="20" colspan="3" bgcolor="white" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
           <tr bgcolor="white">
             <td width="50" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
@@ -131,14 +132,14 @@ get_header();
     <!-- ================ END header & begin time table=============== -->
     <tr>
       <td align="center" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-        <table width="1200" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;">
+        <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;">
           <!--Symposium-->
           <tr><td width="600" height="10" colspan="5" bgcolor="#ffffff" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
           <tr><td width="600" colspan="5" bgcolor="#56A2CC" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-              <table width="1200" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" bgcolor="#56A2CC">
+              <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" bgcolor="#56A2CC">
                 <tr><td width="600" height="30" colspan="5" bgcolor="#56A2CC" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
                 <tr bgcolor="#56A2CC">
-                  <td width="180" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
+                  <td width="50" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
                   <td width="92" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"><img src="http://gallery.mailchimp.com/f29f5c1073116d59f6f84ede2/images/symposium.jpg" alt="Symposium" style="border: 0 !important;display: block !important;outline: none !important;"></td>
                   <td width="15" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
                   <td width="393" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
@@ -157,10 +158,10 @@ get_header();
           </tr>
           <!--Show-->
           <tr><td width="600" colspan="5" bgcolor="#46AC91" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-              <table width="1200" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" bgcolor="#46AC91">
+              <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" bgcolor="#46AC91">
                 <tr><td width="600" height="30" colspan="5" bgcolor="#46AC91" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
                 <tr bgcolor="#46AC91">
-                  <td width="180" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
+                  <td width="50" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
                   <td width="92" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"><img src="http://gallery.mailchimp.com/f29f5c1073116d59f6f84ede2/images/exhibition.jpg" alt="Exhibition" style="border: 0 !important;display: block !important;outline: none !important;"></td>
                   <td width="15" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
                   <td width="393" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
@@ -178,10 +179,10 @@ get_header();
           <tr><td width="600" height="10" colspan="5" bgcolor="#ffffff" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
           <!--Reception-->
           <tr><td width="600" colspan="5" bgcolor="#D9305D" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
-              <table width="1200" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" bgcolor="#D9305D">
+              <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family: helvetica, sans-serif;vertical-align: top;padding: 0;" bgcolor="#D9305D">
                 <tr><td width="600" height="30" colspan="5" bgcolor="#D9305D" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
                 <tr bgcolor="#D9305D">
-                  <td width="180" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
+                  <td width="50" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
                   <td width="92" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"><img src="http://gallery.mailchimp.com/f29f5c1073116d59f6f84ede2/images/reception.jpg" alt="Reception" style="border: 0 !important;display: block !important;outline: none !important;"></td>
                   <td width="15" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td>
                   <td width="393" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;">
@@ -232,7 +233,7 @@ New York City</p>
     <!-- end footer-->
 
   </table>
-
+</div>
 </div>
 
 <?php get_footer(); ?>
