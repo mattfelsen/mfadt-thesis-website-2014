@@ -15,6 +15,11 @@ $thesis_spring = types_render_field('thesis-faculty-spring');
 $writing_fall = types_render_field('writing-faculty-fall');
 $writing_spring = types_render_field('writing-faculty-spring');
 
+$thesis_fall_slug = strtolower(str_replace(' ', '-', $thesis_fall));
+$thesis_spring_slug = strtolower(str_replace(' ', '-', $thesis_spring));
+$writing_fall_slug = strtolower(str_replace(' ', '-', $writing_fall));
+$writing_spring_slug = strtolower(str_replace(' ', '-', $writing_spring));
+
 
 // Set up media
 $media = types_render_field('media', array('width' => 600, 'output' => 'raw'));
@@ -107,18 +112,18 @@ $media = join(' ', $media);
 			<h5>Thesis Faculty</h5>
 		
 			<?php if ($thesis_fall == $thesis_spring) : ?>
-				<p class="facultyNames"><?= $thesis_fall ?></p><br>
+				<p class="facultyNames"><a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p><br>
 			<?php else: ?>
-				<p class="facultyNames">Fall: <?= $thesis_fall ?></p>
-				<p class="facultyNames">Spring: <?= $thesis_spring ?></p><br>
+				<p class="facultyNames">Fall: <a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p>
+				<p class="facultyNames">Spring: <a href="faculty/<?= $thesis_spring_slug ?>"><?= $thesis_spring ?></a></p><br>
 			<?php endif; ?>
 		
 			<h5>Writing & Research Faculty</h5>
-			<?php if ($thesis_fall == $thesis_spring) : ?>
-				<p class="facultyNames"><?= $writing_fall ?></p><br>
+			<?php if ($writing_fall == $writing_spring) : ?>
+				<p class="facultyNames"><a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p><br>
 			<?php else: ?>
-				<p class="facultyNames">Fall: <?= $writing_fall ?></p>
-				<p class="facultyNames">Spring: <?= $writing_spring ?></p><br>
+				<p class="facultyNames">Fall: <a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p>
+				<p class="facultyNames">Spring: <a href="faculty/<?= $writing_spring_slug ?>"><?= $writing_spring ?></a></p><br>
 			<?php endif; ?>
 				</p>
 				
