@@ -24,6 +24,12 @@
 			width: 47%;
 			margin-right: 3.25%;
 		}
+
+		.student-info-symposium {
+			width: 14%;
+			margin-right: 3.25%;
+		}
+
 		.student-info-social {
 			width: 16%;
 		}
@@ -32,10 +38,10 @@
 		}
 
 		.student-info-image {
-			width: 30%;
+			width: 15%;
 		}
 
-		#theImage {
+		.theImage {
 			width: 130px;
 			margin-top: -10px;
 		}
@@ -93,23 +99,23 @@
 			margin-right: 0;
 		}
 
-		.student-info-social {
+		.student-info-symposium {
+			margin-bottom: 20px;
+		}
+
+		.student-info-social, .student-info-symposium {
 			width: 100%;
 		}
 
-		.studentContactInfo h5 {
-			display: none;
-		}
-
-		.student-info-social {
-			margin-top: -10px;
+		.social-icons, .date-time {
+			margin-top: 0 !important;
 		}
 
 		.student-info-image {
 			width: 100%;
 		}
 
-		#theImage {
+		.theImage {
 			width: 100%;
 			margin-top: 0px;
 		}

@@ -15,6 +15,12 @@ $thesis_spring = types_render_field('thesis-faculty-spring');
 $writing_fall = types_render_field('writing-faculty-fall');
 $writing_spring = types_render_field('writing-faculty-spring');
 
+$thesis_fall_slug = strtolower(str_replace(' ', '-', $thesis_fall));
+$thesis_spring_slug = strtolower(str_replace(' ', '-', $thesis_spring));
+$writing_fall_slug = strtolower(str_replace(' ', '-', $writing_fall));
+$writing_spring_slug = strtolower(str_replace(' ', '-', $writing_spring));
+
+
 // Set up media
 $media = types_render_field('media', array('width' => 600, 'output' => 'raw'));
 $media = split(' ', $media);
@@ -35,8 +41,9 @@ $media = join(' ', $media);
 ?>
 
 <!-- html goes here -->
-<div class="container projectPersonPageContainer">
+<div class="container projectPersonPageContainer container-page">
 	<?php foreach ($students as $student) { ?>
+
 	<section class="student">
 		<div class="student-info-text">
 			<h3 class="studentName"><?= $student->post_title ?></h3>	
@@ -45,13 +52,37 @@ $media = join(' ', $media);
 	<!-- 			<img class="headshotRegular" src="<?= $student->fields['headshot'] ?>" /> -->
 			</div>
 		</div>
+		<div class="student-info-symposium">
+			<h5>Symposium</h5>	
+			<div class="date-time">
+				<?= types_render_field('date', array("format"=>"D. F j, ga")) ?>
+				<p><?= types_render_field('symposium-group-choices') ?></p>
+			</div>
+			
+		</div>
 		<div class="student-info-social">
 			<div class="studentContactInfo">
 				<h5>Learn more:</h5>
 				<div class="social-icons">
-					<a href="<?= $student->fields['personal-website'] ?>" target="_blank"><i class="fa fa-desktop"></i></a>
-					<a href="https://twitter.com/<?= $student->fields['twitter'] ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-					<a href="<?= $student->fields['linkedin'] ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
+					<?php 
+
+					$personalWebsite = $student->fields['personal-website'];
+					$twitter = $student->fields['twitter'];					
+					$linkedin = $student->fields['linkedin'];
+
+					if ($personalWebsite != "") {
+						echo "<a href='$personalWebsite' target='_blank'><i class='fa fa-desktop'></i></a>";
+					}
+
+					if ($twitter != "") {	
+						echo "<a href='https://twitter.com/$twitter' target='_blank'><i class='fa fa-twitter'></i></a>";
+					}
+
+					if ($linkedin != "") {
+						echo "<a href='$linkedin' target='_blank'><i class='fa fa-linkedin'></i></a>";
+					}
+
+					?>
 				</div>
 			</div>
 		</div>
@@ -81,18 +112,18 @@ $media = join(' ', $media);
 			<h5>Thesis Faculty</h5>
 		
 			<?php if ($thesis_fall == $thesis_spring) : ?>
-				<p class="facultyNames"><?= $thesis_fall ?></p><br>
+				<p class="facultyNames"><a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p><br>
 			<?php else: ?>
-				<p class="facultyNames">Fall: <?= $thesis_fall ?></p>
-				<p class="facultyNames">Spring: <?= $thesis_spring ?></p><br>
+				<p class="facultyNames">Fall: <a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p>
+				<p class="facultyNames">Spring: <a href="faculty/<?= $thesis_spring_slug ?>"><?= $thesis_spring ?></a></p><br>
 			<?php endif; ?>
 		
 			<h5>Writing & Research Faculty</h5>
-			<?php if ($thesis_fall == $thesis_spring) : ?>
-				<p class="facultyNames"><?= $writing_fall ?></p><br>
+			<?php if ($writing_fall == $writing_spring) : ?>
+				<p class="facultyNames"><a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p><br>
 			<?php else: ?>
-				<p class="facultyNames">Fall: <?= $writing_fall ?></p>
-				<p class="facultyNames">Spring: <?= $writing_spring ?></p><br>
+				<p class="facultyNames">Fall: <a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p>
+				<p class="facultyNames">Spring: <a href="faculty/<?= $writing_spring_slug ?>"><?= $writing_spring ?></a></p><br>
 			<?php endif; ?>
 				</p>
 				
