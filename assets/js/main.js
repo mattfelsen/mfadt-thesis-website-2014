@@ -1,6 +1,6 @@
 var $ = jQuery;
 
-window.onload = function() {
+$(document).ready(function() {
     console.log('OH YEAH');
     var global = {
         w: window.innerWidth,
@@ -123,10 +123,8 @@ window.onload = function() {
     mfadt.init();
 
     // INIT MASONRY
-    // selecting the .mainContainer class from the projects page
-    var container = document.querySelector('section#projects');
-    var msnry = new Masonry(container, {
-        // options...
+    var $container = $('section#projects');
+    $container.masonry({
         itemSelector: '.columns',
         columnWidth: 268,
         "gutter": 30
@@ -152,4 +150,4 @@ window.onload = function() {
             }
         });
     });
-};
+});

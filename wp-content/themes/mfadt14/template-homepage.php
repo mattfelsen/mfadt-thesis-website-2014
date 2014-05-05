@@ -2,9 +2,10 @@
 /*
 Template Name: Homepage
 */
-?>
 
-<?php get_header(); ?>
+get_header();
+
+?>
 
 <!-- html goes here -->
 
@@ -13,7 +14,7 @@ Template Name: Homepage
 	<div class="in-between"></div>
 	<div class="container">
 		<div class="sixteen columns mfadt-box-hero">
-			<img class="eleven columns img-hero" src>
+			<img class="eleven columns img-hero" src="assets/img/hero/hero-<?= rand(1,5); ?>.png">
 			<div class="mfadt-box-hero-shadow"></div>
 			<div class="five columns hero-detail">
 				<h2>
@@ -116,14 +117,20 @@ Template Name: Homepage
 		foreach ($students as $student) { $students_list[] = $student->post_title; }
 		$students = join(" + ", $students_list);
 
+		// set up image dimensions
+		$info = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+		$image_src = $info[0];
+		$image_w = 268;
+		$image_h = intval($info[2] / ($info[1] / 268));
+
 	?>
 
 	<div class="masonry columns">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
-		<h5><?= $students ?></h5>
+		<h5><a href="<?php the_permalink() ?>"><?= $students ?></a></h5>
 
 		<a href="<?php the_permalink() ?>"><? if (has_post_thumbnail()) : ?>
-		<img class="projectThumb" src="<? $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); print $src[0]; ?>">
+		<img class="projectThumb" src="<?= $image_src ?>" style="<?= "width: ${image_w}px; height: ${image_h}px;" ?>">
 		<? else: ?>
 		<img class="projectThumb" src="assets/img/no-thumbnail-<? $r=rand(0,3);if($r>2)$o='sm';elseif($r>1)$o='md';else $o='lg'; print $o; ?>.jpg">
 		<?php endif; ?></a>
