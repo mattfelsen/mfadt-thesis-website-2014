@@ -55,8 +55,8 @@ $media = join(' ', $media);
 		<div class="student-info-symposium">
 			<h5>Symposium</h5>	
 			<div class="date-time">
-				<?= types_render_field('date', array("format"=>"D. F j, ga")) ?>
-				<p><?= types_render_field('symposium-group-choices') ?></p>
+				<?= types_render_field('date', array("format"=>"D. F j, g:ia")) ?>
+				<p><?= types_render_field('symposium-group') ?></p>
 			</div>
 			
 		</div>
@@ -97,35 +97,34 @@ $media = join(' ', $media);
 
 	<section class="project">
 		<div class="project-info-text">
-			<h3><?php the_title(); ?></h3>
+			<h3><?php the_title(); ?><a href="<?= types_render_field('project-website', array('output' => 'raw')) ?>" target="_blank"><i class='fa fa-external-link'></i></a></h3>
 			<h4><?= types_render_field('short-description') ?></h4>
 			
 			<p ><?= types_render_field('long-description') ?></p>
-			<!-- follow the same format of "Project Website" rather than displaying URL target="_blank" -->
-			<p><a href="<?= types_render_field('project-website', array('output' => 'raw')) ?>" target="_blank">View Project Website</a></p>
 			
 			<div class="project-meta">
 				<p class="category">Filed under: <?php the_category(','); ?> </p> 
 				<p class="tag"><?php the_tags('Tagged with: '); ?></p>
 			</div>
 
-			<h5>Thesis Faculty</h5>
-		
-			<?php if ($thesis_fall == $thesis_spring) : ?>
-				<p class="facultyNames"><a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p><br>
-			<?php else: ?>
-				<p class="facultyNames">Fall: <a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p>
-				<p class="facultyNames">Spring: <a href="faculty/<?= $thesis_spring_slug ?>"><?= $thesis_spring ?></a></p><br>
-			<?php endif; ?>
-		
-			<h5>Writing & Research Faculty</h5>
-			<?php if ($writing_fall == $writing_spring) : ?>
-				<p class="facultyNames"><a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p><br>
-			<?php else: ?>
-				<p class="facultyNames">Fall: <a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p>
-				<p class="facultyNames">Spring: <a href="faculty/<?= $writing_spring_slug ?>"><?= $writing_spring ?></a></p><br>
-			<?php endif; ?>
-				</p>
+			<div class="facultyNamesContainer">
+				<h5>Thesis Faculty</h5>
+				<?php if ($thesis_fall == $thesis_spring) : ?>
+					<p class="facultyNames"><a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p><br>
+				<?php else: ?>
+					<p class="facultyNames">Fall: <a href="faculty/<?= $thesis_fall_slug ?>"><?= $thesis_fall ?></a></p>
+					<p class="facultyNames">Spring: <a href="faculty/<?= $thesis_spring_slug ?>"><?= $thesis_spring ?></a></p><br>
+				<?php endif; ?>
+			
+				<h5>Writing & Research Faculty</h5>
+				<?php if ($writing_fall == $writing_spring) : ?>
+					<p class="facultyNames"><a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p><br>
+				<?php else: ?>
+					<p class="facultyNames">Fall: <a href="faculty/<?= $writing_fall_slug ?>"><?= $writing_fall ?></a></p>
+					<p class="facultyNames">Spring: <a href="faculty/<?= $writing_spring_slug ?>"><?= $writing_spring ?></a></p><br>
+				<?php endif; ?>
+					</p>
+			</div>
 				
 		</div>
 
