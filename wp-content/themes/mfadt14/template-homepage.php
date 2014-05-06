@@ -52,7 +52,7 @@ get_header();
 	<link rel="stylesheet" type="text/css" href="http://www.map-embed.com/maps.css">
 	<script type="text/javascript">
 			function init_map(){
-				var myOptions=  {scrollwheel: false, zoom:12, disableDefaultUI:true, center: new google.maps.LatLng (40.7370468,-73.99220600000001),
+				var myOptions = {scrollwheel: false, zoom:12, disableDefaultUI:true, center: new google.maps.LatLng (40.7370468,-73.99220600000001),
 					mapTypeId: google.maps.MapTypeId.ROADMAP};
 					map = new google.maps.Map (document.getElementById("gmap_canvas"), myOptions);
 					marker = new google.maps.Marker({map: map, position: new google.maps.LatLng (40.7370468,-73.99220600000001)});
