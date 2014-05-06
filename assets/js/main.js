@@ -25,7 +25,7 @@ $(document).ready(function() {
                 // ********** IF MOBILE **********
                 this.isMobile = true;
                 // remove magic
-                $('svg').remove();
+                $('#flat-shader').hide();
                 // collapse nav-list
                 $('.nav-list').slideUp();
                 $('nav').css({
@@ -36,16 +36,16 @@ $(document).ready(function() {
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
-                if ($('svg').length !== 1) {
+                $('#flat-shader').show();
+                if ($('#flat-shader').length !== 1) {
                     this.magic();
                 }
                 $('.nav-list').show();
+                // hide background
             }
         },
         magic: function() {
-            var svgFileArray = [];
-            this.svg = d3.select('#mfadt-hero').append('svg');
-            // load svg
+            // load flat shader
         }
     };
 
