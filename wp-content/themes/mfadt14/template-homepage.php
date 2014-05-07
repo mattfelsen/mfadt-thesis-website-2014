@@ -95,15 +95,18 @@ get_header();
 </section>
 
 <section class="categories-container sixteen columns">
-	<div class="categories-list sixteen columns">
-		<h2 style="display: inline-block; margin-right: 10px;">Themes</h2>
-		<li class="cat-item" style="background:rgb(200,200,200); border: 2px solid rgb(200,200,200);"><a href="#" title="View all posts filed under Critical &amp; Speculative">All</a>
-		</li>
-		<?php wp_list_categories('exclude=1&title_li='); ?>
-	</div>
-</section>
+		<div class="categories-list sixteen columns">
+			<h2 style="display: inline-block; margin-right: 10px;">Themes</h2>
+			<li class="cat-item" style="background:rgb(200,200,200); border: 2px solid rgb(200,200,200);"><a href="#" title="View all posts filed under Critical &amp; Speculative">All</a>
+			</li>
+			<?php wp_list_categories('exclude=1&title_li='); ?>
+		</div>
+	</section>
 
 <section id="projects" class="container">
+
+	
+
 	<?php
 
 	$args = array ('post_type' => 'project', 'posts_per_page' => '-1', 'orderby' => 'rand');

@@ -92,9 +92,9 @@ function initialise() {
 }
 
 function createRenderer() {
-    webglRenderer = new FSS.WebGLRenderer();
+    // webglRenderer = new FSS.WebGLRenderer();
     canvasRenderer = new FSS.CanvasRenderer();
-    svgRenderer = new FSS.SVGRenderer();
+    // svgRenderer = new FSS.SVGRenderer();
     setRenderer(RENDER.renderer);
 }
 
@@ -256,27 +256,11 @@ function render() {
 
 function addEventListeners() {
     window.addEventListener('resize', onWindowResize);
-    if (output !== null) {
-        output.addEventListener('click', onMouseClick);
-        output.addEventListener('mousemove', onMouseMove);
-    }
 }
 
 //------------------------------
 // Callbacks
 //------------------------------
-function onMouseClick(event) {
-    FSS.Vector3.set(attractor, event.x, renderer.height - event.y);
-    FSS.Vector3.subtract(attractor, center);
-    LIGHT.autopilot = !LIGHT.autopilot;
-    autopilotController.updateDisplay();
-}
-
-function onMouseMove(event) {
-    FSS.Vector3.set(attractor, event.x, renderer.height - event.y);
-    FSS.Vector3.subtract(attractor, center);
-}
-
 function onWindowResize(event) {
     resize(container.offsetWidth, container.offsetHeight);
     render();

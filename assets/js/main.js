@@ -41,6 +41,15 @@ $(document).ready(function() {
                         $(v).css('border', '2px solid #a954fa');
                     }
                 });
+
+                // scroll to projects section if we're on the homepage and
+                // the projects link was clicked
+                if (window.location.hash == '#projects') {
+                    $('html,body').animate({
+                        scrollTop: $('#projects').offset().top - 240
+                    }, 1000);
+                    return false;
+                } 
             }
             // check what page it is
             var metaLocation = location.pathname,
@@ -162,30 +171,46 @@ $(document).ready(function() {
     });
     // CATEGORY SELECTOR
     $('.categories-list .cat-item').click(function(evt) {
-        // parse slug from the end of the category link
-        var slug = $(this).children('a').attr('href').split('/').reverse()[0];
-
-        // hide everything, show only 
-        // what we want, and re - trigger masonry
-        console.log(slug);
-        if (slug == '#') {
-            $('.masonry.columns').show();
-        } else {
-            $('.masonry.columns').hide();
-            $('.category-' + slug).show();
-        }
-
-        $('section#projects').masonry();
+        // set the background color for the selected category
         $('.categories-list .cat-item').css({
             background: 'none'
         });
         $(this).css({
             background: $(this).css('border-color')
         });
+
+        // parse slug from the end of the category link
+        var slug = $(this).children('a').attr('href').split('/').reverse()[0];
+
+        // hide everything, show only 
+        // what we want, and re - trigger masonry
+        if (slug == '#') {
+            $('.masonry.columns').show();
+        } else {
+            $('.masonry.columns').hide();
+            $('.category-' + slug).show();
+        }
+        $('section#projects').masonry();
         // prevent the link from navigating to the category archive page
         // (even though it totally works and Matt spent time making it nice)
         evt.preventDefault();
     });
+
+    // PROJECTS MENU LINK
+    // scroll to projects section when clicking the Projects menu item
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - 240
+                }, 1000);
+                return false;
+            }
+        }
+    });
+    
     // END OF LISTENER –––––––––––––––––––––––––––––––––––––––––––––––––––
 
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -205,18 +230,5 @@ $(document).ready(function() {
         var h = _.random(0, 360);
         return 'hsla(' + h + ',75%,50%,0.90)';
     }
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 240
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
+
 });
