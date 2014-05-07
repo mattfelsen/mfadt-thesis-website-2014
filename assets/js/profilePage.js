@@ -1,9 +1,9 @@
 var textBoxHeight = $(".projectTextHolder").height();
 $(".projectImageHolder").height(textBoxHeight-30);
 
-console.log($(".projectInfoHolder").height());
-var name = $('img.theImage').attr("name");
-console.log(name);
+// console.log($(".projectInfoHolder").height());
+var name = $('img.theImage').attr("data-slug");
+// console.log(name);
 var pp = "http://mfadt.parsons.edu/2014/assets/img/students/"+name;
 var images = new Array();
 var spin = true; 
@@ -14,7 +14,7 @@ var counter = 0;
 var spinRate = 100;
 //load images into array
 for (var i=1;i<48;i++){
-	images.push(pp+"_"+i+'.jpg');
+	images.push(pp+"/"+i+'.jpg');
     src = images[i-1];
     $(".theImage").attr("src", src);
 /*
@@ -30,7 +30,7 @@ for (var i=1;i<48;i++){
     }
 */
 }
-images.push(pp+'_1.jpg');
+images.push(pp+'/1.jpg');
 
 //make a million unnessisary variables!
 var offset = $( ".theImage" ).offset();

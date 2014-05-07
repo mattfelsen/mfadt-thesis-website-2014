@@ -61,7 +61,7 @@ $query = new WP_Query( $args );
 
 	<div class="masonry columns">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
-		<h5><?= $students ?></h5>
+		<h5><a href="project/<?= the_permalink() ?>"><?= $students ?></a></h5>
 
 		<a href="<?php the_permalink() ?>">
 		

@@ -45,7 +45,7 @@
 
   <div class="masonry columns">
     <h4><a href="<?php the_permalink() ?>"><?= $title ?></a></h4>
-    <h5><?= $student ?></h5>
+    <h5><a href="<?php the_permalink() ?>"><?= $student ?></a></h5>
 
     <a href="<?php the_permalink() ?>">
     <img class="projectThumb" src="<? $src = wp_get_attachment_image_src(get_post_thumbnail_id($project_id), 'large'); print $src[0]; ?>">

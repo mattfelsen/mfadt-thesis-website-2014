@@ -21,7 +21,7 @@ $writing_fall_slug = strtolower(str_replace(' ', '-', $writing_fall));
 $writing_spring_slug = strtolower(str_replace(' ', '-', $writing_spring));
 
 
-// Set up media
+// Set up media 
 $media = types_render_field('media', array('width' => 600, 'output' => 'raw'));
 $media = split(' ', $media);
 
@@ -49,13 +49,12 @@ $media = join(' ', $media);
 			<h3 class="studentName"><?= $student->post_title ?></h3>	
 			<div class="studentInfoHolder">
 				<div class="studentBio"><p><?= $student->fields['biography'] ?></p></div>
-	<!-- 			<img class="headshotRegular" src="<?= $student->fields['headshot'] ?>" /> -->
 			</div>
 		</div>
 		<div class="student-info-symposium">
 			<h5>Symposium</h5>	
 			<div class="date-time">
-				<?= types_render_field('date', array("format"=>"D. F j, g:ia")) ?>
+				<?= types_render_field('symposium-date', array("format"=>"D. F j, g:ia")) ?>
 				<p><?= types_render_field('symposium-group') ?></p>
 			</div>
 			
@@ -87,7 +86,7 @@ $media = join(' ', $media);
 			</div>
 		</div>
 		<div class="student-info-image">
-			<img class="theImage" name="<?= $student->post_title ?>" src="http://mfadt.parsons.edu/2014/assets/img/students/<?= $student->post_title ?>_1.jpg"/>
+			<img class="theImage" data-slug="<?= $student->post_name ?>" src="http://mfadt.parsons.edu/2014/assets/img/students/<?= $student->post_name ?>/1.jpg"/>
 		</div>
 		
 		<div class="clear"></div>
