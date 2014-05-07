@@ -397,6 +397,16 @@ div.longTitleImageCropped img{
 	margin-top: -5px;
 }
 
+/* --------––––––------- FACULTY --e–––––------------------*/
+.faculty-thumbnail {
+	overflow: hidden;
+}
+
+.faculty-thumbnail > img {
+	width: 100%;
+	height: auto;
+}
+
 /* --------––––––------- FOOTER --–––––------------------*/
 #footer-background {
 	padding-top: 15px;
@@ -404,23 +414,27 @@ div.longTitleImageCropped img{
 	/*background-color: #202c33;*/
 }
 
-footer, footer a {
+footer, footer a, footer a:visited, footer a:focus{
 	font-family: 'Roboto Slab', sans-serif;
 	color: #fff;
-	font-size: 0.9em;
-	line-height: 1.15em;
+	font-size: 0.98em;
+	line-height: 1.35em;
 }
 
-footer a:hover {
-	font-weight: 500;
+footer a:hover{
+	font-weight: 900;
 	color: #fff;
 }
 
 footer h5 {
-	font-size: 1em;
-	font-weight: 700;
-	font-style: italic;
-	margin-bottom: 10px;
+	font-size: 0.8em;
+	font-weight: 900;
+	/*font-style: italic;*/
+	margin-bottom: 0px;
+}
+
+footer h3 {
+	margin: 0px;
 }
 
 footer h3, footer h5, footer h6 {
@@ -428,7 +442,7 @@ footer h3, footer h5, footer h6 {
 }
 
 footer h6 {
-	margin: 0px 0px 20px 0px;
+	margin: 0px 0px 7px 0px;
 	padding: 10px 0px 3px 0px;
 	border-bottom: 1px solid #fff;
 	text-transform: uppercase;
@@ -436,6 +450,10 @@ footer h6 {
 }
 
 /* --------––––––------- MISC --–––––------------------*/
+.gm-style-iw {
+	color: #000;
+}
+
 .in-between {
 	margin-top: 72px;
 }

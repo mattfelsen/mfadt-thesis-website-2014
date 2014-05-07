@@ -118,3 +118,4 @@ function add_mtc_post_types( $types )
     return $types;
 }
 add_filter( 'rd2_mtc_post_types', 'add_mtc_post_types' );
+
