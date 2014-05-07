@@ -85,7 +85,9 @@ function initialise() {
     createMesh();
     createLights();
     addEventListeners();
-    resize(container.offsetWidth, container.offsetHeight);
+    if (container !== null) {
+        resize(container.offsetWidth, container.offsetHeight);
+    }
     animate();
 }
 
@@ -112,7 +114,9 @@ function setRenderer(index) {
             break;
     }
     // renderer.setSize(container.offsetWidth, container.offsetHeight);
-    output.appendChild(renderer.element);
+    if (output !== null) {
+        output.appendChild(renderer.element);
+    }
 }
 
 function createScene() {
@@ -252,8 +256,10 @@ function render() {
 
 function addEventListeners() {
     window.addEventListener('resize', onWindowResize);
-    output.addEventListener('click', onMouseClick);
-    output.addEventListener('mousemove', onMouseMove);
+    if (output !== null) {
+        output.addEventListener('click', onMouseClick);
+        output.addEventListener('mousemove', onMouseMove);
+    }
 }
 
 //------------------------------
@@ -276,7 +282,5 @@ function onWindowResize(event) {
     render();
 }
 
-
-
 // Let there be light!
-initialise();
+// initialise();
