@@ -11,6 +11,7 @@ get_header();
 
 <!-- HERO -->
 <section id="mfadt-hero">
+	<div id="flat-shader"></div>
 	<div class="in-between"></div>
 	<div class="container">
 		<div class="sixteen columns mfadt-box-hero">

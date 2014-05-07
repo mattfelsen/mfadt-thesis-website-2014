@@ -119,8 +119,8 @@ $query = new WP_Query( $args );
 <?php wp_footer(); ?>
 
 <!-- load scripts -->
-<script src="assets/js/d3.min.js"></script>
-<script src="assets/js/underscore.min.js"></script>
+<script src="assets/js/fss.min.js"></script>
+<script src="assets/js/mfadt-shader.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/masonry.pkgd.min.js"></script>
 <script src="assets/js/profilePage.js"></script>
