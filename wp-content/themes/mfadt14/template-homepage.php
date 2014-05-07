@@ -44,13 +44,12 @@ get_header();
 	<h3 class="sixteen columns text">
 		The MFA DT program at Parsons examines and extends the intersection of design and technology for practical, playful, theoretical, and artistic impact. Students deepen their practice and theory of design as they critique, leverage, or develop emerging technologies for creative change.
 	</h3>
-	<div class="six columns below-hero-content">
+	<div class="four columns below-hero-content">
 	<h6 class="noBottom">Map</h6>
 	<!-- embed google map -->
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
-	<div id="gmap_canvas" style="margin-top: -10px; height:150px; width:100%;"></div>
+	<div id="gmap_canvas" style="margin-top: -10px; height:120px; width:100%;"></div>
 	<a href="http://www.map-embed.com" class="map-data">www.map-embed.com</a>
-	<link rel="stylesheet" type="text/css" href="http://www.map-embed.com/maps.css">
 	<script type="text/javascript">
 			function init_map(){
 				var myOptions = {scrollwheel: false, zoom:12, disableDefaultUI:true, center: new google.maps.LatLng (40.7370468,-73.99220600000001),
@@ -75,7 +74,7 @@ get_header();
             55 West 13th Street, New York City
 		</p>
 	</div>
-	<div class="three columns below-hero-content">
+	<div class="four columns below-hero-content">
 		<h6>Exhibition</h6>
 		<p>
 			May 17 - 25, 2014<br>
@@ -84,7 +83,7 @@ get_header();
             New York City
 		</p>
 	</div>
-	<div class="three columns below-hero-content">
+	<div class="four columns below-hero-content">
 		<h6>Reception</h6>
 		<p>
 			Wed. May 21, 6-8pm<br>
