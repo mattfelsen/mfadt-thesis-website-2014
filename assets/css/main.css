@@ -54,6 +54,17 @@ nav {
 ul#menu-main {
 	margin-bottom: 0px !important;
 }
+
+ul#menu-main li a {
+	font-weight: 400;
+	color: #262626;
+}
+
+.menu-selected {
+	font-weight: 900 !important;
+	color: #000 !important;
+}
+
 .menu-main-container {
 	padding-top: 4px;
 	float: left;
@@ -184,10 +195,8 @@ svg {
 
 
 .categories-container {
-	
 	margin: 0 auto;
-	padding: 40px 0;
-	
+	padding: 30px 0;
 }
 
 .categories-container li {
@@ -196,14 +205,17 @@ svg {
 }
 
 .categories-list {
-	padding-left: 30%;
-	-webkit-columns: 2;
-	height: 100px;
 }
 
 .categories-container li {
-	margin-bottom: 4px;
-	/*padding-left: 60%;*/
+	display: inline-block;
+	padding: 15px 20px 15px 20px;
+	margin: 0px 10px 10px 0px;
+	line-height: 1em;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-family: 'Exo 2', sans-serif;
+	/*background: #fff;*/
 }
 
 /* --------––––––------- PROJECT --–––––------------------*/
@@ -226,7 +238,6 @@ svg {
 	background: #fff;
 	padding: 2.5% 3%;
 }
-
 
 .projectPersonPageContainer {
 	margin-bottom: 50px;	
@@ -310,7 +321,7 @@ p.facultyNames{
 }
 
 .project-info-text h3 {
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Exo 2', serif;
 	font-weight: 900;
 }
 
@@ -327,7 +338,7 @@ p.facultyNames{
 }
 
 .project-info-text .project-meta p {
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Exo 2', serif;
 	text-transform: uppercase;
 }
 
@@ -403,7 +414,7 @@ div.longTitleImageCropped img{
 }
 
 footer, footer a, footer a:visited, footer a:focus{
-	font-family: 'Roboto Slab', sans-serif;
+	font-family: 'Exo 2', sans-serif;
 	color: #fff;
 	font-size: 0.98em;
 	line-height: 1.35em;

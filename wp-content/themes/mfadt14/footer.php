@@ -10,7 +10,7 @@ $query = new WP_Query( $args );
 <div id="footer-background">
 
 	<footer class="container" role="contentinfo">
-		<h3 class="sixteen columns">ACKNOWLEDGEMENTS</h3>
+		<!-- <h3 class="sixteen columns">ACKNOWLEDGEMENTS</h3> -->
 
 		<div class="three columns">
 			<h6>Faculty</h6>
