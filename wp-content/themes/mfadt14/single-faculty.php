@@ -31,21 +31,24 @@ $args = array (
 $query = new WP_Query( $args );
 
 ?>
-
-<div class="container">
-	<h2><?php the_title(); ?></h2>
-
-	<div>
-		<?php the_content(); ?>
+<section id="faculty">
+	<div class="container">
+		<br>
+		<h2 class="sixteen columns" style="margin-bottom:30px">
+			<?php the_title(); ?>
+		</h2>
+		<div class="six columns faculty-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+		<div class="ten columns">
+			<?php the_content(); ?>
+		</div>
 	</div>
-
-	<div>
-		<?php the_post_thumbnail(); ?>
-	</div>
-</div>
+	<hr>
+</section>
 
 <section id="projects" class="container">
-	<h1 class="sixteen columns">Students</h1>
+	<h2 class="sixteen columns" style="margin-bottom: 30px">Students</h2>
 
 	<?php
 
