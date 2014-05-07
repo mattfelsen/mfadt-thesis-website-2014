@@ -191,6 +191,8 @@ svg {
 	font-weight: 900;
 }
 
+
+
 /* --------––––––------- CATEGORIES --–––––------------------*/
 
 
@@ -293,6 +295,11 @@ p.facultyNames{
 	margin:0px;
 }
 
+.facultyNamesContainer {
+	-webkit-columns: 2;
+	height: 100px;
+}
+
 .js-desc-fixed {
 	position: fixed;
 	top: 80px;
@@ -305,6 +312,11 @@ p.facultyNames{
 	height: auto;
 	float: left; 
 	display: inline;
+}
+
+.fa-external-link {
+	padding-left: 10px;
+	font-size: 24px;
 }
 
 .social-icons, .date-time {

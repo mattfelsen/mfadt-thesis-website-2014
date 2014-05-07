@@ -23,15 +23,23 @@ $query = new WP_Query( $args );
  	?>
 	<div class="masonry columns">
 		<h4><a href="project/<?= $project->post_name ?>"><?php the_title(); ?></a></h4>
-		<h5><?= $project->post_title ?></h5>
+		<h5><a href="project/<?= $project->post_name ?>"><?= $project->post_title ?></a></h5>
+
 		<?php 
-		$projectPostName = get_the_title();
-		if ($projectPostName == "Mirte Becker") { ?>
-			<div class="longTitleImageCropped"><img class='studentPortraitThumb' src="http://mfadt.parsons.edu/2014/assets/img/students/<?php the_title(); ?>_1.jpg"/></div>
+		$student = get_the_title();
+		if ($student == "Mirte Becker")
+			$long_title_div = true;
+		else
+			$long_title_div = false;
+		?>
+		<?php if ($long_title_div) { ?><div class="longTitleImageCropped"><?php } ?>
 		
-		<?php }else{ ?>
-		<img class='studentPortraitThumb' src="http://mfadt.parsons.edu/2014/assets/img/students/<?php the_title(); ?>_1.jpg"/>
-		<?php } ?>
+		<a href="project/<?= $project->post_name ?>">
+		  <img class="studentPortraitThumb" src="http://mfadt.parsons.edu/2014/assets/img/students/<?= $post->post_name ?>/1.jpg"/>
+		</a>
+		
+		<?php if ($long_title_div) { ?></div><?php } ?>
+
 	</div>
 
 	<?php endwhile; endif; ?>
