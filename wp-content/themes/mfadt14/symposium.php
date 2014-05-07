@@ -21,46 +21,54 @@
 		</div>
 		
 		<div class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-storytelling">Storytelling</p>
 These projects convey stories using a variety of forms, involving their audience and participants 
 to different degrees. In some of these projects, the audience is recipient of the story; 
-in others, the participants become a part of the narrative.
+in others, the participants become a part of the narrative.</div>
 		</div>
 		<div id="panel-bigdata" class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-really-big-data">Really Big Data</p>
 Projects in this category tap into the swarm of data generated 
 by us and surrounding us, commenting on the role of the massive 
-amount of often-hidden detail that exists.
+amount of often-hidden detail that exists.</div>
 		</div>
 		<div id="panels-play" class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-play">Play</p>
 These projects invite their audience to participate and explore. 
-Some are toys that invite open-ended play; others are games with formalized rules, winning, and losing.
+Some are toys that invite open-ended play; others are games with formalized rules, winning, and losing.</div>
 		</div>
 		<div id="panels-education" class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-education">Education</p>
 These projects add innovative forms to the world of teaching. 
 They seek to illuminate topics through demonstration, visualization, and participation. 
-Some are geared toward children, while certain projects aim to broaden the knowledge of adults.
+Some are geared toward children, while certain projects aim to broaden the knowledge of adults.</div>
 		</div>
 
 		<div id="panels-critical" class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-critical-speculative">Critical & Speculative</p>
 These projects critique our world through design, questioning 
-current social practices or the directions in which we may be moving.
+current social practices or the directions in which we may be moving.</div>
 		</div>
 		<div id="panels-experiential" class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-experiential">Experiential</p>
 These projects envelope their audience, immersing them in space and exploring 
-the intersection of the physical and digital worlds.
+the intersection of the physical and digital worlds.</div>
 		</div>
 		<div id="panels-information" class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-information-instruments">Information Instruments</p>
-Information Instruments create new forms with information, presenting it to their audience in unique ways.
+Information Instruments create new forms with information, presenting it to their audience in unique ways.</div>
 		</div>
 		<div id="panels-social" class="four columns below-hero-content panels">
+			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-social">Social</p>
-Projects in this category explore the ways that we connect, creating new forms of communication and collaboration.
+Projects in this category explore the ways that we connect, creating new forms of communication and collaboration.</div>
 		</div>
 
 			<div class="eight columns below-hero-content friday">
