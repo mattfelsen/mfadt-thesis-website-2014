@@ -163,15 +163,27 @@ $(document).ready(function() {
         $('.nav-list').slideToggle();
     });
     // CATEGORY SELECTOR
-    $('.categories-list .cat-item a').click(function(evt) {
+    $('.categories-list .cat-item').click(function(evt) {
         // parse slug from the end of the category link
-        var slug = $(this).attr('href').split('/').reverse()[0];
+        var slug = $(this).children('a').attr('href').split('/').reverse()[0];
 
-        // hide everything, show only what we want, and re-trigger masonry
-        $('.masonry.columns').hide();
-        $('.category-' + slug).show();
+        // hide everything, show only 
+        // what we want, and re - trigger masonry
+        console.log(slug);
+        if (slug == '#') {
+            $('.masonry.columns').show();
+        } else {
+            $('.masonry.columns').hide();
+            $('.category-' + slug).show();
+        }
+
         $('section#projects').masonry();
-
+        $('.categories-list .cat-item').css({
+            background: 'none'
+        });
+        $(this).css({
+            background: $(this).css('border-color')
+        });
         // prevent the link from navigating to the category archive page
         // (even though it totally works and Matt spent time making it nice)
         evt.preventDefault();

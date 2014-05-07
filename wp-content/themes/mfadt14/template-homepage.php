@@ -100,7 +100,7 @@ get_header();
 	</div>
 	<hr>
 	<div class="categories-list sixteen columns">
-		<li class="cat-item cat-item-3" style="border: 2px solid rgb(0,0,0);"><a href="http://localhost:8888/mfadt/category/critical-speculative" title="View all posts filed under Critical &amp; Speculative">All</a>
+		<li class="cat-item cat-item-3" style="background:rgb(200,200,200); border: 2px solid rgb(200,200,200);"><a href="#" title="View all posts filed under Critical &amp; Speculative">All</a>
 		</li>
 		<?php wp_list_categories('exclude=1&title_li='); ?>
 	</div>
