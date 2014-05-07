@@ -15,8 +15,7 @@ $query = new WP_Query( $args );
 <!-- <section id="projects" class="container"> -->
 
 <div class="container">
-	<h1>People</h1>
-
+	<br>
 	<?php
 	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 		$project = $wpdb->get_row("SELECT post_title, post_name FROM wp_posts WHERE id = '".wpcf_pr_post_get_belongs(get_the_ID(), 'project')."'");

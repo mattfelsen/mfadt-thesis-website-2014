@@ -19,7 +19,41 @@ $(document).ready(function() {
                     top: 0,
                     height: 60
                 });
+            } else {
+                // if homepage
+                $.each($('.cat-item'), function(i, v) {
+                    var x = $(v)[0].outerText.toLowerCase();
+                    if (x.match('critical')) {
+                        $(v).css('border', '2px solid #f67d11');
+                    } else if (x.match('education')) {
+                        $(v).css('border', '2px solid #f6d311');
+                    } else if (x.match('experiential')) {
+                        $(v).css('border', '2px solid #57e0fa');
+                    } else if (x.match('information')) {
+                        $(v).css('border', '2px solid #ff0837');
+                    } else if (x.match('play')) {
+                        $(v).css('border', '2px solid #2bff3f');
+                    } else if (x.match('really')) {
+                        $(v).css('border', '2px solid #ff2bc1');
+                    } else if (x.match('social')) {
+                        $(v).css('border', '2px solid #4570f9');
+                    } else if (x.match('storytelling')) {
+                        $(v).css('border', '2px solid #a954fa');
+                    }
+                });
             }
+            // check what page it is
+            var metaLocation = location.pathname,
+                pageLocation = metaLocation.substring(metaLocation.lastIndexOf('/') + 1, metaLocation.length);
+            // loop through menu-item
+            $.each($('.menu-item > a'), function(i, v) {
+                var x = $(v)[0].outerText.toLowerCase();
+                var y = location.hash;
+                if (x == pageLocation || x == y.substring(y.lastIndexOf('#') + 1, y.length)) {
+                    $(v).addClass('menu-selected');
+                }
+            });
+
             // check page width
             if (global.w <= 767) {
                 // ********** IF MOBILE **********
@@ -46,6 +80,7 @@ $(document).ready(function() {
         },
         magic: function() {
             // load flat shader
+            console.log('sorry, no magic');
         }
     };
 
@@ -60,6 +95,16 @@ $(document).ready(function() {
     var scrolled, isScrolledCollected = false;
     window.onscroll = function() {
         global.scrollAt = window.pageYOffset;
+
+        // for homepage
+        if ($('#projects').offset().top - global.scrollAt < 350) {
+            // add class for project
+            $('a[href="#projects"]').addClass('menu-selected');
+        } else {
+            // remove class for project
+            $('a[href="#projects"]').removeClass('menu-selected');
+        }
+
         if (global.scrollAt >= 75) {
             $('.img-hero').css({
                 top: 75
@@ -118,15 +163,27 @@ $(document).ready(function() {
         $('.nav-list').slideToggle();
     });
     // CATEGORY SELECTOR
-    $('.categories-list .cat-item a').click(function(evt) {
+    $('.categories-list .cat-item').click(function(evt) {
         // parse slug from the end of the category link
-        var slug = $(this).attr('href').split('/').reverse()[0];
+        var slug = $(this).children('a').attr('href').split('/').reverse()[0];
 
-        // hide everything, show only what we want, and re-trigger masonry
-        $('.masonry.columns').hide();
-        $('.category-' + slug).show();
+        // hide everything, show only 
+        // what we want, and re - trigger masonry
+        console.log(slug);
+        if (slug == '#') {
+            $('.masonry.columns').show();
+        } else {
+            $('.masonry.columns').hide();
+            $('.category-' + slug).show();
+        }
+
         $('section#projects').masonry();
-
+        $('.categories-list .cat-item').css({
+            background: 'none'
+        });
+        $(this).css({
+            background: $(this).css('border-color')
+        });
         // prevent the link from navigating to the category archive page
         // (even though it totally works and Matt spent time making it nice)
         evt.preventDefault();
