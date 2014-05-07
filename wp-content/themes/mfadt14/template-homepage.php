@@ -126,9 +126,13 @@ get_header();
 		$image_w = 268;
 		$image_h = intval($info[2] / ($info[1] / 268));
 
+		// Set up slug for category filtering
+		$slug = get_the_category();
+		$slug = $slug[0]->slug;
+
 	?>
 
-	<div class="masonry columns category-<?= get_the_category()[0]->slug; ?>">
+	<div class="masonry columns category-<?= $slug ?>">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 		<h5><a href="<?php the_permalink() ?>"><?= $students ?></a></h5>
 
