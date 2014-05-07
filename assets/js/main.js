@@ -71,16 +71,14 @@ $(document).ready(function() {
                 this.isMobile = false;
                 // init magic
                 $('#flat-shader').show();
-                if ($('#flat-shader').length !== 1) {
-                    this.magic();
-                }
                 $('.nav-list').show();
-                // hide background
+                this.magic();
             }
         },
         magic: function() {
             // load flat shader
-            console.log('sorry, no magic');
+            console.log('Let there be light!');
+            initialise();
         }
     };
 
@@ -97,7 +95,7 @@ $(document).ready(function() {
         global.scrollAt = window.pageYOffset;
 
         // for homepage
-        if ($('#projects').offset().top - global.scrollAt < 350) {
+        if ($('#projects').offset() !== undefined && $('#projects').offset().top - global.scrollAt < 350) {
             // add class for project
             $('a[href="#projects"]').addClass('menu-selected');
         } else {
@@ -214,7 +212,7 @@ $(document).ready(function() {
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     $('html,body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top - 240
                     }, 1000);
                     return false;
                 }

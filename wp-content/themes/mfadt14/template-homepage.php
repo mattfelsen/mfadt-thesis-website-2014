@@ -95,12 +95,9 @@ get_header();
 </section>
 
 <section class="categories-container sixteen columns">
-	<div class="three columns">
-		<h1>Themes</h1>
-	</div>
-	<hr>
 	<div class="categories-list sixteen columns">
-		<li class="cat-item cat-item-3" style="background:rgb(200,200,200); border: 2px solid rgb(200,200,200);"><a href="#" title="View all posts filed under Critical &amp; Speculative">All</a>
+		<h2 style="display: inline-block; margin-right: 10px;">Themes</h2>
+		<li class="cat-item" style="background:rgb(200,200,200); border: 2px solid rgb(200,200,200);"><a href="#" title="View all posts filed under Critical &amp; Speculative">All</a>
 		</li>
 		<?php wp_list_categories('exclude=1&title_li='); ?>
 	</div>
