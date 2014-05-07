@@ -128,14 +128,54 @@
 
 /* WEIRD SYMPOSIUM MEDIAQUERIES. DON'T JUDGE. I'M BRAINDEAD */
 
-	@media only screen and (max-width: 1320px) {
-		div.three.columns.below-hero-content.panels {
-			line-height: 1.5em;
-			padding: 0 10px 0 10px;
-			height: 300px;
-			width: 250px;
-		}
+
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+	div.four.columns.below-hero-content.panels {
+		font-size: 0.75em !important;
+		line-height: 1.2em !important;
+		padding: 25px !important;
 	}
+	div.six.columns.below-hero-content.panels {
+		width: 361px;
+		visibility: visible !important;
+		margin: 0;
+	}
+	div.eight.columns.below-hero-content.friday {
+		float: left;
+		padding: 0 !important;
+		visibility: hidden !important;
+	}
+	div.eight.columns.below-hero-content.saturday {
+		float: right;
+		padding: 0 !important;
+	}
+	.symposium-welcome-hours {
+		width: 45% !important;
+		font-size: 0.7em !important;
+		line-height: 2.2em !important;
+	}	
+}
+
+@media only screen and (max-width: 767px) {
+	div.six.columns.below-hero-content.panels {
+		visibility: visible !important;
+		margin: 0;
+	}
+	div.eight.columns.below-hero-content.friday {
+		float: left;
+		padding: 0 !important;
+		visibility: hidden !important;
+	}
+	div.eight.columns.below-hero-content.saturday {
+		float: right;
+		padding: 0 !important;
+	}
+	div.four.columns.below-hero-content.panels {
+		padding: 40px !important;
+	}
+}
+
+
 /* #Font-Face
 ================================================== */
 /* 	This is the proper syntax for an @font-face file
