@@ -462,88 +462,153 @@ form::-webkit-input-placeholder {
 }
 /* --------––––––------- SYPOSIUM --–––––------------------*/
 
-div.seven.columns.below-hero-content.friday {
+/* --------––––––------- SYPOSIUM --–––––------------------*/
+
+div.eight.columns.below-hero-content.friday {
 	float: left;
+	padding-left: 7%;
+/*	background: white;
+	padding: 20px;
+	box-shadow: 3px 3px 5px #888888;
+	margin-bottom: 30px;*/
 }
-div.seven.columns.below-hero-content.saturday {
+div.eight.columns.below-hero-content.saturday {
 	float: right;
+	padding-left: 3%;
+/*	background: white;
+	padding: 20px;
+	box-shadow: 3px 3px 5px #888888;
+	margin-bottom: 30px;*/
 }
-div.three.columns.below-hero-content.panels {
+
+div.four.columns.below-hero-content.panels {
+	font-size: 0.9em;
 	line-height: 1.5em;
-	padding: 0 10px 0 10px;
-	height: 325px;
+	padding: 30px;
+	height: 275px;
+	background: #ffffff;
+	box-shadow: 3px 3px 5px #888888;
+	margin-bottom: 30px;
 }
-.symposium-panels-titles {
-	text-transform: uppercase;
-	font-size: 0.75em;
+div.six.columns.below-hero-content.panels {
+	background: white;
+	padding: 20px;
+	box-shadow: 3px 3px 5px #888888;
+	margin-bottom: 30px;
 }
 .symposium-students {
 	float: left;
-	width: 73%;
+	width: 70%;
 	text-align: left;
+	line-height: 1.38em;
+	font-size: 0.9em;
+	padding-bottom: 10px;
 }
 .symposium-hours {
 	float: right;
 	text-align: right;
-	width: 27%;
+	width: 30%;
 	font-size: 0.8em;
-}
-.symposium-hours p {
-	padding: 3px 0 1px 0;
+	line-height: 1.5em;
+	display: none;
+	color: #a8a8a8;
 }
 .symposium-feedback-break {
 	float: left;
-	width: 55%;
+	width: 70%;
 	padding: 10px 0 10px 0;
+	line-height: 1.25em;
+	font-size: 0.9em;
+/*	display: none;*/
 }
 .symposium-feedback-break-hours {
 	float: right;
-	width: 25%;
+	width: 30%;
 	text-align: right;
 	padding: 10px 0 10px 0;
 	font-size: 0.8em;
-}
-.symposium-feedback-break-hours p {
-	padding: 3px 0 1px 0;
+	display: none;
 }
 .symposium-welcome {
 	float: left;
 	width: 55%;
+	line-height: 1.5em;
 }
 .symposium-welcome-hours {
 	float: right;
 	width: 30%;
 	text-align: right;
 	font-size: 0.8em;
-}
-.symposium-welcome-hours p {
-	padding: 3px 0 1px 0;
+	line-height: 1.75em;
 }
 .symposium-panel-title {
 	float: left;
 	width: 50%;
-	font-size: 0.9em;
-	font-weight: bold;
-	padding: 20px 0 20px 0;
+	padding: 10px 0 0 0;
 	text-transform: uppercase;
+}
+.symposium-panel-title p {
+	margin: 0;
 }
 .symposium-panel-title-hours {
 	float: right;
 	width: 50%;
 	text-align: right;
-	padding: 20px 0 20px 0;
+	padding: 12px 0 0 0;
 	font-size: 0.8em;
 }
 p.symposium-title {
 	font-family: 'Exo 2';
 	font-size: 2em;
 	color: #4c4c4c;
-	padding-bottom: 20px;
 	text-transform: uppercase;
+	padding-top: 20px;
 }
 .symposium-saturday {
-	font-family: Lato;
-	font-size: 1.28em;
+	font-size: 1.10em;
 	color: #4c4c4c;
-	padding-bottom: 20px;
+}
+.symposium-panels-titles {
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-experiential {
+	color: #57e0fa;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-storytelling{
+	color: #a954fa;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-really-big-data {
+	color: #ff2bc1;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-play {
+	color: #2bff3f;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-education {
+	color: #f6d311;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-critical-speculative {
+	color: #f67d11;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-information-instruments {
+	color: #ff0837;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+.symposium-panel-title-social {
+	color: #4570f9;
+	text-transform: uppercase;
+	font-size: 0.75em;
 }
