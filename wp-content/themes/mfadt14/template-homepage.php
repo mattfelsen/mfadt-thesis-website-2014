@@ -125,7 +125,7 @@ get_header();
 
 	?>
 
-	<div class="masonry columns">
+	<div class="masonry columns category-<?= get_the_category()[0]->slug; ?>">
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 		<h5><a href="<?php the_permalink() ?>"><?= $students ?></a></h5>
 
