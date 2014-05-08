@@ -19,7 +19,6 @@ $(document).ready(function() {
                     top: 0,
                     height: 60
                 });
-                // if projects
             } else {
                 // if homepage
                 $.each($('.cat-item'), function(i, v) {
@@ -62,7 +61,12 @@ $(document).ready(function() {
                     $(v).addClass('menu-selected');
                 }
             });
-
+            // if project detail page, add background
+            if ($('.student-info-social').length) {
+                $('body').css({
+                    background: 'url("assets/img/hero/bg.jpg")'
+                });
+            }
             // check page width
             if (global.w <= 767) {
                 // ********** IF MOBILE **********
@@ -74,8 +78,7 @@ $(document).ready(function() {
                 $('nav').css({
                     height: 'auto'
                 });
-                var top = 0,
-                    allow = false;
+                var top = 0;
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
@@ -130,8 +133,7 @@ $(document).ready(function() {
             });
         }
         // when scroll, move nav
-        if (mfadt.isMobile == false && $('.project-info-image').children('img').attr('src')) { // no mobile, has image
-            var studentNum = $('.student').length;
+        if (mfadt.isMobile == false) { // no mobile, has image
             // console.log(global.scrollAt);
             $('nav').css({
                 bottom: global.scrollAt + 'px'
@@ -144,30 +146,32 @@ $(document).ready(function() {
                 });
             }
             // Project page fix project description
-            if (global.scrollAt >= 280 * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
-                // console.log('fix desc!');
-                $('.project-info-text').css({
-                    position: 'fixed',
-                    top: 80,
-                    width: init_desc_width
-                });
-            } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
-                if (isScrolledCollected == false) {
-                    isScrolledCollected = true;
-                    scrolled = global.scrollAt;
-                    // console.log(scrolled);
+            if ($('.project-info-image').children('img').attr('src') || $('.project-info-image').children('iframe').attr('src')) {
+                var studentNum = $('.student').length;
+                if (global.scrollAt >= 280 * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
+                    // console.log('fix desc!');
+                    $('.project-info-text').css({
+                        position: 'fixed',
+                        top: 80,
+                        width: init_desc_width
+                    });
+                } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
+                    if (isScrolledCollected == false) {
+                        isScrolledCollected = true;
+                        scrolled = global.scrollAt;
+                        // console.log(scrolled);
+                    }
+                    $('.project-info-text').css({
+                        position: 'absolute',
+                        top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
+                    });
+                } else if (global.scrollAt < 280 * studentNum) {
+                    // console.log('release desc!');
+                    $('.project-info-text').css({
+                        position: 'static'
+                    });
                 }
-                $('.project-info-text').css({
-                    position: 'absolute',
-                    top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
-                });
-            } else if (global.scrollAt < 280 * studentNum) {
-                // console.log('release desc!');
-                $('.project-info-text').css({
-                    position: 'static'
-                });
             }
-            // console.log(global.scrollAt);
         }
     };
     // BUTTONS
@@ -231,11 +235,5 @@ $(document).ready(function() {
         "gutter": 30
     });
     // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
-
-    // HELPERS
-    function getRandBg() {
-        var h = _.random(0, 360);
-        return 'hsla(' + h + ',75%,50%,0.90)';
-    }
 
 });
