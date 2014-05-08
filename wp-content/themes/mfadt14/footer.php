@@ -51,7 +51,6 @@ $query = new WP_Query( $args );
 			<h5>Peer Reviews</h5>
 			<a href="project/title">Fabiola Einhorn</a><br>
 			<a href="project/title">Namreta Kumar</a><br>
-			<a href="project/title">Salome Asega</a><br>
 			<a href="project/title">Susse Sønderby Jensen</a><br>
 			<a href="project/title">Yuchen Zhang</a><br>
 			<br>

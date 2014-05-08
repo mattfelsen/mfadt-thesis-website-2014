@@ -1,51 +1,46 @@
-var textBoxHeight = $(".projectTextHolder").height();
-$(".projectImageHolder").height(textBoxHeight-30);
+var images = {};
+var names = $(".theImage");
 
-// console.log($(".projectInfoHolder").height());
-var name = $('img.theImage').attr("data-slug");
-// console.log(name);
-var pp = "http://mfadt.parsons.edu/2014/assets/img/students/"+name;
-var images = new Array();
-var spin = true; 
+var spin = true;
 var metaSpin = true;
 var forward = false;
 var unwindingBacktoZero = false;
 var counter = 0;
 var spinRate = 100;
-//load images into array
-for (var i=1;i<48;i++){
-	images.push(pp+"/"+i+'.jpg');
-    src = images[i-1];
-    $(".theImage").attr("src", src);
-/*
-    if(i<10){
-        images.push(pp+'0'+i+'.jpg');
-        src = images[i-1];
-        $(".theImage").attr("src", src);
-    }
-    else{
-        images.push(pp+i+'.jpg');
-        src = images[i-1];
-        $(".theImage").attr("src", src);
-    }
-*/
-}
-images.push(pp+'/1.jpg');
-
-//make a million unnessisary variables!
-var offset = $( ".theImage" ).offset();
-var numberOfFrames = images.length;
-var widthOfImage = $(".theImage").width();
-var interval = widthOfImage/numberOfFrames;
-var xLocInImage;
+var numberOfFrames = 48;
 var frameNumber = 0;
 
+// load up images for each person
+for (var i = 0; i < names.length; i++) {
+    var slug = $(names[i]).attr('data-slug')
+    
+    images[slug] = [];
+    var url = "http://mfadt.parsons.edu/2014/assets/img/students/" + slug + "/";
+
+    for (var j = 1; j <= numberOfFrames; j++) {
+        var src = url + j + ".jpg";
+        images[slug].push(src);
+
+        // preload the image into a new img element
+        var elem = document.createElement('img')
+        elem.src = src;
+    }
+}
+
 //move image when you hover over it
-$(".theImage").mousemove(function(e){ 
-  xLocInImage = e.pageX - offset.left;
-  frameNumber = parseInt(xLocInImage/interval);  
-  src = images[frameNumber];
-  $(this).attr("src", src);
+$(".theImage").mousemove(function(e) { 
+    // var slug = $(this).attr('data-slug')
+
+    var offset = $(this).offset();
+    var xLocInImage = e.pageX - offset.left;
+
+    var interval = $(this).width() / numberOfFrames;
+    var frameNumber = parseInt(xLocInImage / interval);  
+
+    for (var i = 0; i < names.length; i++) {
+        var slug = $(names[i]).attr('data-slug');
+        $(".theImage[data-slug='" + slug + "']").attr("src", images[slug][frameNumber]);
+    }
 });
 
 //dont let the image auto spin when you are hovering
@@ -61,30 +56,36 @@ $(".theImage").mouseout(function(){
 
 //unwind
 setInterval(function () {
-    if(unwindingBacktoZero && spin){
+    if (unwindingBacktoZero && spin) {
         frameNumber--;
-        $(".theImage").attr("src", images[frameNumber]);
-        if(frameNumber < 1){ unwindingBacktoZero = false;}
+        if (frameNumber < 1)  { unwindingBacktoZero = false; }
+        
+        for (var i = 0; i < names.length; i++) {
+            var slug = $(names[i]).attr('data-slug');
+            $(".theImage[data-slug='" + slug + "']").attr("src", images[slug][frameNumber]);
+        }
     }
 }, spinRate+20);
 
 //spin back and forth for ever
 setInterval(function () {
-    if(frameNumber < 1){ frameNumber = images.length-1; }
-    else if(frameNumber > images.length-2){ frameNumber = 0; }
-    if(spin && !unwindingBacktoZero && metaSpin){
-        if(forward){
+    if (frameNumber < 1) { frameNumber = numberOfFrames - 1; }
+    else if (frameNumber > numberOfFrames - 2) { frameNumber = 0; }
+    if (spin && !unwindingBacktoZero && metaSpin) {
+        if (forward)
             frameNumber++;
-            $(".theImage").attr("src", images[frameNumber]);
-        }
-        else{
+        else
             frameNumber--;
-            $(".theImage").attr("src", images[frameNumber]);
+
+        for (var i = 0; i < names.length; i++) {
+            var slug = $(names[i]).attr('data-slug');
+            $(".theImage[data-slug='" + slug + "']").attr("src", images[slug][frameNumber]);
         }
     }
-    if(frameNumber == 7 || frameNumber == images.length-7){forward = !forward}
-    if(metaSpin){ counter += spinRate; }
-    if(counter > 3200 && frameNumber == 0){ metaSpin = false; counter = 0; } 
+
+    if (frameNumber == 7 || frameNumber == images.length-7) { forward = !forward; }
+    if (metaSpin) { counter += spinRate; }
+    if (counter > 3200 && frameNumber == 0) { metaSpin = false; counter = 0; } 
 }, spinRate);
 
 

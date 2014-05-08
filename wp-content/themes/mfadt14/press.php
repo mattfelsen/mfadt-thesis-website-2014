@@ -11,7 +11,7 @@ get_header();
 <!-- html goes here -->
 
 <div class="container" style="padding-bottom: 100px;">
-	<h1>Press</h1>
+	<h1>&nbsp;</h1>
 
 <div class="holder" style="width: 600px; margin: auto;">
 <tr><td height="20" style="vertical-align: top;font-family: helvetica, sans-serif;padding: 0;"></td></tr>
