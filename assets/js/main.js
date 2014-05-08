@@ -131,6 +131,7 @@ $(document).ready(function() {
         }
         // when scroll, move nav
         if (mfadt.isMobile == false && $('.project-info-image').children('img').attr('src')) { // no mobile, has image
+            var studentNum = $('.student').length;
             // console.log(global.scrollAt);
             $('nav').css({
                 bottom: global.scrollAt + 'px'
@@ -143,7 +144,7 @@ $(document).ready(function() {
                 });
             }
             // Project page fix project description
-            if (global.scrollAt >= 280 && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
+            if (global.scrollAt >= 280 * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
                 // console.log('fix desc!');
                 $('.project-info-text').css({
                     position: 'fixed',
@@ -160,7 +161,7 @@ $(document).ready(function() {
                     position: 'absolute',
                     top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
                 });
-            } else if (global.scrollAt <= 290) {
+            } else if (global.scrollAt < 280 * studentNum) {
                 console.log('release desc!');
                 $('.project-info-text').css({
                     position: 'static'
