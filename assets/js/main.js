@@ -79,7 +79,7 @@ $(document).ready(function() {
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
-                $('#flat-shader').show();
+                $('#flat-shader').hide();
                 $('.nav-list').show();
                 this.magic();
             }
@@ -88,6 +88,7 @@ $(document).ready(function() {
             // load flat shader
             console.log('Let there be light!');
             initialise();
+            $('#flat-shader').fadeIn();
         }
     };
 
@@ -194,6 +195,7 @@ $(document).ready(function() {
             $('.category-' + slug).show();
         }
         $('section#projects').masonry();
+
         // prevent the link from navigating to the category archive page
         // (even though it totally works and Matt spent time making it nice)
         evt.preventDefault();
