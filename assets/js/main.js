@@ -19,6 +19,7 @@ $(document).ready(function() {
                     top: 0,
                     height: 60
                 });
+                // if projects
             } else {
                 // if homepage
                 $.each($('.cat-item'), function(i, v) {
@@ -48,8 +49,7 @@ $(document).ready(function() {
                     $('html,body').animate({
                         scrollTop: $('#projects').offset().top - 240
                     }, 1000);
-                    return false;
-                } 
+                }
             }
             // check what page it is
             var metaLocation = location.pathname,
@@ -100,6 +100,9 @@ $(document).ready(function() {
     });
     var init_desc_width = $('.project-info-text').width();
     var scrolled, isScrolledCollected = false;
+    window.onload = function() {
+        $('section#projects').masonry();
+    };
     window.onscroll = function() {
         global.scrollAt = window.pageYOffset;
 
@@ -210,7 +213,7 @@ $(document).ready(function() {
             }
         }
     });
-    
+
     // END OF LISTENER –––––––––––––––––––––––––––––––––––––––––––––––––––
 
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
