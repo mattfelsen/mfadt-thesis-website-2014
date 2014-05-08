@@ -192,6 +192,8 @@ function animate() {
 }
 
 function update() {
+    if (window.pageYOffset > $('#mfadt-hero').height()) return;
+
     var ox, oy, oz, l, light, v, vertex, offset = MESH.depth / 2;
     // Update Bounds
     FSS.Vector3.copy(LIGHT.bounds, center);
@@ -251,6 +253,8 @@ function update() {
 }
 
 function render() {
+    if (window.pageYOffset > $('#mfadt-hero').height()) return;
+    
     renderer.render(scene);
 }
 
