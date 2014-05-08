@@ -162,12 +162,12 @@ $(document).ready(function() {
                     top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
                 });
             } else if (global.scrollAt < 280 * studentNum) {
-                console.log('release desc!');
+                // console.log('release desc!');
                 $('.project-info-text').css({
                     position: 'static'
                 });
             }
-            console.log(global.scrollAt);
+            // console.log(global.scrollAt);
         }
     };
     // BUTTONS
