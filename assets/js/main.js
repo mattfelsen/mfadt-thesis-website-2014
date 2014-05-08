@@ -130,7 +130,7 @@ $(document).ready(function() {
             });
         }
         // when scroll, move nav
-        if (mfadt.isMobile == false) {
+        if (mfadt.isMobile == false && $('.project-info-image').children('img').attr('src')) { // no mobile, has image
             // console.log(global.scrollAt);
             $('nav').css({
                 bottom: global.scrollAt + 'px'
@@ -150,7 +150,7 @@ $(document).ready(function() {
                     top: 80,
                     width: init_desc_width
                 });
-            } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height() - 300) {
+            } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
                 if (isScrolledCollected == false) {
                     isScrolledCollected = true;
                     scrolled = global.scrollAt;
@@ -160,12 +160,13 @@ $(document).ready(function() {
                     position: 'absolute',
                     top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
                 });
-            } else if (global.scrollAt < 280) {
-                // console.log('release desc!');
+            } else if (global.scrollAt <= 290) {
+                console.log('release desc!');
                 $('.project-info-text').css({
                     position: 'static'
                 });
             }
+            console.log(global.scrollAt);
         }
     };
     // BUTTONS
