@@ -48,18 +48,15 @@ $media = join(' ', $media);
 		<div class="student-info-text">
 			<h3 class="studentName"><?= $student->post_title ?></h3>	
 			<div class="studentInfoHolder">
-				<div class="studentBio"><p><?= substr($student->fields['biography'], 0, 593); ?></p></div>
+				<div class="studentBio"><p><?= $student->fields['biography']; ?></p></div>
 			</div>
 		</div>
-		<div class="student-info-symposium">
+		<div class="student-info-social">
 			<h5>Symposium</h5>	
 			<div class="date-time">
 				<?= types_render_field('symposium-date', array("format"=>"D. F j, g:ia")) ?>
 				<p><?= types_render_field('symposium-group') ?></p>
 			</div>
-			
-		</div>
-		<div class="student-info-social">
 			<div class="studentContactInfo">
 				<h5>Learn more:</h5>
 				<div class="social-icons">
@@ -99,7 +96,7 @@ $media = join(' ', $media);
 			<h3><?php the_title(); ?><a href="<?= types_render_field('project-website', array('output' => 'raw')) ?>" target="_blank"><i class='fa fa-external-link'></i></a></h3>
 			<h4><?= types_render_field('short-description') ?></h4>
 			
-			<p ><?= types_render_field('long-description') ?></p>
+			<p ><?= substr(types_render_field('long-description'), 0, 1050); ?></p>
 			
 			<div class="project-meta">
 				<p class="category">Filed under: <?php the_category(','); ?> </p> 
