@@ -154,6 +154,14 @@
 		font-size: 0.7em !important;
 		line-height: 2.2em !important;
 	}	
+	@-moz-document url-prefix() {
+    	div.eight.columns.below-hero-content.friday {
+		margin-left: -45px;
+		}
+		div.four.columns.below-hero-content.panels {
+		padding: 0;
+		}
+	}
 }
 
 @media only screen and (max-width: 767px) {

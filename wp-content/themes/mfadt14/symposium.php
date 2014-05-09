@@ -13,14 +13,13 @@
 		<div class="sixteen columns below-hero-content">
 
 			<p class="symposium-title">Symposium</p>
-			<p class="symposium-saturday">Wollman Hall, Eugene Lang College<br>
-			65 West 11th Street Room B500, 
-			<br>New York, NY 10003
+			<p class="symposium-saturday">Theresa Lang Student & Community Center<br>
+55 West 13th Street, New York City
 			</p>
 			<p class="symposium-title">panels</p>
 		</div>
 		
-		<div class="four columns below-hero-content panels">
+		<div id="panels-storytelling" class="four columns below-hero-content panels">
 			<div class="wtf-mozilla">
 			<p class="symposium-panel-title-storytelling">Storytelling</p>
 These projects convey stories using a variety of forms, involving their audience and participants 
@@ -147,14 +146,13 @@ Projects in this category explore the ways that we connect, creating new forms o
 	<p class="symposium-panel-title-storytelling">Storytelling 2</p>
 	</div>		
 	<div class="symposium-panel-title-hours">		
-	3.54PM - 4.24PM
+	3.54PM - 4.02PM
 	</div>
 	<div class="symposium-feedback-break">
 	Panel respondent: Nick Fortugno<br>					
 	</div>	
 	 
-	<div class="symposium-students">
-	Agustina J<br>								
+	<div class="symposium-students">							
 	Sarah Wever<br>									
 	Viktoria Hristova<br>					
 	George Chang<br>								
@@ -162,7 +160,6 @@ Projects in this category explore the ways that we connect, creating new forms o
 	</div>
 
 	<div class="symposium-hours">
-	3.54PM - 4.00PM<br>
 	4.02PM - 4.06PM<br>
 	4.08PM - 4.12PM<br>
 	4.14PM - 4.18PM<br>
