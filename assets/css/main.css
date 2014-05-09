@@ -68,7 +68,8 @@ ul#menu-main li a {
 
 .menu-main-container ul > li {
 	display: inline-block;
-	margin-right: 30px;
+	margin-left: 25px;
+	margin-right: 25px;
 	font-weight: 600;
 	text-transform: uppercase;
 }
@@ -121,8 +122,12 @@ form div label {
 	height: 100%;
 }
 
-.hero-detail {
-	margin-top: 50px !important;
+.verticalCenter {
+	position: relative;
+	top: 40%;
+	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
 }
 
 .mfadt-box-hero {

@@ -68,20 +68,25 @@ $(document).ready(function() {
             // if project detail page, add background
             if ($('.student-info-social').length) {
                 $('body').css({
-                    background: 'url("assets/img/hero/bg.jpg")'
+                    background: 'url("assets/img/hero/bg.jpg")',
+                    'background-attachment': 'fixed'
                 });
             }
             // check page width
             if (global.w <= 767) {
                 // ********** IF MOBILE **********
                 this.isMobile = true;
+                $('.hero-detail').removeClass('verticalCenter');
+                $('.img-hero-container').removeClass('verticalCenter');
                 // re-arrange hero and below-hero
-                $('#mfadt-hero').css({
-                    height: $('.hero-text-desc-percentage').offset().top + 200
-                });
-                $('.below-hero').css({
-                    top: $('.hero-text-desc-percentage').offset().top + 198
-                });
+                if ($('#mfadt-hero').length) {
+                    $('#mfadt-hero').css({
+                        height: $('.hero-text-desc-percentage').offset().top + 200
+                    });
+                    $('.below-hero').css({
+                        top: $('.hero-text-desc-percentage').offset().top + 198
+                    });
+                }
                 // remove magic
                 $('#flat-shader').hide();
                 // collapse nav-list
@@ -93,6 +98,8 @@ $(document).ready(function() {
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
+                $('.hero-detail').addClass('verticalCenter');
+                $('.img-hero-container').addClass('verticalCenter');
                 $('#flat-shader').hide();
                 $('.nav-list').show();
                 this.magic();

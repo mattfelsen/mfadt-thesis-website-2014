@@ -6,9 +6,19 @@
 		.img-hero {
 			width: 55% !important;
 		}
-		.mfadt-box-hero-shadow {
-			display: none;
+
+		.hero-text-header-percentage {
+			font-size: 3em;
+			font-weight: 700;
 		}
+
+		.hero-text-desc-percentage {
+			margin-top: 15px;
+			font-size: 1.5em;
+			font-weight: 350;
+			line-height: 1.2em;
+		}
+
 		.nav-logo-for-mobile {
 			display: none !important;
 		}
@@ -157,6 +167,11 @@
 }
 
 @media only screen and (max-width: 767px) {
+	.hero-text-header-percentage {
+			padding-top: 15px;
+			font-size: 2.5em;
+			font-weight: 700;
+		}
 	div.six.columns.below-hero-content.panels {
 		visibility: visible !important;
 		margin: 0;

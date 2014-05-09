@@ -100,7 +100,8 @@ function createRenderer() {
 
 function setRenderer(index) {
     if (renderer) {
-        output.removeChild(renderer.element);
+        if (output !== null)
+            output.removeChild(renderer.element);
     }
     switch (index) {
         case WEBGL:
@@ -254,7 +255,7 @@ function update() {
 
 function render() {
     if (window.pageYOffset > $('#mfadt-hero').height()) return;
-    
+
     renderer.render(scene);
 }
 
@@ -266,8 +267,10 @@ function addEventListeners() {
 // Callbacks
 //------------------------------
 function onWindowResize(event) {
-    resize(container.offsetWidth, container.offsetHeight);
-    render();
+    if (container !== null) {
+        resize(container.offsetWidth, container.offsetHeight);
+        render();
+    }
 }
 
 // Let there be light!
