@@ -54,16 +54,33 @@ function generateGroupListing($group) {
 <div id="mfadt-symposium" class="container">
 
   <div class="sixteen columns below-hero-content">
-    <p class="symposium-title">Symposium</p>
+    <p class="symposium-title">Location</p>
     <p class="symposium-saturday">Wollman Hall, Eugene Lang College<br>
       65 West 11th Street Room B500, 
       <br>New York, NY 10003
     </p>
 
-    <p class="symposium-title">panels</p>
+    <p class="symposium-title">keynote speakers</p>
   
   </div>
-  
+
+  <div class="eight columns keynote-speakers">
+  	  <div class="wtf-mozilla">
+      <p class="symposium-keynote-speakers">Majora Carter</p>
+      Majora Carter is an urban revitalization strategy consultant, real estate developer, and Peabody Award winning broadcaster.  She is responsible for the creation & successful implementation of numerous green-infrastructure projects, policies, and job training & placement systems.
+	  <br><br>She’s founded Sustainable South Bronx in 2001, and co-founded Green For All soon after, among other organizations. Her consulting company, Majora Carter Group LLC, was named Best for the World, 2014 by bcorporation.net.   Her work involves unorthodox notions about urban economic developments designed to help move Americans out of poverty.
+    </div>
+    </div>
+  <div class="eight columns keynote-speakers">
+  	<div class="wtf-mozilla">
+      <p class="symposium-keynote-speakers">Theo & Emily</p>
+      Theo Watson is an artist, designer and experimenter. An open-source enthusiast, he works together with Zach Lieberman and Arturo Castro in the openFrameworks toolkit for creative coding. Emily Gobeille is an artist and award-winning designer who specializes in merging technology and design to create rich immersive design experiences.
+	  <br><br>Theo and Emily are co-founders of Design I/O – a creative studio specializing in the design and development of cutting edge, immersive, interactive installations – pushing the boundaries of what is possible in the intersection between design and technology.
+	 </div>
+	 </div> 
+	<div class="sixteen columns below-hero-content">
+    <p class="symposium-title">panels</p>
+  </div>
   <div class="four columns panels">
     <div class="wtf-mozilla">
       <p class="symposium-panel-title-storytelling">Storytelling</p>
@@ -112,7 +129,9 @@ function generateGroupListing($group) {
       Exploring the ways in which we connect, creating new forms of communication and collaboration.
     </div>
   </div>
-
+<div class="sixteen columns below-hero-content">
+    <p class="symposium-title-schedule">schedule</p>
+  </div>
   <div class="eight columns friday">
     <div class="six columns panels">
       <div class="symposium-panel-title">
@@ -246,7 +265,7 @@ function generateGroupListing($group) {
           Panel respondent: Sara Chipps<br>
         </div>
         <div class="symposium-students">
-          <?php generateGroupListing("Education (Group 1)"); ?>
+          <?php generateGroupListing("Education"); ?>
         </div>
         <div class="symposium-feedback-break-hours">
           7.27PM - 7.43PM<br>
@@ -256,6 +275,7 @@ function generateGroupListing($group) {
   </div>
 
   <div class="eight columns saturday">
+  <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div class="symposium-panel-title">
         <p class="symposium-saturday">Saturday, May 17th<br>
@@ -264,6 +284,8 @@ function generateGroupListing($group) {
         <p class="symposium-saturday">12.00PM - 7.00PM<br>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div class="symposium-welcome">
         Welcome<br>
@@ -274,6 +296,8 @@ function generateGroupListing($group) {
         12.10PM - 12.15PM<br>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div id="critical-speculative-1">
         <div class="symposium-panel-title">
@@ -294,6 +318,8 @@ function generateGroupListing($group) {
         </div>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div id="critical-speculative-2">
         <div class="symposium-panel-title">
@@ -314,6 +340,8 @@ function generateGroupListing($group) {
         </div>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div id="storytelling-1">
         <div class="symposium-panel-title">
@@ -334,6 +362,8 @@ function generateGroupListing($group) {
         </div>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div id="experiential-2">
         <div class="symposium-panel-title">
@@ -354,6 +384,8 @@ function generateGroupListing($group) {
         </div>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div id="information-instruments">
         <div class="symposium-panel-title">
@@ -374,6 +406,8 @@ function generateGroupListing($group) {
         </div>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div id="social">
         <div class="symposium-panel-title">
@@ -394,6 +428,8 @@ function generateGroupListing($group) {
         </div>
       </div>
     </div>
+   </div>
+   <div class="srsly-mozilla-wtf">
     <div class="six columns panels">
       <div class="symposium-welcome">
         Closing:<br>
@@ -404,6 +440,7 @@ function generateGroupListing($group) {
       </div>
     </div>
   </div>
+ </div>
 </div>
 
 
