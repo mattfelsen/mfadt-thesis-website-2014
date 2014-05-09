@@ -1,12 +1,18 @@
 <?php get_header(); ?>
+<!--  inject style -->
+<style>
+	body {
+		background: white;
+	}
+</style>
 <section id="content" role="main">
 <article id="post-0" class="post not-found">
-<header class="header">
-<h1 class="entry-title"><?php _e( 'Not Found', 'blankslate' ); ?></h1>
-</header>
-<section class="entry-content">
-<p><?php _e( 'Nothing found for the requested page. Try a search instead?', 'blankslate' ); ?></p>
-<?php get_search_form(); ?>
+<section class="entry-content container">
+	<div class="search-nope">
+		<img src="http://mfadt.parsons.edu/2014/assets/img/students/ricardo-vega-mora/44.jpg">
+		<h1>"404: No knowledge could be spread."<blockquote>Socrates</blockquote></h1>
+
+	</div>
 </section>
 </article>
 </section>

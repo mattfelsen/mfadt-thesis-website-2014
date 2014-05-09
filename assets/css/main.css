@@ -670,3 +670,18 @@ p.symposium-title {
 	text-transform: uppercase;
 	font-size: 0.75em;
 }
+
+/*404*/
+.search-nope {
+	text-align:center;
+}
+
+.search-nope img {
+	width: 90% !important;
+	max-width: 500px
+}
+
+.search-nope h2 {
+	margin-bottom: 50px !important;
+	font-weight: 900;
+}

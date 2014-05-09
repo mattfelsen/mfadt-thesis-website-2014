@@ -225,6 +225,30 @@ $(document).ready(function() {
             }
         }
     });
+    // 404 not found
+    if ($('.search-nope').length) {
+        console.log('boo');
+        var i = 1;
+        setInterval(function() {
+            if (i == 1) {
+                i = 48;
+                i--;
+            } else if (i == 47) {
+                i++;
+            } else if (i == 48) {
+                i = 1;
+                i++;
+            } else if (i == 2) {
+                i++;
+            } else if (i == 3) {
+                i = 2;
+                i--;
+            }
+            $('.search-nope').children('img').attr({
+                src: 'http://mfadt.parsons.edu/2014/assets/img/students/ricardo-vega-mora/' + i + '.jpg'
+            });
+        }, 1000 / 12);
+    }
 
     // END OF LISTENER –––––––––––––––––––––––––––––––––––––––––––––––––––
 
