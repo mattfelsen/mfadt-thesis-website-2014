@@ -246,7 +246,7 @@ print "<a href=\"project/$student[project]\">$student[name]</a><br>\n";
           Panel respondent: Sara Chipps<br>
         </div>
         <div class="symposium-students">
-          <?php generateGroupListing("Education (Group 1)"); ?>
+          <?php generateGroupListing("Education"); ?>
         </div>
         <div class="symposium-feedback-break-hours">
           7.27PM - 7.43PM<br>

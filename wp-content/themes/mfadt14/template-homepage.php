@@ -111,6 +111,9 @@ get_header();
 
 	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 
+		// eggs for easter
+		if (get_the_title() == "Open Source Pregnancy") continue;
+
 		// Set up student/s name
 		$students_list = array();
 		$students = types_child_posts('student');
@@ -133,7 +136,7 @@ get_header();
 		<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
 		<h5><a href="<?php the_permalink() ?>"><?= $students ?></a></h5>
 
-		<a href="<?php the_permalink() ?>"><? if (has_post_thumbnail()) : ?>
+		<a href="<?php the_permalink() ?>"><? if (true) /*has_post_thumbnail()) */ : ?>
 		<img class="projectThumb" src="<?= $image_src ?>" style="<?= "width: ${image_w}px; height: ${image_h}px;" ?>">
 		<? else: ?>
 		<img class="projectThumb" src="assets/img/no-thumbnail-<? $r=rand(0,3);if($r>2)$o='sm';elseif($r>1)$o='md';else $o='lg'; print $o; ?>.jpg">

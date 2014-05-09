@@ -54,6 +54,9 @@ $query = new WP_Query( $args );
 
 	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 
+		// eggs for easter
+		if (get_the_title() == "Open Source Pregnancy") continue;
+
 		// Set up student/s name
 		$students_list = array();
 		$students = types_child_posts('student');

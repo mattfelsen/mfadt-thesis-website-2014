@@ -48,7 +48,7 @@ $media = join(' ', $media);
 		<div class="student-info-text">
 			<h3 class="studentName"><?= $student->post_title ?></h3>	
 			<div class="studentInfoHolder">
-				<div class="studentBio"><p><?= $student->fields['biography'] ?></p></div>
+				<div class="studentBio"><p><?= substr($student->fields['biography'], 0, 593); ?></p></div>
 			</div>
 		</div>
 		<div class="student-info-symposium">
