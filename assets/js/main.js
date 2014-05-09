@@ -225,7 +225,7 @@ $(document).ready(function() {
             if (target.length) {
                 $('html,body').animate({
                     scrollTop: target.offset().top - 240
-                }, 1000);
+                }, 500);
                 return false;
             }
         }

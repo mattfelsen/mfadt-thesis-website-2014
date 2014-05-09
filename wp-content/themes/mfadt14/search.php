@@ -4,6 +4,7 @@
 
 <div class="container">
   <h3><?php printf( __( 'Search Results for: %s', 'blankslate' ), get_search_query() ); ?></h3>
+  <br>
 </div>
 
 <section id="projects" class="container">
@@ -57,10 +58,17 @@
 </section>
 
 <?php else : ?>
-
 <div class="container">
-  <h3><?php _e( 'Nothing Found', 'blankslate' ); ?></h3>
-  <?php _e( 'Sorry, nothing matched your search. Please try again.', 'blankslate' ); ?>
+  <div class="search-nope">
+    <style>
+      body {
+        background: white;
+      }
+    </style>
+    <img src="http://mfadt.parsons.edu/2014/assets/img/students/ricardo-vega-mora/44.jpg">
+    <h1>"I can't find <?= get_search_query(); ?> on the bookshelf."<blockquote>Socrates</blockquote></h1>
+
+  </div>
 </div>
 
 <?php endif; ?>
