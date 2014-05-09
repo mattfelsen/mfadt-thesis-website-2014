@@ -62,6 +62,10 @@
 			font-size: 1.5em !important;
 		}
 
+		section#projects.container {
+			width: 268px;
+		}
+
 		nav {
 			position: fixed !important;
 			top:0 !important;
@@ -154,6 +158,11 @@
 		font-size: 0.7em !important;
 		line-height: 2.2em !important;
 	}	
+
+	section#projects.container, .categories-list {
+		width: 576px;
+		margin: 0 auto;
+	}
 }
 
 @media only screen and (max-width: 767px) {
