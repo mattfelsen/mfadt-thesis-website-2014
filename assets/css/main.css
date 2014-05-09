@@ -503,31 +503,31 @@ form::-webkit-input-placeholder {
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 
-div.eight.columns.below-hero-content.friday {
+div.eight.columns.friday {
 	float: left;
 	padding-left: 7%;
 	}
 
-	div.eight.columns.below-hero-content.saturday {
+	div.eight.columns.saturday {
 	float: right;
 	padding-left: 7%;
 	}
 
-	div.four.columns.below-hero-content.panels {
+	div.four.columns.panels {
 	padding: 30px;
 	}
 }
 
 @-moz-document url-prefix() {
     div.wtf-mozilla {
-	padding: 30px;
+	padding: 15px;
 	}
-	div.six.columns.below-hero-content.panels {
+	div.six.columns.panels {
 		margin-left: 55px;
 	}
 }
 
-div.four.columns.below-hero-content.panels {
+div.four.columns.panels {
 	font-size: 0.9em;
 	line-height: 1.5em;
 	height: 275px;
@@ -535,7 +535,7 @@ div.four.columns.below-hero-content.panels {
 	box-shadow: 3px 3px 5px #888888;
 	margin-bottom: 30px;
 }
-div.six.columns.below-hero-content.panels {
+div.six.columns.panels {
 	background: white;
 	padding: 20px;
 	box-shadow: 3px 3px 5px #888888;
