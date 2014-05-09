@@ -55,10 +55,14 @@ function generateGroupListing($group) {
 
   <div class="sixteen columns below-hero-content">
     <p class="symposium-title">Location</p>
-    <p class="symposium-saturday">Wollman Hall, Eugene Lang College<br>
-      65 West 11th Street Room B500, 
-      <br>New York, NY 10003
+    <p class="symposium-saturday">
+      Theresa Lang Student & Community Center<br>
+      55 W 13th St<br>
+      New York, NY 10011
     </p>
+    Fri May 16  2 - 8pm<br>
+    Sat May 17 12 - 7pm
+
 
     <p class="symposium-title">keynote speakers</p>
   
