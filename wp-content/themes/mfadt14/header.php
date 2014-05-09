@@ -21,10 +21,10 @@
     <meta name="twitter:title" content="MFAD+T Thesis Show 2014">
     <meta name="twitter:description" content="Join us this May for a week-long exhibition of 70+ projects by emerging artists, designers, coders, makers, hackers, educators, and thinkers.">
     <meta name="twitter:creator" content="@mfadt">
-    <meta name="twitter:image:src" content="http://mfadt.parsons.edu/2014/assets/img/hero/embed.jpg">
+    <meta name="twitter:image:src" content="http://mfadt.parsons.edu/2014/assets/img/hero/embed.v2.jpg">
     <meta name="twitter:domain" content="mfadt.parsons.edu">
 
-<meta property="og:site_name" content="MFAD+T Thesis Show 2014">
+	<meta property="og:site_name" content="MFAD+T Thesis Show 2014">
     <meta property="og:title" content="MFAD+T Thesis Show 2014">
     <meta property="og:url" content="http://mfadt.parsons.edu/2014/">
     <meta property="og:image" content="http://mfadt.parsons.edu/2014/assets/img/hero/embed.v2.jpg">
