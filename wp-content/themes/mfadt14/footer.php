@@ -23,36 +23,39 @@ $query = new WP_Query( $args );
 			<h6>Thesis Show Committees</h6>
 
 			<h5>Co-Chairs</h5>
-			<a href="project/title">Salome Asega</a><br>
-			<a href="project/title">Justin Charles</a><br>
+			<a href="student/salome-asega">Salome Asega</a><br>
+			<a href="student/justin-charles">Justin Charles</a><br>
 			<br>
 
 			<h5>Curation/Symposium</h5>
-			<a href="project/title">Albert Kim</a><br>
-			<a href="project/title">Bernardo Santos Schorr</a><br>
-			<a href="project/title">Clarisa Diaz</a><br>
-			<a href="project/title">Jennifer Presto</a><br>
-			<a href="project/title">Joe Moore</a><br>
-			<a href="project/title">Sarah Wever</a><br>
-			<a href="project/title">Susse Sønderby Jensen</a><br>
+			<a href="student/clarisa-diaz">Clarisa Diaz</a><br>
+			<a href="student/susse-sonderby-jensen">Susse Sønderby Jensen</a><br>
+			<a href="student/albert-kim">Albert Kim</a><br>
+			<a href="student/joseph-moore">Joe Moore</a><br>
+			<a href="student/jennifer-presto">Jennifer Presto</a><br>
+			<a href="student/bernardo-schorr">Bernardo Santos Schorr</a><br>
+			<a href="student/sarah-wever">Sarah Wever</a><br>
+			
 			<br>
 		</div>
 
 		<div class="three columns">
 			<h6>&nbsp;</h6>
 			<h5>Design</h5>
-			<a href="project/title">Decho Pitukcharoen</a><br>
-			<a href="project/title">Francesca Castelli</a><br>
-			<a href="project/title">Gustavo Faria</a><br>
-			<a href="project/title">Mennie Shen</a><br>
-			<a href="project/title">Napangsiri Wanpen</a><br>
-			<a href="project/title">Yi-Ning Huang</a><br>
+			<a href="student/francesca-maria-castelli">Francesca Castelli</a><br>
+			<a href="student/gustavo-faria">Gustavo Faria</a><br>
+			<a href="student/yi-ning-huang">Yi-Ning Huang</a><br>
+			<a href="student/decho-pitukcharoen">Decho Pitukcharoen</a><br>
+			<a href="student/jorge-proano">Jorge Proano</a><br>
+			<a href="student/mennie-hsiu-ying-shen">Mennie Shen</a><br>
+			<a href="student/napangsiri-wanpen">Napangsiri Wanpen</a><br>
+			
 			<br>
 			<h5>Peer Reviews</h5>
-			<a href="project/title">Fabiola Einhorn</a><br>
-			<a href="project/title">Namreta Kumar</a><br>
-			<a href="project/title">Susse Sønderby Jensen</a><br>
-			<a href="project/title">Yuchen Zhang</a><br>
+			<a href="http://www.fabiolaeinhorn.com/" target="_blank">Fabiola Einhorn</a><br>
+			<a href="student/susse-sonderby-jensen">Susse Sønderby Jensen</a><br>
+<!-- 			<a href="student/title" target="_blank"> -->Namreta Kumar<!-- 			</a> --><br>
+			<a href="http://yuchenzhang.com/" target="_blank">Yuchen Zhang</a><br>
 			<br>
 		</div>
 
