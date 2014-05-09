@@ -15,18 +15,20 @@ get_header();
 	<div class="in-between"></div>
 	<div class="container">
 		<div class="sixteen columns mfadt-box-hero">
-			<img class="eleven columns img-hero" src="assets/img/hero/hero-<?= rand(1,5); ?>.png">
+			<div class="ten columns img-hero-container">
+				<img class="img-hero" src="assets/img/hero/hero-<?= rand(1,5); ?>.png">
+			</div>
 			<div class="mfadt-box-hero-shadow"></div>
 			<div class="five columns hero-detail">
-				<h2>
+				<h2 class="hero-text-header-percentage">
 				PARSONS MFADT THESIS SHOW 2014
 				</h2>
 
-				<h4>
+				<h4 class="hero-text-desc-percentage">
 					Join us this May for a week-long exhibition of 70+ projects by emerging artists, designers, coders, makers, hackers, educators, and thinkers.
 				</h4>
 				<br>
-				<h4>
+				<h4 class="hero-text-desc-percentage">
 					See exhibition detail below
 				</h4>
 

@@ -1,7 +1,7 @@
 var $ = jQuery;
 
 $(document).ready(function() {
-    console.log('OH YEAH');
+    // console.log('OH YEAH');
     var global = {
         w: window.innerWidth,
         h: window.innerHeight,
@@ -11,7 +11,7 @@ $(document).ready(function() {
         svg: null,
         isMobile: false,
         init: function() {
-            console.log('mfadt thesis initialized');
+            // console.log('mfadt thesis initialized');
             // check pathname
             if ((location.pathname !== '/2014/' && location.pathname !== '/mfadt/') || location.search !== "") {
                 // if not homepage
@@ -19,11 +19,12 @@ $(document).ready(function() {
                     top: 0,
                     height: 60
                 });
-                // if projects
             } else {
                 // if homepage
                 $.each($('.cat-item'), function(i, v) {
-                    var x = $(v)[0].outerText.toLowerCase();
+                    var z = $(v)[0].outerHTML,
+                        y = z.substring(z.lastIndexOf('">') + 2, z.lastIndexOf('</a>')),
+                        x = y.toLowerCase();
                     if (x.match('critical')) {
                         $(v).css('border', '2px solid #f67d11');
                     } else if (x.match('education')) {
@@ -56,17 +57,31 @@ $(document).ready(function() {
                 pageLocation = metaLocation.substring(metaLocation.lastIndexOf('/') + 1, metaLocation.length);
             // loop through menu-item
             $.each($('.menu-item > a'), function(i, v) {
-                var x = $(v)[0].outerText.toLowerCase();
-                var y = location.hash;
-                if (x == pageLocation || x == y.substring(y.lastIndexOf('#') + 1, y.length)) {
+                var z = $(v)[0].outerHTML,
+                    y = z.substring(z.lastIndexOf('">') + 2, z.lastIndexOf('</a>')),
+                    x = y.toLowerCase();
+                var a = location.hash;
+                if (x == pageLocation || x == a.substring(a.lastIndexOf('#') + 1, a.length)) {
                     $(v).addClass('menu-selected');
                 }
             });
-
+            // if project detail page, add background
+            if ($('.student-info-social').length) {
+                $('body').css({
+                    background: 'url("assets/img/hero/bg.jpg")'
+                });
+            }
             // check page width
             if (global.w <= 767) {
                 // ********** IF MOBILE **********
                 this.isMobile = true;
+                // re-arrange hero and below-hero
+                $('#mfadt-hero').css({
+                    height: $('.hero-text-desc-percentage').offset().top + 200
+                });
+                $('.below-hero').css({
+                    top: $('.hero-text-desc-percentage').offset().top + 198
+                });
                 // remove magic
                 $('#flat-shader').hide();
                 // collapse nav-list
@@ -74,8 +89,7 @@ $(document).ready(function() {
                 $('nav').css({
                     height: 'auto'
                 });
-                var top = 0,
-                    allow = false;
+                var top = 0;
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
@@ -86,7 +100,7 @@ $(document).ready(function() {
         },
         magic: function() {
             // load flat shader
-            console.log('Let there be light!');
+            // console.log('Let there be light!');
             initialise();
             $('#flat-shader').fadeIn();
         }
@@ -106,7 +120,6 @@ $(document).ready(function() {
     };
     window.onscroll = function() {
         global.scrollAt = window.pageYOffset;
-
         // for homepage
         if ($('#projects').offset() !== undefined && $('#projects').offset().top - global.scrollAt < 350) {
             // add class for project
@@ -116,22 +129,8 @@ $(document).ready(function() {
             $('a[href="#projects"]').removeClass('menu-selected');
         }
 
-        if (global.scrollAt >= 75) {
-            $('.img-hero').css({
-                top: 75
-            });
-        } else {
-            $('.img-hero').css({
-                top: global.scrollAt
-            });
-            $('.mfadt-box-hero-shadow').css({
-                width: 50 + global.scrollAt / 2.5 + '%',
-                boxShadow: '0 ' + -30 + 'px ' + (26 - global.scrollAt / 5) + 'px black',
-            });
-        }
         // when scroll, move nav
-        if (mfadt.isMobile == false && $('.project-info-image').children('img').attr('src')) { // no mobile, has image
-            var studentNum = $('.student').length;
+        if (!mfadt.isMobile) { // no mobile, has image
             // console.log(global.scrollAt);
             $('nav').css({
                 bottom: global.scrollAt + 'px'
@@ -144,30 +143,32 @@ $(document).ready(function() {
                 });
             }
             // Project page fix project description
-            if (global.scrollAt >= 280 * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
-                // console.log('fix desc!');
-                $('.project-info-text').css({
-                    position: 'fixed',
-                    top: 80,
-                    width: init_desc_width
-                });
-            } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
-                if (isScrolledCollected == false) {
-                    isScrolledCollected = true;
-                    scrolled = global.scrollAt;
-                    // console.log(scrolled);
+            if ($('.project-info-image').children('img').attr('src') || $('.project-info-image').children('iframe').attr('src')) {
+                var studentNum = $('.student').length;
+                if (global.scrollAt >= 280 * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
+                    // console.log('fix desc!');
+                    $('.project-info-text').css({
+                        position: 'fixed',
+                        top: 80,
+                        width: init_desc_width
+                    });
+                } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
+                    if (isScrolledCollected == false) {
+                        isScrolledCollected = true;
+                        scrolled = global.scrollAt;
+                        // console.log(scrolled);
+                    }
+                    $('.project-info-text').css({
+                        position: 'absolute',
+                        top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
+                    });
+                } else if (global.scrollAt < 280 * studentNum) {
+                    // console.log('release desc!');
+                    $('.project-info-text').css({
+                        position: 'static'
+                    });
                 }
-                $('.project-info-text').css({
-                    position: 'absolute',
-                    top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
-                });
-            } else if (global.scrollAt < 280 * studentNum) {
-                console.log('release desc!');
-                $('.project-info-text').css({
-                    position: 'static'
-                });
             }
-            console.log(global.scrollAt);
         }
     };
     // BUTTONS
@@ -182,7 +183,7 @@ $(document).ready(function() {
             background: 'none'
         });
         $(this).css({
-            background: $(this).css('border-color')
+            background: $(this)[0].style.borderColor
         });
 
         // parse slug from the end of the category link
@@ -231,11 +232,5 @@ $(document).ready(function() {
         "gutter": 30
     });
     // END OF INITIALIZE  –––––––––––––––––––––––––––––––––––––––––––––––––––
-
-    // HELPERS
-    function getRandBg() {
-        var h = _.random(0, 360);
-        return 'hsla(' + h + ',75%,50%,0.90)';
-    }
 
 });
