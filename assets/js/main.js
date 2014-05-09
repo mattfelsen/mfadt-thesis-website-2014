@@ -19,12 +19,56 @@ $(document).ready(function() {
                     top: 0,
                     height: 60
                 });
+                // if projects
+            } else {
+                // if homepage
+                $.each($('.cat-item'), function(i, v) {
+                    var x = $(v)[0].outerText.toLowerCase();
+                    if (x.match('critical')) {
+                        $(v).css('border', '2px solid #f67d11');
+                    } else if (x.match('education')) {
+                        $(v).css('border', '2px solid #f6d311');
+                    } else if (x.match('experiential')) {
+                        $(v).css('border', '2px solid #57e0fa');
+                    } else if (x.match('information')) {
+                        $(v).css('border', '2px solid #ff0837');
+                    } else if (x.match('play')) {
+                        $(v).css('border', '2px solid #2bff3f');
+                    } else if (x.match('really')) {
+                        $(v).css('border', '2px solid #ff2bc1');
+                    } else if (x.match('social')) {
+                        $(v).css('border', '2px solid #4570f9');
+                    } else if (x.match('storytelling')) {
+                        $(v).css('border', '2px solid #a954fa');
+                    }
+                });
+
+                // scroll to projects section if we're on the homepage and
+                // the projects link was clicked
+                if (window.location.hash == '#projects') {
+                    $('html,body').animate({
+                        scrollTop: $('#projects').offset().top - 240
+                    }, 1000);
+                }
             }
+            // check what page it is
+            var metaLocation = location.pathname,
+                pageLocation = metaLocation.substring(metaLocation.lastIndexOf('/') + 1, metaLocation.length);
+            // loop through menu-item
+            $.each($('.menu-item > a'), function(i, v) {
+                var x = $(v)[0].outerText.toLowerCase();
+                var y = location.hash;
+                if (x == pageLocation || x == y.substring(y.lastIndexOf('#') + 1, y.length)) {
+                    $(v).addClass('menu-selected');
+                }
+            });
+
             // check page width
-            if (global.w <= 767) { // ********** IF MOBILE **********
+            if (global.w <= 767) {
+                // ********** IF MOBILE **********
                 this.isMobile = true;
                 // remove magic
-                $('svg').remove();
+                $('#flat-shader').hide();
                 // collapse nav-list
                 $('.nav-list').slideUp();
                 $('nav').css({
@@ -35,16 +79,16 @@ $(document).ready(function() {
             } else { // ********** IF DESKTOP **********
                 this.isMobile = false;
                 // init magic
-                if ($('svg').length !== 1) {
-                    this.magic();
-                }
+                $('#flat-shader').hide();
                 $('.nav-list').show();
+                this.magic();
             }
         },
         magic: function() {
-            var svgFileArray = [];
-            // this.svg = d3.select('#mfadt-hero').append('svg');
-            // load svg
+            // load flat shader
+            console.log('Let there be light!');
+            initialise();
+            $('#flat-shader').fadeIn();
         }
     };
 
@@ -57,8 +101,21 @@ $(document).ready(function() {
     });
     var init_desc_width = $('.project-info-text').width();
     var scrolled, isScrolledCollected = false;
+    window.onload = function() {
+        $('section#projects').masonry();
+    };
     window.onscroll = function() {
         global.scrollAt = window.pageYOffset;
+
+        // for homepage
+        if ($('#projects').offset() !== undefined && $('#projects').offset().top - global.scrollAt < 350) {
+            // add class for project
+            $('a[href="#projects"]').addClass('menu-selected');
+        } else {
+            // remove class for project
+            $('a[href="#projects"]').removeClass('menu-selected');
+        }
+
         if (global.scrollAt >= 75) {
             $('.img-hero').css({
                 top: 75
@@ -73,7 +130,8 @@ $(document).ready(function() {
             });
         }
         // when scroll, move nav
-        if (mfadt.isMobile == false) {
+        if (mfadt.isMobile == false && $('.project-info-image').children('img').attr('src')) { // no mobile, has image
+            var studentNum = $('.student').length;
             // console.log(global.scrollAt);
             $('nav').css({
                 bottom: global.scrollAt + 'px'
@@ -86,14 +144,14 @@ $(document).ready(function() {
                 });
             }
             // Project page fix project description
-            if (global.scrollAt >= 280 && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
+            if (global.scrollAt >= 280 * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
                 // console.log('fix desc!');
                 $('.project-info-text').css({
                     position: 'fixed',
                     top: 80,
                     width: init_desc_width
                 });
-            } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height() - 300) {
+            } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
                 if (isScrolledCollected == false) {
                     isScrolledCollected = true;
                     scrolled = global.scrollAt;
@@ -103,13 +161,13 @@ $(document).ready(function() {
                     position: 'absolute',
                     top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
                 });
-            } else if (global.scrollAt < 280) {
-                // console.log('release desc!');
+            } else if (global.scrollAt < 280 * studentNum) {
+                console.log('release desc!');
                 $('.project-info-text').css({
                     position: 'static'
                 });
             }
-
+            console.log(global.scrollAt);
         }
     };
     // BUTTONS
@@ -117,6 +175,49 @@ $(document).ready(function() {
         // toggle slide
         $('.nav-list').slideToggle();
     });
+    // CATEGORY SELECTOR
+    $('.categories-list .cat-item').click(function(evt) {
+        // set the background color for the selected category
+        $('.categories-list .cat-item').css({
+            background: 'none'
+        });
+        $(this).css({
+            background: $(this).css('border-color')
+        });
+
+        // parse slug from the end of the category link
+        var slug = $(this).children('a').attr('href').split('/').reverse()[0];
+
+        // hide everything, show only 
+        // what we want, and re - trigger masonry
+        if (slug == '#') {
+            $('.masonry.columns').show();
+        } else {
+            $('.masonry.columns').hide();
+            $('.category-' + slug).show();
+        }
+        $('section#projects').masonry();
+
+        // prevent the link from navigating to the category archive page
+        // (even though it totally works and Matt spent time making it nice)
+        evt.preventDefault();
+    });
+
+    // PROJECTS MENU LINK
+    // scroll to projects section when clicking the Projects menu item
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - 240
+                }, 1000);
+                return false;
+            }
+        }
+    });
+
     // END OF LISTENER –––––––––––––––––––––––––––––––––––––––––––––––––––
 
     // INITIALIZE –––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -136,18 +237,5 @@ $(document).ready(function() {
         var h = _.random(0, 360);
         return 'hsla(' + h + ',75%,50%,0.90)';
     }
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
+
 });
