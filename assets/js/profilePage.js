@@ -83,7 +83,7 @@ setInterval(function () {
         }
     }
 
-    if (frameNumber == 7 || frameNumber == images.length-7) { forward = !forward; }
+    if (frameNumber == 7 || frameNumber == 41) { forward = !forward; }
     if (metaSpin) { counter += spinRate; }
     if (counter > 3200 && frameNumber == 0) { metaSpin = false; counter = 0; } 
 }, spinRate);
