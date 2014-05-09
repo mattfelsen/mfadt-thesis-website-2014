@@ -35,7 +35,7 @@ $(".theImage").mousemove(function(e) {
     var xLocInImage = e.pageX - offset.left;
 
     var interval = $(this).width() / numberOfFrames;
-    var frameNumber = parseInt(xLocInImage / interval);  
+    frameNumber = parseInt(xLocInImage / interval);  
 
     for (var i = 0; i < names.length; i++) {
         var slug = $(names[i]).attr('data-slug');
@@ -72,11 +72,12 @@ setInterval(function () {
     if (frameNumber < 1) { frameNumber = numberOfFrames - 1; }
     else if (frameNumber > numberOfFrames - 2) { frameNumber = 0; }
     if (spin && !unwindingBacktoZero && metaSpin) {
-        if (forward)
+        if (forward){
             frameNumber++;
-        else
+        }
+        else{
             frameNumber--;
-
+        }
         for (var i = 0; i < names.length; i++) {
             var slug = $(names[i]).attr('data-slug');
             $(".theImage[data-slug='" + slug + "']").attr("src", images[slug][frameNumber]);
