@@ -111,8 +111,21 @@
 
 /* #Links
 ================================================== */
-	a, a:visited { color: #333; text-decoration: none; outline: 0; }
-	a:hover, a:focus { color: #000; }
+	a, a:visited { 
+		color: #000; 
+		text-decoration: none; outline: 0; 
+		-webkit-transition-property:color, text;
+		-webkit-transition-duration: 0.4s;
+		transition: color 0.4s;
+		-o-transition:color 0.4s;
+ 	}
+	a:hover, a:focus { 
+		color: #474747; 
+		-webkit-transition-property:color, text;
+		-webkit-transition-duration: 0.4s;
+		transition: color 0.4s;
+		-o-transition:color 0.4s;
+	}
 	p a, p a:visited { line-height: inherit; }
 
 

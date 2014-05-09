@@ -66,6 +66,10 @@
 			width: 268px;
 		}
 
+		.student-container {
+			width: 268px;
+		}
+
 		nav {
 			position: fixed !important;
 			top:0 !important;
@@ -134,6 +138,7 @@
 
 
 @media only screen and (max-width: 1199px) and (min-width: 768px) {
+
 	div.four.columns.below-hero-content.panels {
 		font-size: 0.75em !important;
 		line-height: 1.2em !important;
@@ -162,6 +167,14 @@
 	section#projects.container, .categories-list {
 		width: 576px;
 		margin: 0 auto;
+	}
+
+	.student-container {
+		width: 576px;
+	}
+
+	.student-info-text {
+		width: 35%;
 	}
 }
 

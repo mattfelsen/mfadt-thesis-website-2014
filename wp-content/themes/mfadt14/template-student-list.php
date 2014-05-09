@@ -14,7 +14,7 @@ $query = new WP_Query( $args );
 <!-- html goes here -->
 <!-- <section id="projects" class="container"> -->
 
-<div class="container">
+<div class="container student-container">
 	<br>
 	<?php
 	if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();

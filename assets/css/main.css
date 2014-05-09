@@ -329,8 +329,20 @@ p.facultyNames{
 	padding-right: 5%;
 }
 
-.project-info-text a {
-	color: #7c24f5;
+.project-info-text a, .project-info-text a:visited, .social-icons a, .social-icons a:visited  {
+	color: #f72378; 
+	-webkit-transition-property:color, text;
+	-webkit-transition-duration: 0.4s;
+	transition: color 0.4s;
+	-o-transition:color 0.4s;
+}
+
+.project-info-text a:hover, .project-info-text a:focus, .social-icons a:hover, .social-icons a:focus {
+	color: #000;
+	-webkit-transition-property:color, text;
+	-webkit-transition-duration: 0.4s;
+	transition: color 0.4s;
+	-o-transition:color 0.4s;
 }
 
 .project-info-text h3 {
@@ -431,11 +443,18 @@ footer, footer a, footer a:visited, footer a:focus{
 	color: #fff;
 	font-size: 0.98em;
 	line-height: 1.35em;
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transition: opacity 0.4s;
+	transition: opacity 0.4s;
 }
 
 footer a:hover{
-	font-weight: 900;
 	color: #fff;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	-webkit-transition: opacity 0.4s;
+	transition: opacity 0.4s;
 }
 
 footer h5 {
