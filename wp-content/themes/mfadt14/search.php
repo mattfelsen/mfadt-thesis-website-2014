@@ -2,11 +2,6 @@
 
 <?php if ( have_posts() ) : ?>
 
-<div class="container">
-  <h3><?php printf( __( 'Search Results for: %s', 'blankslate' ), get_search_query() ); ?></h3>
-  <br>
-</div>
-
 <section id="projects" class="container">
 
   <?php
@@ -21,6 +16,8 @@
 
     if ($type != "project" && $type != "student")
       continue;
+
+    $real_result = true;
 
     if ($type == "student") {
       $student = get_the_title();
@@ -57,7 +54,7 @@
 
 </section>
 
-<?php else : ?>
+<?php endif; if (!have_posts() || !$real_result) : ?>
 <div class="container">
   <div class="search-nope">
     <style>
