@@ -149,22 +149,32 @@
 
 @media only screen and (max-width: 1199px) and (min-width: 768px) {
 
-	div.four.columns.below-hero-content.panels {
+	div.four.columns.panels {
 		font-size: 0.75em !important;
 		line-height: 1.2em !important;
-		padding: 25px !important;
-	}
-	div.six.columns.below-hero-content.panels {
+/*		padding: 25px !important;
+*/	}
+	div.eight.columns.keynote-speakers {
+		font-size: 0.8em !important;
+		line-height: 1.4em !important;
+/*		padding: 25px !important;
+*/	}
+	p.symposium-title-schedule {
+		margin: 0 !important;
+		}
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		div.six.columns.panels {
 		width: 361px;
 		visibility: visible !important;
 		margin: 0;
+		}
 	}
-	div.eight.columns.below-hero-content.friday {
+	div.eight.columns.friday {
 		float: left;
 		padding: 0 !important;
 		visibility: hidden !important;
 	}
-	div.eight.columns.below-hero-content.saturday {
+	div.eight.columns.saturday {
 		float: right;
 		padding: 0 !important;
 	}
@@ -173,6 +183,7 @@
 		font-size: 0.7em !important;
 		line-height: 2.2em !important;
 	}	
+
 
 	section#projects.container, .categories-list {
 		width: 576px;
@@ -186,29 +197,75 @@
 	.student-info-text {
 		width: 35%;
 	}
+
+	@-moz-document url-prefix() {
+    	div.eight.columns.friday {
+			margin-left: -15px;
+		}
+		div.eight.columns.saturday {
+			margin-right: 35px;
+		}
+		div.four.columns.panels {
+			padding: 0;
+		}
+		div.six.columns.panels {
+			visibility: visible !important;
+			margin: 0;
+		}
+		p.symposium-title-schedule {
+			margin-left: 32px !important;
+			padding-bottom: 20px !important;
+		}
+
+	}
 }
 
 @media only screen and (max-width: 767px) {
+
 	.hero-text-header-percentage {
 			padding-top: 15px;
 			font-size: 2.5em;
 			font-weight: 700;
 		}
-	div.six.columns.below-hero-content.panels {
+	div.six.columns.panels {
 		visibility: visible !important;
 		margin: 0;
 	}
-	div.eight.columns.below-hero-content.friday {
+	div.eight.columns.friday {
 		float: left;
 		padding: 0 !important;
 		visibility: hidden !important;
 	}
-	div.eight.columns.below-hero-content.saturday {
+	div.eight.columns.saturday {
 		float: right;
 		padding: 0 !important;
 	}
-	div.four.columns.below-hero-content.panels {
-		padding: 40px !important;
+	div.eight.columns.keynote-speakers {
+		font-size: 0.85em !important;
+		line-height: 1.4em !important;
+/*		padding: 25px !important;
+*/	}
+	p.symposium-title-schedule {
+		margin: 0 !important;
+		}
+	div.four.columns.panels {
+		height: 200px !important;
+	/*	padding: 40px !important;*/
+	}
+	@-moz-document url-prefix() {
+    	div.eight.columns.friday {
+		margin-left: -75px;
+		}
+		div.six.columns.panels {
+		width: 380px !important;
+		margin-left: 74px !important;
+		}
+		div.eight.columns.saturday {
+		margin-left: -75px !important;
+		}
+		.srsly-mozilla-wtf {
+		margin-left: -75px !important;
+		}
 	}
 }
 

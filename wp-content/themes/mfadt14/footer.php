@@ -42,6 +42,7 @@ $query = new WP_Query( $args );
 		<div class="three columns">
 			<h6>&nbsp;</h6>
 			<h5>Design</h5>
+
 			<a href="student/francesca-maria-castelli">Francesca Castelli</a><br>
 			<a href="student/gustavo-faria">Gustavo Faria</a><br>
 			<a href="student/yi-ning-huang">Yi-Ning Huang</a><br>
@@ -54,59 +55,66 @@ $query = new WP_Query( $args );
 			<h5>Peer Reviews</h5>
 			<a href="http://www.fabiolaeinhorn.com/" target="_blank">Fabiola Einhorn</a><br>
 			<a href="student/susse-sonderby-jensen">Susse Sønderby Jensen</a><br>
-<!-- 			<a href="student/title" target="_blank"> -->Namreta Kumar<!-- 			</a> --><br>
+			Namreta Kumar<br>
 			<a href="http://yuchenzhang.com/" target="_blank">Yuchen Zhang</a><br>
+
 			<br>
 		</div>
 
 		<div class="three columns">
 			<h6>&nbsp;</h6>
 			<h5>Installation</h5>
-			<a href="project/title">Adiel Fernandez</a><br>
-			<a href="project/title">Amp Thongtawach</a><br>
-			<a href="project/title">Chy Narkvichetr</a><br>
-			<a href="project/title">Julie Huynh</a><br>
-			<a href="project/title">Mauricio Sanchez</a><br>
-			<a href="project/title">Mehdi Supertramp</a><br>
-			<a href="project/title">Mirte Becker</a><br>
-			<a href="project/title">Norihito Yuki</a><br>
+
+			<a href="student/mirte-becker">Mirte Becker</a><br>
+			<a href="student/adiel-fernandez">Adiel Fernandez</a><br>
+			Julie Huynh<br>
+			<a href="student/jomkwan-narkvicheter">Chy Narkvichetr</a><br>
+			<a href="student/mauricio-sanchez-duque">Mauricio Sanchez</a><br>
+			<a href="student/mehdi-salehi">Mehdi Supertramp</a><br>
+			<a href="student/anantapa-thongtawach">Amp Thongtawach</a><br>
+			<a href="student/nori-yuki">Norihito Yuki</a><br>
 			<br>
 			<h5>Design/Web Liaison</h5>
-			<a href="project/title">Owen Herterich</a><br>
+
+			<a href="student/owen-herterich">Owen Herterich</a><br>
 			<br>
 		</div>
+
 		<div class="two columns">
 			<h6>&nbsp;</h6>
 			<h5>Venue</h5>
-			<a href="project/title">Bobby Fata</a><br>
-			<a href="project/title">Justin Charles</a><br>
-			<a href="project/title">Matt Felsen</a><br>
-			<a href="project/title">Or Leviteh</a><br>
-			<a href="project/title">Salome Asega</a><br>
+			<a href="student/salome-asega">Salome Asega</a><br>
+			<a href="student/justin-charles">Justin Charles</a><br>
+			<a href="student/bobby-fata">Bobby Fata</a><br>
+			<a href="student/matt-felsen">Matt Felsen</a><br>
+			<a href="student/or-leviteh">Or Leviteh</a><br>
 			<br>
+
 			<h5>Marketing</h5>
-			<a href="project/title">Agustina Jacobi</a><br>
-			<a href="project/title">Alex Samuel</a><br>
-			<a href="project/title">Huy Nguyen</a><br>
-			<a href="project/title">Jorge Proano</a><br>
-			<a href="project/title">Kristen Kersh</a><br>
+			<a href="student/agustina-jacobi">Agustina Jacobi</a><br>
+			<a href="student/kristen-kersh">Kristen Kersh</a><br>
+			<a href="student/huy-nguyen">Huy Nguyen</a><br>
+			<a href="student/jorge-proano">Jorge Proano</a><br>
+			<a href="student/alex-samuel">Alex Samuel</a><br>
 			<br>
 			
 		</div>
 		<div class="two columns">
 			<h6>&nbsp;</h6>
 			<h5>Web</h5>
-			<a href="project/title">Apon Palanuwech</a><br>
-			<a href="project/title">Fei Liu</a><br>
-			<a href="project/title">Kamilla Kielbowska</a><br>
-			<a href="project/title">Matt Felsen</a><br>
-			<a href="project/title">Quincy Bock</a><br>
+
+			<a href="student/quincy-bock">Quincy Bock</a><br>
+			<a href="student/matt-felsen">Matt Felsen</a><br>
+			<a href="student/kamilla-kielbowska">Kamilla Kielbowska</a><br>
+			<a href="student/fei-liu">Fei Liu</a><br>
+			<a href="student/apon-palanuwech">Apon Palanuwech</a><br>
 			<br>
+
 			<h5>Event Production</h5>
-			<a href="project/title">Aneta Genova</a><br>
-			<a href="project/title">Jason Lalor</a><br>
-			<a href="project/title">Namreta Kumar</a><br>
-			<a href="project/title">Veronica Black</a><br>
+			<a href="student/veronica-black">Veronica Black</a><br>
+			<a href="student/aneta-genova">Aneta Genova</a><br>
+			Namreta Kumar<br>
+			<a href="student/jason-lalor">Jason Lalor</a><br>
 			<br>
 		</div>
 		<div class="clear"></div>
