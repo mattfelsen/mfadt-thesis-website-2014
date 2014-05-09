@@ -72,6 +72,9 @@ $(document).ready(function() {
                     'background-attachment': 'fixed'
                 });
             }
+            // fix video size
+            $('iframe').attr('width', $('.project-info-image').width());
+
             // check page width
             if (global.w <= 767) {
                 // ********** IF MOBILE **********
@@ -150,16 +153,18 @@ $(document).ready(function() {
                 });
             }
             // Project page fix project description
-            if ($('.project-info-image').children('img').attr('src') || $('.project-info-image').children('iframe').attr('src')) {
+            if ($('.project-info-image').children('img').length > 1 || $('.project-info-image').children('iframe').length > 1) {
                 var studentNum = $('.student').length;
-                if (global.scrollAt >= 280 * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - 600) {
+                var diff;
+                if (global.scrollAt >= $('.student').height() * studentNum && global.scrollAt <= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
                     // console.log('fix desc!');
                     $('.project-info-text').css({
                         position: 'fixed',
                         top: 80,
                         width: init_desc_width
                     });
-                } else if (global.scrollAt >= $('.projectPersonPageContainer').height() - $('.project-info-text').height()) {
+                    // calc
+                } else if (global.scrollAt >= $('.project-info-text').height() - 300) {
                     if (isScrolledCollected == false) {
                         isScrolledCollected = true;
                         scrolled = global.scrollAt;
@@ -167,10 +172,10 @@ $(document).ready(function() {
                     }
                     $('.project-info-text').css({
                         position: 'absolute',
-                        top: $('.projectPersonPageContainer').height() - $('.project-info-text').height()
+                        top: '',
+                        bottom: 40
                     });
-                } else if (global.scrollAt < 280 * studentNum) {
-                    // console.log('release desc!');
+                } else if (global.scrollAt < $('.student').height() * studentNum) {
                     $('.project-info-text').css({
                         position: 'static'
                     });
