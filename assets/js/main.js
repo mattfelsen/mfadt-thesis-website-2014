@@ -142,14 +142,16 @@ $(document).ready(function() {
         // when scroll, move nav
         if (!mfadt.isMobile) { // no mobile, has image
             // console.log(global.scrollAt);
-            $('nav').css({
-                bottom: global.scrollAt + 'px'
-            });
+            
             // if scroll to top
             if (global.scrollAt >= global.h - 60) {
                 // stick
                 $('nav').css({
                     bottom: global.h - 60
+                });
+            } else {
+                $('nav').css({
+                    bottom: global.scrollAt + 'px'
                 });
             }
             // Project page fix project description
@@ -224,7 +226,7 @@ $(document).ready(function() {
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 $('html,body').animate({
-                    scrollTop: target.offset().top - 240
+                    scrollTop: $('.categories-container').offset().top - 60
                 }, 500);
                 return false;
             }
