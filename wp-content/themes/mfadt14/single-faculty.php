@@ -37,10 +37,10 @@ $query = new WP_Query( $args );
 		<h2 class="sixteen columns" style="margin-bottom:30px">
 			<?php the_title(); ?>
 		</h2>
-		<div class="six columns faculty-thumbnail">
+		<div class="five columns faculty-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>
-		<div class="ten columns">
+		<div class="ten columns faculty-desc">
 			<?php the_content(); ?>
 		</div>
 	</div>

@@ -421,6 +421,11 @@ div.longTitleImageCropped img{
 	height: auto;
 }
 
+.faculty-desc p {
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+
 /* --------––––––------- FOOTER --–––––------------------*/
 #footer-background {
 	padding-top: 15px;
