@@ -130,22 +130,22 @@
 
 
 @media only screen and (max-width: 1199px) and (min-width: 768px) {
-	div.four.columns.below-hero-content.panels {
+	div.four.columns.panels {
 		font-size: 0.75em !important;
 		line-height: 1.2em !important;
-		padding: 25px !important;
-	}
-	div.six.columns.below-hero-content.panels {
+/*		padding: 25px !important;
+*/	}
+	div.six.columns.panels {
 		width: 361px;
 		visibility: visible !important;
 		margin: 0;
 	}
-	div.eight.columns.below-hero-content.friday {
+	div.eight.columns.friday {
 		float: left;
 		padding: 0 !important;
 		visibility: hidden !important;
 	}
-	div.eight.columns.below-hero-content.saturday {
+	div.eight.columns.saturday {
 		float: right;
 		padding: 0 !important;
 	}
@@ -155,31 +155,31 @@
 		line-height: 2.2em !important;
 	}	
 	@-moz-document url-prefix() {
-    	div.eight.columns.below-hero-content.friday {
+    	div.eight.columns.friday {
 		margin-left: -45px;
 		}
-		div.four.columns.below-hero-content.panels {
+		div.four.columns.panels {
 		padding: 0;
 		}
 	}
 }
 
 @media only screen and (max-width: 767px) {
-	div.six.columns.below-hero-content.panels {
+	div.six.columns.panels {
 		visibility: visible !important;
 		margin: 0;
 	}
-	div.eight.columns.below-hero-content.friday {
+	div.eight.columns.friday {
 		float: left;
 		padding: 0 !important;
 		visibility: hidden !important;
 	}
-	div.eight.columns.below-hero-content.saturday {
+	div.eight.columns.saturday {
 		float: right;
 		padding: 0 !important;
 	}
-	div.four.columns.below-hero-content.panels {
-		padding: 40px !important;
+	div.four.columns.panels {
+	/*	padding: 40px !important;*/
 	}
 }
 
