@@ -68,7 +68,7 @@ $query = new WP_Query( $args );
 			<a href="student/mirte-becker">Mirte Becker</a><br>
 			<a href="student/adiel-fernandez">Adiel Fernandez</a><br>
 			Julie Huynh<br>
-			<a href="student/jomkwan-narkvicheter">Chy Narkvichetr</a><br>
+			<a href="student/jomkwan-narkvichetr">Chy Narkvichetr</a><br>
 			<a href="student/mauricio-sanchez-duque">Mauricio Sanchez</a><br>
 			<a href="student/mehdi-salehi">Mehdi Supertramp</a><br>
 			<a href="student/anantapa-thongtawach">Amp Thongtawach</a><br>
@@ -136,7 +136,7 @@ $query = new WP_Query( $args );
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-50437222-2', 'mfadt.com');
+  ga('create', 'UA-50437222-1', 'parsons.edu');
   ga('send', 'pageview');
 </script>
 
