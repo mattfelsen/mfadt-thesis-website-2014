@@ -1,7 +1,7 @@
 var $ = jQuery;
 
 $(document).ready(function() {
-    console.log('OH YEAH');
+    // console.log('OH YEAH');
     var global = {
         w: window.innerWidth,
         h: window.innerHeight,
@@ -11,7 +11,7 @@ $(document).ready(function() {
         svg: null,
         isMobile: false,
         init: function() {
-            console.log('mfadt thesis initialized');
+            // console.log('mfadt thesis initialized');
             // check pathname
             if ((location.pathname !== '/2014/' && location.pathname !== '/mfadt/') || location.search !== "") {
                 // if not homepage
@@ -22,7 +22,9 @@ $(document).ready(function() {
             } else {
                 // if homepage
                 $.each($('.cat-item'), function(i, v) {
-                    var x = $(v)[0].outerText.toLowerCase();
+                    var z = $(v)[0].outerHTML,
+                        y = z.substring(z.lastIndexOf('">') + 2, z.lastIndexOf('</a>')),
+                        x = y.toLowerCase();
                     if (x.match('critical')) {
                         $(v).css('border', '2px solid #f67d11');
                     } else if (x.match('education')) {
@@ -55,9 +57,11 @@ $(document).ready(function() {
                 pageLocation = metaLocation.substring(metaLocation.lastIndexOf('/') + 1, metaLocation.length);
             // loop through menu-item
             $.each($('.menu-item > a'), function(i, v) {
-                var x = $(v)[0].outerText.toLowerCase();
-                var y = location.hash;
-                if (x == pageLocation || x == y.substring(y.lastIndexOf('#') + 1, y.length)) {
+                var z = $(v)[0].outerHTML,
+                    y = z.substring(z.lastIndexOf('">') + 2, z.lastIndexOf('</a>')),
+                    x = y.toLowerCase();
+                var a = location.hash;
+                if (x == pageLocation || x == a.substring(a.lastIndexOf('#') + 1, a.length)) {
                     $(v).addClass('menu-selected');
                 }
             });
@@ -71,6 +75,13 @@ $(document).ready(function() {
             if (global.w <= 767) {
                 // ********** IF MOBILE **********
                 this.isMobile = true;
+                // re-arrange hero and below-hero
+                $('#mfadt-hero').css({
+                    height: $('.hero-text-desc-percentage').offset().top + 200
+                });
+                $('.below-hero').css({
+                    top: $('.hero-text-desc-percentage').offset().top + 198
+                });
                 // remove magic
                 $('#flat-shader').hide();
                 // collapse nav-list
@@ -89,7 +100,7 @@ $(document).ready(function() {
         },
         magic: function() {
             // load flat shader
-            console.log('Let there be light!');
+            // console.log('Let there be light!');
             initialise();
             $('#flat-shader').fadeIn();
         }
@@ -109,7 +120,6 @@ $(document).ready(function() {
     };
     window.onscroll = function() {
         global.scrollAt = window.pageYOffset;
-
         // for homepage
         if ($('#projects').offset() !== undefined && $('#projects').offset().top - global.scrollAt < 350) {
             // add class for project
@@ -119,21 +129,8 @@ $(document).ready(function() {
             $('a[href="#projects"]').removeClass('menu-selected');
         }
 
-        if (global.scrollAt >= 75) {
-            $('.img-hero').css({
-                top: 75
-            });
-        } else {
-            $('.img-hero').css({
-                top: global.scrollAt
-            });
-            $('.mfadt-box-hero-shadow').css({
-                width: 50 + global.scrollAt / 2.5 + '%',
-                boxShadow: '0 ' + -30 + 'px ' + (26 - global.scrollAt / 5) + 'px black',
-            });
-        }
         // when scroll, move nav
-        if (mfadt.isMobile == false) { // no mobile, has image
+        if (!mfadt.isMobile) { // no mobile, has image
             // console.log(global.scrollAt);
             $('nav').css({
                 bottom: global.scrollAt + 'px'
@@ -186,7 +183,7 @@ $(document).ready(function() {
             background: 'none'
         });
         $(this).css({
-            background: $(this).css('border-color')
+            background: $(this)[0].style.borderColor
         });
 
         // parse slug from the end of the category link

@@ -64,14 +64,17 @@ ul#menu-main li a {
 .menu-main-container {
 	padding-top: 4px;
 	float: left;
-/*	top: 0;
-	left: 30%;*/
 }
 
 .menu-main-container ul > li {
 	display: inline-block;
 	margin-right: 30px;
 	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.menu-main-container ul > li:nth-last-child(1) {
+	margin-right: 0px;
 }
 
 form {
@@ -95,11 +98,13 @@ form div label {
 	top:0; left:0;
 }
 
+.img-hero-container {
+	text-align: center;
+}
+
 .img-hero {
-	position: relative;
-	max-width:100% !important;
-	margin-bottom: 30px !important;
-	padding: 0 3em;
+	width: 90% !important;
+	height: 100%;
 }
 
 #mfadt-hero {
@@ -132,20 +137,6 @@ form div label {
 	font-family: 'Exo 2', sans-serif;
 
 }
-
-.mfadt-box-hero-shadow {
-	display: none;
-	height: 4px;
-	border-radius: 85% 10%;
-	box-shadow: 0 -30px 26px black;
-	width: 50%;
-	margin: 100px auto 15px auto;
-}
-
-svg {
-	background: #fff;
-}
-
 .below-hero {
 	position: absolute;
 	width: 100%;
@@ -484,7 +475,7 @@ footer h6 {
 	background: url(../img/nav/search-128.png) no-repeat !important;
 	background-size: contain !important;
 	/*transition: 0s;*/
-	width: 140px;
+	width: 135px;
 }
 
 form::-webkit-input-placeholder {
@@ -515,6 +506,9 @@ div.eight.columns.below-hero-content.friday {
 }
 
 @-moz-document url-prefix() {
+	#s {
+		width: 100px;
+	}
     div.wtf-mozilla {
 	padding: 30px;
 	}
