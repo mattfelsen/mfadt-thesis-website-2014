@@ -220,12 +220,12 @@
 	}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) and (min-width: 480px) {
 
 	.hero-text-header-percentage {
-			padding-top: 15px;
-			font-size: 2.5em;
-			font-weight: 700;
+		padding-top: 15px;
+		font-size: 2.5em;
+		font-weight: 700;
 		}
 	div.six.columns.panels {
 		visibility: visible !important;
@@ -243,29 +243,33 @@
 	div.eight.columns.keynote-speakers {
 		font-size: 0.85em !important;
 		line-height: 1.4em !important;
-/*		padding: 25px !important;
-*/	}
+	}
 	p.symposium-title-schedule {
 		margin: 0 !important;
 		}
 	div.four.columns.panels {
 		height: 200px !important;
-	/*	padding: 40px !important;*/
 	}
 	@-moz-document url-prefix() {
     	div.eight.columns.friday {
-		margin-left: -75px;
+			margin-left: -75px;
 		}
 		div.six.columns.panels {
-		width: 380px !important;
-		margin-left: 74px !important;
+			width: 380px !important;
+			margin-left: 74px !important;
 		}
 		div.eight.columns.saturday {
-		margin-left: -75px !important;
+			margin-left: -75px !important;
 		}
 		.srsly-mozilla-wtf {
-		margin-left: -75px !important;
+			margin-left: -75px !important;
 		}
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	div.eight.columns.keynote-speakers {
+		height: 580px !important;
 	}
 }
 
