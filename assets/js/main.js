@@ -48,7 +48,7 @@ $(document).ready(function() {
                 // the projects link was clicked
                 if (window.location.hash == '#projects') {
                     $('html,body').animate({
-                        scrollTop: $('#projects').offset().top - 240
+                        scrollTop: $('.categories-container').offset().top - 60
                     }, 1000);
                 }
             }
