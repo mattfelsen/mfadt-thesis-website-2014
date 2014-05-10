@@ -77,7 +77,7 @@ function generateGroupListing($group) {
     </div>
   <div class="eight columns keynote-speakers">
   	<div class="wtf-mozilla">
-      <p class="symposium-keynote-speakers">Theo & Emily</p>
+      <p class="symposium-keynote-speakers">Emily Gobeille & Theo Watson</p>
       Theo Watson is an artist, designer and experimenter. An open-source enthusiast, he works together with Zach Lieberman and Arturo Castro in the openFrameworks toolkit for creative coding. Emily Gobeille is an artist and award-winning designer who specializes in merging technology and design to create rich immersive design experiences.
 	  <br><br>Theo and Emily are co-founders of Design I/O – a creative studio specializing in the design and development of cutting edge, immersive, interactive installations – pushing the boundaries of what is possible in the intersection between design and technology.
 	 </div>
