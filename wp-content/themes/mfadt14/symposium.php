@@ -180,7 +180,7 @@ function generateGroupListing($group) {
     <div class="six columns panels">
       <div id="storytelling-2">
         <div class="symposium-panel-title">
-          <p class="symposium-panel-title-storytelling">Storytelling 2</p>
+          <p class="symposium-panel-title-storytelling">Storytelling 1</p>
         </div>
         <div class="symposium-panel-title-hours">
           3.50PM<br>
@@ -189,7 +189,7 @@ function generateGroupListing($group) {
           Panel respondent: Nick Fortugno<br>
         </div>
         <div class="symposium-students">
-          <?php generateGroupListing("Storytelling (Group 2)"); ?>
+          <?php generateGroupListing("Storytelling (Group 1)"); ?>
         </div>
         <div class="symposium-feedback-break-hours">
           4.26PM - 4.36PM<br>
@@ -203,7 +203,7 @@ function generateGroupListing($group) {
           <p class="symposium-panel-title-really-big-data">Really Big Data</p>
         </div>
         <div class="symposium-panel-title-hours">
-          4.40<br>
+          4.40PM<br>
         </div>
         <div class="symposium-feedback-break">
           Panel respondent: Jen Lowe<br> 
@@ -349,7 +349,7 @@ function generateGroupListing($group) {
     <div class="six columns panels">
       <div id="storytelling-1">
         <div class="symposium-panel-title">
-          <p class="symposium-panel-title-storytelling">Storytelling 1</p>
+          <p class="symposium-panel-title-storytelling">Storytelling 2</p>
         </div>
         <div class="symposium-panel-title-hours">
           2.10PM<br>
@@ -358,7 +358,7 @@ function generateGroupListing($group) {
           Panel respondent: Brett Renfer<br>
         </div>
         <div class="symposium-students">
-          <?php generateGroupListing("Storytelling (Group 1)"); ?>
+          <?php generateGroupListing("Storytelling (Group 2)"); ?>
         </div>
         <div class="symposium-feedback-break-hours">
           2.39PM - 2.49PM<br>
